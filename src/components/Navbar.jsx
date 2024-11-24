@@ -18,7 +18,7 @@ const Navbar = () => {
     { href: "/about-us", label: "ABOUT US" },
     { href: "/properties", label: "PROPERTIES" },
     { href: "/amenities", label: "AMENITIES" },
-    { href: "/contact-us", label: "CONTACT US" }
+    { href: "/contact-us", label: "CONTACT US" },
   ];
 
   return (
@@ -29,7 +29,7 @@ const Navbar = () => {
       </div>
 
       {/* Navbar Links */}
-      <div className="navbar">
+      <div className="navbar flex-1">
         <ul className="hidden lg:flex gap-12 text-white font-workSansMedium font-medium text-lg items-center ml-20">
           {navLinks.map((link) => (
             <li key={link.href}>
@@ -38,7 +38,11 @@ const Navbar = () => {
           ))}
         </ul>
 
-        <button className="lg:hidden" onClick={handleMenuToggle} aria-label="Open Menu">
+        <button
+          className="lg:hidden"
+          onClick={handleMenuToggle}
+          aria-label="Open Menu"
+        >
           <IoMdMenu size={28} />
         </button>
       </div>
@@ -57,9 +61,24 @@ const Navbar = () => {
           </p>
         </div>
         <div className="social-media-icon flex items-center gap-5">
-          <Image src="/assets/Navbar/facebook.svg" width={24} height={24} alt="Facebook Icon" />
-          <Image src="/assets/Navbar/instagram.svg" width={24} height={24} alt="Instagram Icon" />
-          <Image src="/assets/Navbar/x.svg" width={24} height={24} alt="X (Twitter) Icon" />
+          <Image
+            src="/assets/Navbar/facebook.svg"
+            width={24}
+            height={24}
+            alt="Facebook Icon"
+          />
+          <Image
+            src="/assets/Navbar/instagram.svg"
+            width={24}
+            height={24}
+            alt="Instagram Icon"
+          />
+          <Image
+            src="/assets/Navbar/x.svg"
+            width={24}
+            height={24}
+            alt="X (Twitter) Icon"
+          />
         </div>
       </div>
 
