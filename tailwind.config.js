@@ -12,6 +12,9 @@ module.exports = {
         foreground: "var(--foreground)",
       },
     },
+    fontFamily: {
+      workSansMedium: ["WorkSansMedium", "sans-serif"],
+    },
   },
   plugins: [],
 };
