@@ -9,8 +9,20 @@ import { IoMdMenu } from "react-icons/io";
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
+  const handleMenuToggle = () => setMenuOpen((prev) => !prev);
+
+  const closeMenu = () => setMenuOpen(false);
+
+  const navLinks = [
+    { href: "/", label: "HOME" },
+    { href: "/about-us", label: "ABOUT US" },
+    { href: "/properties", label: "PROPERTIES" },
+    { href: "/amenities", label: "AMENITIES" },
+    { href: "/contact-us", label: "CONTACT US" }
+  ];
+
   return (
-    <div className="bg-[#004568] flex justify-between items-center px-14 py-5 text-white font-workSansMedium font-medium">
+    <div className="bg-[#004568] flex justify-between items-center px-4 py-5 text-white font-workSansMedium font-medium">
       {/* Logo Section */}
       <div className="logo flex-shrink-0">
         <Image src="/assets/logo.svg" width={72} height={72} alt="Logo" />
@@ -19,28 +31,14 @@ const Navbar = () => {
       {/* Navbar Links */}
       <div className="navbar">
         <ul className="hidden lg:flex gap-12 text-white font-workSansMedium font-medium text-lg items-center ml-20">
-          <li>
-            <Link href="/">HOME</Link>
-          </li>
-          <li>
-            <Link href="/about-us">ABOUT US</Link>
-          </li>
-          <li>
-            <Link href="/properties">PROPERTIES</Link>
-          </li>
-          <li>
-            <Link href="/amenities">AMENITIES</Link>
-          </li>
-          <li>
-            <Link href="/contact-us">CONTACT US</Link>
-          </li>
+          {navLinks.map((link) => (
+            <li key={link.href}>
+              <Link href={link.href}>{link.label}</Link>
+            </li>
+          ))}
         </ul>
 
-        <button
-          className="lg:hidden"
-          onClick={() => setMenuOpen(true)}
-          aria-label="Open Menu"
-        >
+        <button className="lg:hidden" onClick={handleMenuToggle} aria-label="Open Menu">
           <IoMdMenu size={28} />
         </button>
       </div>
@@ -59,24 +57,9 @@ const Navbar = () => {
           </p>
         </div>
         <div className="social-media-icon flex items-center gap-5">
-          <Image
-            src="/assets/Navbar/facebook.svg"
-            width={24}
-            height={24}
-            alt="Facebook Icon"
-          />
-          <Image
-            src="/assets/Navbar/instagram.svg"
-            width={24}
-            height={24}
-            alt="Instagram Icon"
-          />
-          <Image
-            src="/assets/Navbar/x.svg"
-            width={24}
-            height={24}
-            alt="X (Twitter) Icon"
-          />
+          <Image src="/assets/Navbar/facebook.svg" width={24} height={24} alt="Facebook Icon" />
+          <Image src="/assets/Navbar/instagram.svg" width={24} height={24} alt="Instagram Icon" />
+          <Image src="/assets/Navbar/x.svg" width={24} height={24} alt="X (Twitter) Icon" />
         </div>
       </div>
 
@@ -87,7 +70,7 @@ const Navbar = () => {
         }`}
       >
         {/* Sidebar Background */}
-        <div className="flex-1" onClick={() => setMenuOpen(false)}></div>
+        <div className="flex-1" onClick={closeMenu}></div>
 
         {/* Sidebar Content */}
         <div className="w-64 bg-white h-full flex flex-col shadow-lg">
@@ -96,7 +79,7 @@ const Navbar = () => {
             <span className="font-semibold text-lg text-[#004568]">Menu</span>
             <button
               className="text-gray-500"
-              onClick={() => setMenuOpen(false)}
+              onClick={closeMenu}
               aria-label="Close Menu"
             >
               <IoClose size={28} />
@@ -105,31 +88,13 @@ const Navbar = () => {
 
           {/* Sidebar Links */}
           <ul className="flex flex-col gap-4 mt-6 px-4 text-gray-800">
-            <li>
-              <Link href="/" onClick={() => setMenuOpen(false)}>
-                HOME
-              </Link>
-            </li>
-            <li>
-              <Link href="/about-us" onClick={() => setMenuOpen(false)}>
-                ABOUT US
-              </Link>
-            </li>
-            <li>
-              <Link href="/properties" onClick={() => setMenuOpen(false)}>
-                PROPERTIES
-              </Link>
-            </li>
-            <li>
-              <Link href="/amenities" onClick={() => setMenuOpen(false)}>
-                AMENITIES
-              </Link>
-            </li>
-            <li>
-              <Link href="/contact-us" onClick={() => setMenuOpen(false)}>
-                CONTACT US
-              </Link>
-            </li>
+            {navLinks.map((link) => (
+              <li key={link.href}>
+                <Link href={link.href} onClick={closeMenu}>
+                  {link.label}
+                </Link>
+              </li>
+            ))}
           </ul>
         </div>
       </div>
