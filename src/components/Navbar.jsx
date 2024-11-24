@@ -29,7 +29,7 @@ const Navbar = () => {
       </div>
 
       {/* Navbar Links */}
-      <div className="navbar flex-1">
+      <div className="navbar">
         <ul className="hidden lg:flex gap-12 text-white font-workSansMedium font-medium text-lg items-center ml-20">
           {navLinks.map((link) => (
             <li key={link.href}>
