@@ -3,8 +3,16 @@
 @tailwind utilities;
 
 @font-face {
+  font-family: "WorkSansRegular";
+  src: url("../../public/fonts/WorkSans-Regular.ttf");
+}
+@font-face {
   font-family: "WorkSansMedium";
   src: url("../../public/fonts/WorkSans-Medium.ttf");
+}
+@font-face {
+  font-family: "RalewaySemiBold";
+  src: url("../../public/fonts/Raleway-SemiBold.ttf");
 }
 
 * {

@@ -13,7 +13,9 @@ module.exports = {
       },
     },
     fontFamily: {
+      workSansRegular: ["WorkSansRegular", "sans-serif"],
       workSansMedium: ["WorkSansMedium", "sans-serif"],
+      ralewaySemiBold: ["RalewaySemiBold", "sans-serif"],
     },
   },
   plugins: [],
