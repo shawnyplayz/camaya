@@ -11,3 +11,11 @@ export const AboutCamayaData = {
   description:
     "Brief description about Camaya Coast Properties and its vision to provide luxurious beachfront living",
 };
+
+export const GetInTouchData = {
+  description:
+    "We'd love to hear from you! Whether you have questions about our properties, want to schedule a tour, or need more information, feel free to reach out to us.",
+  phoneNumber: "+63 926 053 2470",
+  email: "maripaul.milanes@realestate.camayacoast.com",
+  location: "acinta Bldg., Brgy Guadalupe Nuevo, Makati, Philippines",
+};
