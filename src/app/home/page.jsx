@@ -1,11 +1,20 @@
-import React from 'react'
+import React from "react";
+import HeroSection from "./HeroSection";
+import Navbar from "@/components/Navbar";
+import AffiliatePartners from "./AffiliatePartners";
+import AboutCamaya from "./AboutCamaya";
+import DevelopmentPlan from "./DevelopmentPlan";
 
 const Home = () => {
   return (
     <div>
-        Hi
+      <Navbar />
+      <HeroSection />
+      <AffiliatePartners />
+      <AboutCamaya />
+      <DevelopmentPlan />
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
