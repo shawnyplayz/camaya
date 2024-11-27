@@ -6,6 +6,7 @@ import AboutCamaya from "./AboutCamaya";
 import DevelopmentPlan from "./DevelopmentPlan";
 import GetInTouchSection from "./GetInTouchSection";
 import FrequentlyAskedQuestions from "./FrequentlyAskedQuestions";
+import Amenities from "./Amenities";
 
 const Home = () => {
   return (
@@ -15,6 +16,7 @@ const Home = () => {
       <AffiliatePartners />
       <AboutCamaya />
       <DevelopmentPlan />
+      <Amenities/>
       <FrequentlyAskedQuestions />
       <GetInTouchSection />
     </div>
