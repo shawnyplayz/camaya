@@ -5,6 +5,7 @@ import AffiliatePartners from "./AffiliatePartners";
 import AboutCamaya from "./AboutCamaya";
 import DevelopmentPlan from "./DevelopmentPlan";
 import GetInTouchSection from "./GetInTouchSection";
+import FrequentlyAskedQuestions from "./FrequentlyAskedQuestions";
 
 const Home = () => {
   return (
@@ -14,6 +15,7 @@ const Home = () => {
       <AffiliatePartners />
       <AboutCamaya />
       <DevelopmentPlan />
+      <FrequentlyAskedQuestions />
       <GetInTouchSection />
     </div>
   );
