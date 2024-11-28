@@ -11,6 +11,10 @@
   src: url("../../public/fonts/WorkSans-Medium.ttf");
 }
 @font-face {
+  font-family: "WorkSansSemiBold";
+  src: url("../../public/fonts/WorkSans-SemiBold.ttf");
+}
+@font-face {
   font-family: "RalewaySemiBold";
   src: url("../../public/fonts/Raleway-SemiBold.ttf");
 }

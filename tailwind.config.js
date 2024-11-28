@@ -15,6 +15,7 @@ module.exports = {
     fontFamily: {
       workSansRegular: ["WorkSansRegular", "sans-serif"],
       workSansMedium: ["WorkSansMedium", "sans-serif"],
+      workSansSemiBold: ["WorkSansSemiBold", "sans-serif"],
       ralewaySemiBold: ["RalewaySemiBold", "sans-serif"],
     },
   },
