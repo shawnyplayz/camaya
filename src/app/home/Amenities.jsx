@@ -35,7 +35,7 @@ const Amenities = () => {
         <h1 className="font-workSansMedium font-medium text-4xl md:text-5xl text-[#221C42] mb-6 pt-14">
           Resort-Style Amenities
         </h1>
-        <p className="text-[#9C9C9C] max-w-4xl mx-auto md:mx-0 font-workSansMedium font-medium text-lg md:text-xl mb-12">
+        <p className="text-[#9C9C9C] max-w-4xl mx-auto md:mx-0 font-workSansMedium font-medium text-lg md:text-xl mb-44">
           At Camaya Coast, we offer a wide range of world-class amenities to
           ensure relaxation and recreation for our residents.
         </p>
