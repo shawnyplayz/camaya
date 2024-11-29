@@ -9,6 +9,10 @@ const baseUrl = isLive ? baseURLLive : baseURLDev;
 
 const endpoints = {
   fetchTestimonials: `${baseUrl}/fetchTestimonials`,
+  properties: `${baseUrl}/properties`,
+  propertyOptions: `${baseUrl}/propertyOptions`,
+  locationOptions: `${baseUrl}/locationOptions`,
+  pricingOptions: `${baseUrl}/pricingOptions`,
 };
 
 export default endpoints;

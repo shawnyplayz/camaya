@@ -1,11 +1,13 @@
 "use client";
 
 import Dropdown from "@/components/DropDown";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Image from "next/image";
+import { fetchDataGet } from "@/utils.js/fetchData";
+import endpoints from "@/config/endpoints";
 
 const FeaturedProperties = () => {
   const settings = {
@@ -16,8 +18,50 @@ const FeaturedProperties = () => {
     slidesToScroll: 1,
   };
 
-  const handleDropdownSelect = (value, type) => {
-    console.log(`${type} selected:`, value);
+  const [locations, setLocations] = useState([]);
+  const [propertyTypes, setPropertyTypes] = useState([]);
+  const [pricingOptions, setPricingOptions] = useState([]);
+  const [filteredProperties, setFilteredProperties] = useState([]);
+  const [selectedFilters, setSelectedFilters] = useState({
+    location: "",
+    property: "",
+    price: "",
+  });
+
+  // Fetch dropdown options from the backend
+  useEffect(() => {
+    const fetchDropdownData = async () => {
+      try {
+        const locationData = await fetchDataGet(endpoints.locationOptions);
+        setLocations(locationData);
+
+        const propertyData = await fetchDataGet(endpoints.propertyOptions);
+        setPropertyTypes(propertyData);
+
+        const priceData = await fetchDataGet(endpoints.pricingOptions);
+        setPricingOptions(priceData);
+      } catch (error) {
+        console.error("Error fetching filter options:", error);
+      }
+    };
+
+    fetchDropdownData();
+  }, []);
+
+  // Handle dropdown selection changes and fetch properties
+  const handleDropdownSelect = async (value, type) => {
+    const updatedFilters = { ...selectedFilters, [type]: value };
+    setSelectedFilters(updatedFilters);
+
+    try {
+      const queryParams = new URLSearchParams(updatedFilters).toString();
+      const propertiesData = await fetchDataGet(
+        `${endpoints.properties}?${queryParams}`
+      );
+      setFilteredProperties(propertiesData.properties);
+    } catch (error) {
+      console.error("Error fetching filtered properties:", error);
+    }
   };
 
   return (
@@ -31,51 +75,43 @@ const FeaturedProperties = () => {
       {/* Dropdowns */}
       <div className="flex gap-11 justify-center items-center mt-16">
         <Dropdown
-          options={["Mariveles Bataan", "Bagac Bataan", "Balanga, Bataan"]}
-          onSelect={(value) => handleDropdownSelect(value, "Location")}
-          placeholder="location"
+          options={locations}
+          onSelect={(value) => handleDropdownSelect(value, "location")}
+          placeholder="Location"
         />
         <Dropdown
-          options={["House", "Apartment", "Condo"]}
-          onSelect={(value) => handleDropdownSelect(value, "Property")}
-          placeholder="property"
+          options={propertyTypes}
+          onSelect={(value) => handleDropdownSelect(value, "property")}
+          placeholder="Property"
         />
         <Dropdown
-          options={["For Sale", "For Rent"]}
+          options={pricingOptions}
           onSelect={(value) => handleDropdownSelect(value, "price")}
-          placeholder="price"
+          placeholder="Price"
         />
       </div>
 
       {/* Slider */}
       <div className="mt-32">
-        <Slider {...settings}>
-          {/* Slide 1 */}
-          <div>
-            <div className="flex items-center justify-center">
-              <Image
-                src="/assets/home/featuredPropertiesSection/image1.png"
-                alt="Property 1"
-                width={450}
-                height={200}
-                className="pb-7"
-              />
-            </div>
-          </div>
-
-          {/* Slide 2 */}
-          <div>
-            <div className="flex items-center justify-center">
-              <Image
-                src="/assets/home/featuredPropertiesSection/image2.png"
-                alt="Property 2"
-                width={500}
-                height={600}
-                className="pb-7"
-              />
-            </div>
-          </div>
-        </Slider>
+        {/* <Slider {...settings}> */}
+        <div>
+          {filteredProperties.map((property, index) => {
+            return (
+              <div key={index}>
+                <div className="flex items-center justify-center">
+                  <Image
+                    src={property?.pictures[0]?.url}
+                    alt={"Property Image"}
+                    width={450}
+                    height={200}
+                    className="pb-7"
+                  />
+                </div>
+              </div>
+            );
+          })}
+        </div>
+        {/* </Slider> */}
       </div>
     </div>
   );

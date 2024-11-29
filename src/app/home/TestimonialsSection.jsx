@@ -41,7 +41,7 @@ const TestimonialsSection = () => {
 
       {/* Testimonials Grid or Slider */}
       <div className="flex items-center justify-center">
-        <div className="mt-28 w-full max-w-7xl">
+        <div className="mt-28 max-w-7xl">
           {loading ? (
             <p className="col-span-full text-center text-xl text-gray-500">
               Loading testimonials...

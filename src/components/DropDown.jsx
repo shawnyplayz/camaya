@@ -14,7 +14,6 @@ const Dropdown = ({ options, onSelect, placeholder }) => {
 
   return (
     <div className="relative w-48">
-      {/* Button */}
       <button
         className="w-full text-left bg-white border border-gray-300 rounded-lg shadow-md px-4 py-2 flex items-center justify-between hover:border-gray-400 focus:outline-none"
         onClick={() => setIsOpen(!isOpen)}
@@ -36,7 +35,6 @@ const Dropdown = ({ options, onSelect, placeholder }) => {
         </svg>
       </button>
 
-      {/* Dropdown Menu */}
       {isOpen && (
         <div className="absolute mt-2 w-full bg-white rounded-lg shadow-lg border border-gray-300 z-10">
           <ul className="text-sm text-gray-800">
