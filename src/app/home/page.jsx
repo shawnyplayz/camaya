@@ -7,6 +7,8 @@ import DevelopmentPlan from "./DevelopmentPlan";
 import GetInTouchSection from "./GetInTouchSection";
 import FrequentlyAskedQuestions from "./FrequentlyAskedQuestions";
 import Amenities from "./Amenities";
+import FeaturedProperties from "./FeaturedProperties";
+import TestimonialsSection from "./TestimonialsSection";
 
 const Home = () => {
   return (
@@ -16,7 +18,9 @@ const Home = () => {
       <AffiliatePartners />
       <AboutCamaya />
       <DevelopmentPlan />
-      <Amenities/>
+      <FeaturedProperties />
+      <Amenities />
+      <TestimonialsSection />
       <FrequentlyAskedQuestions />
       <GetInTouchSection />
     </div>

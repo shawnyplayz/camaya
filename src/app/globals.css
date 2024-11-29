@@ -11,6 +11,10 @@
   src: url("../../public/fonts/WorkSans-Medium.ttf");
 }
 @font-face {
+  font-family: "WorkSansItalic";
+  src: url("../../public/fonts/WorkSans-Italic.ttf");
+}
+@font-face {
   font-family: "WorkSansSemiBold";
   src: url("../../public/fonts/WorkSans-SemiBold.ttf");
 }
@@ -31,4 +35,11 @@ html {
   overflow-x: hidden;
   margin: 0;
   padding: 0;
+}
+/* Custom styles for Swiper navigation arrows */
+.swiper-button-next,
+.swiper-button-prev {
+  color: #7157da; /* Change arrow color */
+  font-size: 24px; /* Customize size */
+  z-index: 10;
 }
