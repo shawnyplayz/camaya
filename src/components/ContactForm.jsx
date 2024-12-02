@@ -22,7 +22,7 @@ const ContactForm = () => {
           />
         </div>
         <div className="flex items-center justify-center pb-8">
-          <Button>Send Message</Button>
+          <Button className="w-full">Send Message</Button>
         </div>
       </form>
     </div>
