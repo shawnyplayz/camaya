@@ -13,6 +13,7 @@ const endpoints = {
   propertyOptions: `${baseUrl}/propertyOptions`,
   locationOptions: `${baseUrl}/locationOptions`,
   pricingOptions: `${baseUrl}/pricingOptions`,
+  sendInquiry: `${baseUrl}/sendInquiry`,
 };
 
 export default endpoints;
