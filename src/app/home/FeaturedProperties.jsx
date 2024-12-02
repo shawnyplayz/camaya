@@ -6,6 +6,7 @@ import Image from "next/image";
 import { fetchDataGet } from "@/utils.js/fetchData";
 import endpoints from "@/config/endpoints";
 import defaultImage from "../../../public/assets/home/featuredPropertiesSection/image1.png";
+import errorImage from "../../../public/assets/home/featuredPropertiesSection/error.svg";
 
 const FeaturedProperties = () => {
   const [locations, setLocations] = useState([]);
@@ -66,7 +67,7 @@ const FeaturedProperties = () => {
       </div>
 
       {/* Dropdowns */}
-      <div className="lg:flex lg:gap-11 gap-4 justify-center items-center mt-16 grid grid-cols-2">
+      <div className="flex gap-11 flex-col md:flex-row justify-center items-center mt-16">
         <Dropdown
           options={locations}
           onSelect={(value) => handleDropdownSelect(value, "location")}
@@ -84,7 +85,7 @@ const FeaturedProperties = () => {
         />
       </div>
 
-      {/* Slider or Default Image */}
+      {/* Slider or Default/Error Image */}
       <div className="mt-32">
         <div>
           {/* Check if properties exist */}
@@ -103,11 +104,11 @@ const FeaturedProperties = () => {
               </div>
             ))
           ) : (
-            // Show default image when no properties are available
+            // Show error image when no properties are available
             <div className="flex items-center justify-center">
               <Image
-                src={defaultImage}
-                alt="Default Image"
+                src={errorImage}
+                alt="Error: No Properties Found"
                 width={800}
                 height={400}
                 className="pb-7"
