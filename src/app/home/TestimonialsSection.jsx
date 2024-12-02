@@ -84,7 +84,7 @@ const TestimonialsSection = () => {
 
   return (
     <section
-      className="font-workSansMedium text-[#221C42] pb-28"
+      className="font-workSansMedium text-[#221C42] pb-28 px-4 sm:px-8 md:px-16"
       style={{ background: "#DDA93A0F" }}
     >
       {/* Section Header */}
@@ -95,8 +95,8 @@ const TestimonialsSection = () => {
       </header>
 
       {/* Testimonials Slider Layout */}
-      <div className="flex items-center justify-center">
-        <div className="mt-28 max-w-5xl px-4">
+      <div className="flex items-center justify-center mt-12 sm:mt-16 lg:mt-20">
+        <div className="max-w-5xl w-full">
           {loading ? (
             <p className="col-span-full text-center text-xl text-gray-500">
               Loading testimonials...
