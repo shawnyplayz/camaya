@@ -95,7 +95,7 @@ const FeaturedProperties = () => {
                   <Image
                     src={property?.pictures?.[0]?.url || defaultImage}
                     alt="Property Image"
-                    width={600}
+                    width={800}
                     height={200}
                     className="pb-7"
                   />
@@ -108,8 +108,8 @@ const FeaturedProperties = () => {
               <Image
                 src={defaultImage}
                 alt="Default Image"
-                width={600}
-                height={200}
+                width={800}
+                height={400}
                 className="pb-7"
               />
             </div>
