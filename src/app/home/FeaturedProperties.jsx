@@ -5,14 +5,16 @@ import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import { fetchDataGet } from "@/utils.js/fetchData";
 import endpoints from "@/config/endpoints";
+import Slider from "react-slick";
 
 const FeaturedProperties = () => {
   const settings = {
     dots: true,
-    infinite: true,
+    infinite: false,
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
+    arrows: false,
   };
 
   const [locations, setLocations] = useState([]);
@@ -90,25 +92,25 @@ const FeaturedProperties = () => {
 
       {/* Slider */}
       <div className="mt-32">
-        {/* <Slider {...settings}> */}
-        <div>
-          {filteredProperties.map((property, index) => {
-            return (
-              <div key={index}>
-                <div className="flex items-center justify-center">
-                  <Image
-                    src={property?.pictures[0]?.url}
-                    alt={"Property Image"}
-                    width={600}
-                    height={200}
-                    className="pb-7"
-                  />
+        <Slider {...settings}>
+          <div>
+            {filteredProperties.map((property, index) => {
+              return (
+                <div key={index}>
+                  <div className="flex items-center justify-center">
+                    <Image
+                      src={property?.pictures[0]?.url}
+                      alt={"Property Image"}
+                      width={800}
+                      height={500}
+                      className="pb-7"
+                    />
+                  </div>
                 </div>
-              </div>
-            );
-          })}
-        </div>
-        {/* </Slider> */}
+              );
+            })}
+          </div>
+        </Slider>
       </div>
     </div>
   );
