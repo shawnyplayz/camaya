@@ -50,7 +50,7 @@ const GetInTouchSection = () => {
         </div>
 
         {/* Right Section - Contact Form */}
-        <div className="right mt-8 lg:mt-0 px-4 lg:px-0 lg:absolute lg:right-20 lg:-bottom-44">
+        <div className="mt-8 lg:mt-0 px-4 lg:px-0 2xl:absolute 2xl:right-20 lg:-bottom-44">
           <ContactForm />
         </div>
       </div>

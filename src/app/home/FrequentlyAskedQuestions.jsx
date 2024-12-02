@@ -3,7 +3,7 @@ import React from "react";
 
 const FrequentlyAskedQuestions = () => {
   return (
-    <div className="lg:h-screen flex items-center justify-evenly flex-col lg:flex-row mb-20">
+    <div className="lg:h-screen flex items-center justify-evenly flex-col lg:flex-row mb-20 px-5">
       <div className="left">
         <div>
           <h1 className="max-w-3xl font-workSansMedium font-normal lg:text-6xl text-xl text-[#221C42] text-center lg:text-start mt-12 lg:mt-0">

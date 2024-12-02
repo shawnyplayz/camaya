@@ -68,8 +68,8 @@ const Navbar = () => {
         <div className="social-media-icon flex items-center gap-5">
           <Image
             src="/assets/Navbar/facebook.svg"
-            width={24}
-            height={24}
+            width={15}
+            height={15}
             alt="Facebook Icon"
           />
           <Image

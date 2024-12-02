@@ -14,7 +14,7 @@ const AmenityCard = ({ imageSrc, title, description, cardIndex }) => {
         {title}
       </h3>
       <p
-        className={`mt-4 text-[#646464] text-sm md:text-base max-w-xs md:max-w-sm mb-3 lg:mb-0
+        className={`mt-4 text-[#646464] text-sm md:text-base max-w-xs md:max-w-sm mb-3 lg:mb-0 pb-14 md:pb-0
       ${cardIndex === 2 || cardIndex === 4 ? "ml-4" : ""}`}
       >
         {description}
