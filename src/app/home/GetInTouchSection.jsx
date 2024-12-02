@@ -2,6 +2,7 @@ import React from "react";
 import { GetInTouchData } from "../constants";
 import Image from "next/image";
 import ContactForm from "@/components/ContactForm";
+import { FaLocationDot } from "react-icons/fa6";
 
 const GetInTouchSection = () => {
   return (
@@ -26,7 +27,7 @@ const GetInTouchSection = () => {
                   height={20}
                   alt="Phone Icon"
                 />
-                <p className="text-sm sm:text-base">
+                <p className="text-xs sm:text-base">
                   {GetInTouchData.phoneNumber}
                 </p>
               </div>
@@ -38,17 +39,12 @@ const GetInTouchSection = () => {
                   height={20}
                   alt="Email Icon"
                 />
-                <p className="text-sm sm:text-base">{GetInTouchData.email}</p>
+                <p className="text-xs sm:text-base">{GetInTouchData.email}</p>
               </div>
               {/* Location */}
               <div className="flex items-center gap-2 mt-4 sm:mt-6 justify-center lg:justify-start">
-                <Image
-                  src="assets/home/getInTouchSection/icons/location.svg"
-                  width={20}
-                  height={20}
-                  alt="Location Icon"
-                />
-                <p className="text-sm sm:text-base">
+                <FaLocationDot />
+                <p className="text-xs sm:text-base">
                   {GetInTouchData.location}
                 </p>
               </div>
