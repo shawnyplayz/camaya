@@ -14,11 +14,11 @@ const Navbar = () => {
   const closeMenu = () => setMenuOpen(false);
 
   const navLinks = [
-    { href: "/", label: "HOME" },
-    { href: "/about-us", label: "ABOUT US" },
-    { href: "/properties", label: "PROPERTIES" },
-    { href: "/amenities", label: "AMENITIES" },
-    { href: "/contact-us", label: "CONTACT US" },
+    { href: "/home#home", label: "HOME" },
+    { href: "/home#AboutCamayaSection", label: "ABOUT US" },
+    { href: "/home#featuredPropertiesSection", label: "PROPERTIES" },
+    { href: "/home#amenitiesSection", label: "AMENITIES" },
+    { href: "/home#contactUsSection", label: "CONTACT US" },
   ];
 
   return (
@@ -100,7 +100,13 @@ const Navbar = () => {
         <div className="w-64 bg-white h-full flex flex-col shadow-lg">
           {/* Sidebar Header */}
           <div className="flex items-center justify-between px-4 py-3 border-b">
-            <span className="font-semibold text-lg text-[#004568]">Menu</span>
+            {/* <span className="font-semibold text-lg text-[#004568]">Menu</span> */}
+            <Image
+              src={"/assets/logo-large.svg"}
+              width={50}
+              height={50}
+              alt="Logo"
+            />
             <button
               className="text-gray-500"
               onClick={closeMenu}
