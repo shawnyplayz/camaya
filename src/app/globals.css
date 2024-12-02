@@ -51,7 +51,7 @@ html {
   justify-content: center;
   width: 40px;
   height: 40px;
-  background-color: #f4f1e1;  /* A soft beige color */
+  background-color: #f4f1e1; /* A soft beige color */
   border-radius: 50%;
   cursor: pointer;
   z-index: 10;
@@ -59,12 +59,12 @@ html {
 }
 
 .custom-arrow:hover {
-  background-color: #d0c2a1;  /* Darker beige/golden tone on hover */
+  background-color: #d0c2a1; /* Darker beige/golden tone on hover */
 }
 
 .arrow-icon {
   font-size: 20px;
-  color: #a68756;  /* Goldish color for the arrow */
+  color: #a68756; /* Goldish color for the arrow */
 }
 
 /* Specific styles for next and previous arrows */
@@ -82,6 +82,7 @@ html {
   transform: translateY(-50%);
 }
 
+/* Custom Dots Styling */
 .custom-dots {
   display: flex !important;
   justify-content: center;
@@ -94,14 +95,14 @@ html {
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  background: #b0b0b0; /* Default gray color for inactive dots /
+  background: #b0b0b0; /* Default gray color for inactive dots */
   transition: background-color 0.3s ease;
 }
 
 .custom-dots li.slick-active {
-  background: #e5c887; / Active dot color /
+  background: #e5c887; /* Active dot color */
 }
 
 .custom-dots li button {
-  display: none; / Hide default button */
+  display: none; /* Hide default button */
 }
