@@ -84,39 +84,25 @@ const FeaturedProperties = () => {
 
       {/* Slider or Default Image */}
       <div className="mt-32">
+        {/* <Slider {...settings}> */}
         <div>
-          {/* Check if properties exist */}
-          {filteredProperties.length > 0 ? (
-            filteredProperties.map((property, index) => (
+          {filteredProperties.map((property, index) => {
+            return (
               <div key={index}>
                 <div className="flex items-center justify-center">
                   <Image
-                    src={property?.pictures?.[0]?.url || defaultImage}
-                    alt="Property Image"
+                    src={property?.pictures[0]?.url}
+                    alt={"Property Image"}
                     width={600}
                     height={200}
                     className="pb-7"
                   />
                 </div>
               </div>
-            ))
-          ) : (
-            // Show default image when no properties are available
-            <div className="flex items-center justify-center">
-              <Image
-                src={defaultImage}
-                alt="Default Image"
-                width={600}
-                height={200}
-                className="pb-7"
-              />
-            </div>
-          )}
+            );
+          })}
         </div>
-      </div>
-
-      <div className="flex justify-center mt-36">
-        <Button className="font-workSansMedium px-14 py-2">Consultation</Button>
+        {/* </Slider> */}
       </div>
     </div>
   );
