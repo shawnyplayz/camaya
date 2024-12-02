@@ -100,7 +100,13 @@ const Navbar = () => {
         <div className="w-64 bg-white h-full flex flex-col shadow-lg">
           {/* Sidebar Header */}
           <div className="flex items-center justify-between px-4 py-3 border-b">
-            <span className="font-semibold text-lg text-[#004568]">Menu</span>
+            {/* <span className="font-semibold text-lg text-[#004568]">Menu</span> */}
+            <Image
+              src={"/assets/logo-large.svg"}
+              width={50}
+              height={50}
+              alt="Logo"
+            />
             <button
               className="text-gray-500"
               onClick={closeMenu}
