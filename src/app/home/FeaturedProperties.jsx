@@ -5,16 +5,10 @@ import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import { fetchDataGet } from "@/utils.js/fetchData";
 import endpoints from "@/config/endpoints";
+import defaultImage from "../../../public/assets/home/featuredPropertiesSection/image1.png";
+import Button from "@/components/Button";
 
 const FeaturedProperties = () => {
-  const settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-  };
-
   const [locations, setLocations] = useState([]);
   const [propertyTypes, setPropertyTypes] = useState([]);
   const [pricingOptions, setPricingOptions] = useState([]);
@@ -62,7 +56,7 @@ const FeaturedProperties = () => {
   };
 
   return (
-    <div className="pb-72">
+    <div className="pb-40 bg-gradient-to-b from-[#FDF6F1] via-[#F9E3C8] to-[#F9E3C8]">
       <div>
         <h1 className="text-[#221C42] flex justify-center items-center font-workSansMedium font-medium lg:text-6xl pt-20 text-center text-3xl">
           Featured Properties
@@ -88,27 +82,41 @@ const FeaturedProperties = () => {
         />
       </div>
 
-      {/* Slider */}
+      {/* Slider or Default Image */}
       <div className="mt-32">
-        {/* <Slider {...settings}> */}
         <div>
-          {filteredProperties.map((property, index) => {
-            return (
+          {/* Check if properties exist */}
+          {filteredProperties.length > 0 ? (
+            filteredProperties.map((property, index) => (
               <div key={index}>
                 <div className="flex items-center justify-center">
                   <Image
-                    src={property?.pictures[0]?.url}
-                    alt={"Property Image"}
+                    src={property?.pictures?.[0]?.url || defaultImage}
+                    alt="Property Image"
                     width={600}
                     height={200}
                     className="pb-7"
                   />
                 </div>
               </div>
-            );
-          })}
+            ))
+          ) : (
+            // Show default image when no properties are available
+            <div className="flex items-center justify-center">
+              <Image
+                src={defaultImage}
+                alt="Default Image"
+                width={600}
+                height={200}
+                className="pb-7"
+              />
+            </div>
+          )}
         </div>
-        {/* </Slider> */}
+      </div>
+
+      <div className="flex justify-center mt-36">
+        <Button className="font-workSansMedium px-14 py-2">Consultation</Button>
       </div>
     </div>
   );

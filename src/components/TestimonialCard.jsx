@@ -7,13 +7,13 @@ const TestimonialCard = ({
   review,
 }) => {
   return (
-    <div className="mx-auto bg-[#FFF1D2] border border-gray-200 rounded-lg shadow-md p-8 max-w-md">
+    <div className="mx-auto bg-transparent border-2 border-[#FFDF9A] hover:bg-[#FFF1D2] hover:border-2 hover:border-white rounded-lg p-8 max-w-md flex-wrap">
       {/* Profile section */}
       <div className="flex items-center justify-between mb-4">
         <div className="flex items-center">
           <Image
             src={picture}
-            alt={`${reviewer_name}'s profile picture`}
+            alt={reviewer_name}
             width={121}
             height={121}
             className="w-12 h-12 rounded-full"
@@ -22,6 +22,7 @@ const TestimonialCard = ({
             <h3 className="text-lg font-medium text-gray-800">
               {reviewer_name}
             </h3>
+            {/* <h5 className="font-workSansRegular text-base">Home</h5> */}
           </div>
         </div>
         <Image

@@ -43,3 +43,42 @@ html {
   font-size: 24px; /* Customize size */
   z-index: 10;
 }
+
+/* Custom Styles for Arrows */
+.custom-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background-color: #f4f1e1;  /* A soft beige color */
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 10;
+  transition: background-color 0.3s ease;
+}
+
+.custom-arrow:hover {
+  background-color: #d0c2a1;  /* Darker beige/golden tone on hover */
+}
+
+.arrow-icon {
+  font-size: 20px;
+  color: #a68756;  /* Goldish color for the arrow */
+}
+
+/* Specific styles for next and previous arrows */
+.custom-next {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+}
+
+.custom-prev {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+}
+

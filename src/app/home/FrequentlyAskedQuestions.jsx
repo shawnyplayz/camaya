@@ -10,7 +10,7 @@ const FrequentlyAskedQuestions = () => {
             Have Questions About Camaya Coast?
           </h1>
           <p className="mt-4 text-[#9C9C9C] font-workSansMedium font-medium lg:text-xl text-lg text-center lg:text-start">
-            We've Got the Answers You Need!
+            We&rsquo;ve Got the Answers You Need!
           </p>
         </div>
       </div>
