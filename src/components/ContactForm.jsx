@@ -7,24 +7,22 @@ import { fetchDataPost } from "@/utils.js/fetchData";
 import endpoints from "@/config/endpoints";
 
 const ContactForm = () => {
-  // Form state
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    phone: "",
+    mobile_number: "",
     message: "",
   });
+
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [successMessage, setSuccessMessage] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
 
-  // Handle input changes
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
+    setFormData((prevData) => ({ ...prevData, [name]: value }));
   };
 
-  // Handle form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
@@ -32,12 +30,13 @@ const ContactForm = () => {
     setErrorMessage("");
 
     try {
-      // Make API call
+      console.log("Sending data:", formData);
+
       const response = await fetchDataPost(endpoints.sendInquiry, formData);
 
       if (response.success) {
         setSuccessMessage("Your message has been sent successfully!");
-        setFormData({ name: "", email: "", phone: "", message: "" }); // Reset form
+        setFormData({ name: "", email: "", mobile_number: "", message: "" });
       } else {
         throw new Error(response.message || "Failed to send message.");
       }
@@ -74,8 +73,8 @@ const ContactForm = () => {
           />
           <Input
             type="text"
-            name="phone"
-            value={formData.phone}
+            name="mobile_number"
+            value={formData.mobile_number}
             onChange={handleInputChange}
             placeholder="Phone"
           />
@@ -87,6 +86,7 @@ const ContactForm = () => {
             rows="5"
             placeholder="Message"
             className="w-full pl-7 py-6 rounded-xl border-2 mb-8 resize-none focus:outline-none focus:ring-2 focus:ring-[#221C42]"
+            required
           />
         </div>
         {successMessage && <p className="text-green-600">{successMessage}</p>}
