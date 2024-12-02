@@ -58,22 +58,22 @@ const TestimonialsSection = () => {
   const sliderSettings = {
     dots: true,
     infinite: true,
-    slidesToShow: 2,  // Default: 2 testimonials on larger screens
+    slidesToShow: 2,
     slidesToScroll: 1,
     nextArrow: <SampleNextArrow />,
     prevArrow: <SamplePrevArrow />,
     responsive: [
       {
-        breakpoint: 1024, // Tablets and larger screens
+        breakpoint: 1024,
         settings: {
-          slidesToShow: 2, // Show 2 testimonials on tablets
+          slidesToShow: 2,
           slidesToScroll: 1,
         },
       },
       {
-        breakpoint: 768, // Mobile devices
+        breakpoint: 768,
         settings: {
-          slidesToShow: 1, // Show 1 testimonial on mobile
+          slidesToShow: 1,
           slidesToScroll: 1,
         },
       },
@@ -81,7 +81,10 @@ const TestimonialsSection = () => {
   };
 
   return (
-    <section className="font-workSansMedium text-[#221C42] pb-28">
+    <section
+      className="font-workSansMedium text-[#221C42] pb-28"
+      style={{ background: "#DDA93A0F" }}
+    >
       {/* Section Header */}
       <header className="pt-36 text-center">
         <h1 className="text-center text-3xl lg:text-6xl font-medium">

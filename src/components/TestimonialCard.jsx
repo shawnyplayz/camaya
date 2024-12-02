@@ -7,8 +7,7 @@ const TestimonialCard = ({
   review,
 }) => {
   return (
-    <div className="mx-auto bg-transparent border-2 border-[#FFDF9A] hover:bg-[#FFF1D2] hover:border-2 hover:border-white rounded-lg p-8 max-w-md flex-wrap">
-      {/* Profile section */}
+    <div className="mx-auto bg-transparent border-2 border-[#FFDF9A] rounded-lg p-8 max-w-md flex-wrap transform transition-all duration-500 ease-in-out hover:scale-105 hover:bg-[#FFF1D2] hover:border-white">
       <div className="flex items-center justify-between mb-4">
         <div className="flex items-center">
           <Image
@@ -22,7 +21,6 @@ const TestimonialCard = ({
             <h3 className="text-lg font-medium text-gray-800">
               {reviewer_name}
             </h3>
-            {/* <h5 className="font-workSansRegular text-base">Home</h5> */}
           </div>
         </div>
         <Image
@@ -33,8 +31,8 @@ const TestimonialCard = ({
           className="w-14 h-14"
         />
       </div>
-      {/* Testimonial text */}
-      <p className="text-[#221C42] text-lg mb-4 font-workSansItalic ">
+
+      <p className="text-[#221C42] text-lg mb-4 font-workSansItalic">
         {review}
       </p>
     </div>
