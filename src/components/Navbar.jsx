@@ -14,11 +14,11 @@ const Navbar = () => {
   const closeMenu = () => setMenuOpen(false);
 
   const navLinks = [
-    { href: "/", label: "HOME" },
-    { href: "/about-us", label: "ABOUT US" },
-    { href: "/properties", label: "PROPERTIES" },
-    { href: "/amenities", label: "AMENITIES" },
-    { href: "/contact-us", label: "CONTACT US" },
+    { href: "/home#home", label: "HOME" },
+    { href: "/home#AboutCamayaSection", label: "ABOUT US" },
+    { href: "/home#featuredPropertiesSection", label: "PROPERTIES" },
+    { href: "/home#amenitiesSection", label: "AMENITIES" },
+    { href: "/home#contactUsSection", label: "CONTACT US" },
   ];
 
   return (

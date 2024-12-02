@@ -5,7 +5,7 @@ import ContactForm from "@/components/ContactForm";
 
 const GetInTouchSection = () => {
   return (
-    <div className="bg-[#FDFAF3]">
+    <div className="bg-[#FDFAF3]" id="contactUsSection">
       <div className="h-auto relative mx-auto container flex flex-col lg:flex-row items-center gap-8 lg:gap-20 px-4 sm:px-6 lg:px-16 py-8 sm:py-12 lg:py-16">
         {/* Left Section */}
         <div className="text-center lg:text-left">

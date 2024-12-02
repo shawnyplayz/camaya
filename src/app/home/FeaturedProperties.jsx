@@ -55,7 +55,10 @@ const FeaturedProperties = () => {
   };
 
   return (
-    <div className="pb-72 bg-gradient-to-b from-[#ffffff] via-[#F9E3C8] to-[#ffffff]">
+    <div
+      className="pb-72 bg-gradient-to-b from-[#ffffff] via-[#F9E3C8] to-[#ffffff]"
+      id="featuredPropertiesSection"
+    >
       <div>
         <h1 className="text-[#221C42] flex justify-center items-center font-workSansMedium font-medium lg:text-6xl pt-20 text-center text-3xl">
           Featured Properties
@@ -63,7 +66,7 @@ const FeaturedProperties = () => {
       </div>
 
       {/* Dropdowns */}
-      <div className="flex gap-11 justify-center items-center mt-16 flex-wrap">
+      <div className="lg:flex lg:gap-11 gap-4 justify-center items-center mt-16 grid grid-cols-2">
         <Dropdown
           options={locations}
           onSelect={(value) => handleDropdownSelect(value, "location")}

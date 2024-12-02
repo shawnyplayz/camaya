@@ -4,7 +4,7 @@ import { DevelopmentPlanData } from "../constants";
 
 const DevelopmentPlan = () => {
   return (
-    <div className="mx-auto container px-6 sm:px-10 lg:px-20">
+    <div className="mx-auto container px-6 sm:px-10 lg:px-20" id="developmentPlanSection">
       {/* Header Section */}
       <div className="flex flex-col md:flex-row justify-between items-center">
         <h1 className="font-workSansMedium font-medium text-3xl sm:text-4xl lg:text-5xl text-black text-center md:text-left">

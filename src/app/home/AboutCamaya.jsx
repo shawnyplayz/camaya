@@ -4,7 +4,7 @@ import { AboutCamayaData } from "../constants";
 
 const AboutCamaya = () => {
   return (
-    <div className="px-6 sm:px-10 lg:px-20 container mx-auto mb-36">
+    <div className="px-6 sm:px-10 lg:px-20 container mx-auto mb-36" id="AboutCamayaSection">
       {/* Header Section */}
       <div className="flex flex-col lg:flex-row justify-center items-center lg:items-start gap-6 lg:gap-12 mb-12 text-center lg:text-left">
         <div className="hidden lg:block">
