@@ -82,3 +82,26 @@ html {
   transform: translateY(-50%);
 }
 
+.custom-dots {
+  display: flex !important;
+  justify-content: center;
+  gap: 8px;
+  list-style: none;
+  padding: 0;
+}
+
+.custom-dots li {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #b0b0b0; /* Default gray color for inactive dots /
+  transition: background-color 0.3s ease;
+}
+
+.custom-dots li.slick-active {
+  background: #e5c887; / Active dot color /
+}
+
+.custom-dots li button {
+  display: none; / Hide default button */
+}

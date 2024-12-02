@@ -63,7 +63,7 @@ const FeaturedProperties = () => {
       </div>
 
       {/* Dropdowns */}
-      <div className="lg:flex gap-11 justify-center items-center mt-16 grid">
+      <div className="flex gap-11 justify-center items-center mt-16 flex-wrap">
         <Dropdown
           options={locations}
           onSelect={(value) => handleDropdownSelect(value, "location")}

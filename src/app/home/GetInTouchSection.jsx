@@ -18,7 +18,7 @@ const GetInTouchSection = () => {
             </p>
 
             <div className="contact-info mt-10 lg:mt-20 font-workSansMedium font-medium text-lg text-[#182A64]">
-              <div className="flex items-center gap-2 mt-6">
+              <div className="flex items-center gap-2 mt-6 justify-center lg:justify-start">
                 <Image
                   src="assets/home/getInTouchSection/icons/phone.svg"
                   width={24}
@@ -27,7 +27,7 @@ const GetInTouchSection = () => {
                 />
                 <p>{GetInTouchData.phoneNumber}</p>
               </div>
-              <div className="flex items-center gap-2 mt-6">
+              <div className="flex items-center gap-2 mt-6 justify-center lg:justify-start flex-wrap">
                 <Image
                   src="assets/home/getInTouchSection/icons/mail.svg"
                   width={26}

@@ -30,7 +30,7 @@ const Amenities = () => {
   ];
 
   return (
-    <div className="container mx-auto lg:px-20">
+    <div className="container mx-auto lg:px-20 py-20">
       <div className="text-center md:text-left">
         <h1 className="font-workSansMedium font-medium text-4xl md:text-5xl text-[#221C42] mb-6 pt-14">
           Resort-Style Amenities

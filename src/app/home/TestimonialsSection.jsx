@@ -62,6 +62,8 @@ const TestimonialsSection = () => {
     slidesToScroll: 1,
     nextArrow: <SampleNextArrow />,
     prevArrow: <SamplePrevArrow />,
+    customPaging: (i) => <div className="custom-dot"></div>,
+    dotsClass: "slick-dots custom-dots",
     responsive: [
       {
         breakpoint: 1024,
