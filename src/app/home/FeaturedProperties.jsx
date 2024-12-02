@@ -55,7 +55,7 @@ const FeaturedProperties = () => {
   };
 
   return (
-    <div className="pb-72 bg-gradient-to-b from-[#FDF6F1] via-[#F9E3C8] to-[#F9E3C8]">
+    <div className="pb-72 bg-gradient-to-b from-[#ffffff] via-[#F9E3C8] to-[#ffffff]">
       <div>
         <h1 className="text-[#221C42] flex justify-center items-center font-workSansMedium font-medium lg:text-6xl pt-20 text-center text-3xl">
           Featured Properties
