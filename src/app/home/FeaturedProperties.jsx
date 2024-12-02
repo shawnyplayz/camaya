@@ -2,9 +2,6 @@
 
 import Dropdown from "@/components/DropDown";
 import React, { useEffect, useState } from "react";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 import Image from "next/image";
 import { fetchDataGet } from "@/utils.js/fetchData";
 import endpoints from "@/config/endpoints";
@@ -67,13 +64,13 @@ const FeaturedProperties = () => {
   return (
     <div className="pb-72">
       <div>
-        <h1 className="text-[#221C42] flex justify-center items-center font-workSansMedium font-medium text-6xl pt-20">
+        <h1 className="text-[#221C42] flex justify-center items-center font-workSansMedium font-medium lg:text-6xl pt-20 text-center text-3xl">
           Featured Properties
         </h1>
       </div>
 
       {/* Dropdowns */}
-      <div className="flex gap-11 justify-center items-center mt-16">
+      <div className="lg:flex gap-11 justify-center items-center mt-16 grid">
         <Dropdown
           options={locations}
           onSelect={(value) => handleDropdownSelect(value, "location")}
@@ -102,7 +99,7 @@ const FeaturedProperties = () => {
                   <Image
                     src={property?.pictures[0]?.url}
                     alt={"Property Image"}
-                    width={450}
+                    width={600}
                     height={200}
                     className="pb-7"
                   />
