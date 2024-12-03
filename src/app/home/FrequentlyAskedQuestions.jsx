@@ -3,20 +3,18 @@ import React from "react";
 
 const FrequentlyAskedQuestions = () => {
   return (
-    <div className="lg:h-screen flex items-center justify-evenly flex-col lg:flex-row mb-20 px-5">
+    <div className="flex items-center justify-center flex-col lg:flex-row gap-12 lg:gap-16 px-5 py-10 lg:py-16">
       <div className="left">
-        <div>
-          <h1 className="max-w-3xl font-workSansMedium font-normal lg:text-6xl text-xl text-[#221C42] text-center lg:text-start mt-12 lg:mt-0">
-            Have Questions About Camaya Coast?
-          </h1>
-          <p className="mt-4 text-[#9C9C9C] font-workSansMedium font-medium lg:text-xl text-lg text-center lg:text-start">
-            We&rsquo;ve Got the Answers You Need!
-          </p>
-        </div>
+        <h1 className="max-w-3xl font-workSansMedium font-normal lg:text-5xl text-2xl text-[#221C42] text-center lg:text-start">
+          Have Questions About Camaya Coast?
+        </h1>
+        <p className="mt-4 text-[#9C9C9C] font-workSansMedium font-medium lg:text-lg text-base text-center lg:text-start">
+          We&rsquo;ve Got the Answers You Need!
+        </p>
       </div>
 
       <div className="right">
-        <div className="max-w-xl lg:mt-36 mt-28 pb-32 lg:pb-0 px-8 lg:px-0">
+        <div className="max-w-xl space-y-4">
           <Accordion
             title="1. What types of properties are available at Camaya Coast?"
             content="We offer a variety of properties, including beachfront villas, cozy condominiums, and residential lots. Each option is designed for comfort, luxury, and different lifestyle needs."
