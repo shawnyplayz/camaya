@@ -61,7 +61,7 @@ const Footer = () => {
         </nav>
 
         {/* Divider */}
-        <div className="border-b border-white my-8" />
+        <div className="w-full border-b border-[#858282] my-8" />
 
         {/* Footer Bottom Section */}
         <div className="flex flex-col lg:flex-row justify-center lg:justify-between items-center gap-4 lg:gap-0 text-black pb-8 text-sm md:text-base lg:text-lg font-workSansMedium font-medium">
