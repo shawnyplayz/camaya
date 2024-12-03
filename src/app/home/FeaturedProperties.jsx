@@ -18,6 +18,7 @@ const FeaturedProperties = () => {
     property: "",
     price: "",
   });
+  const [isError, setIsError] = useState(false);
 
   // Fetch dropdown options from the backend
   useEffect(() => {
@@ -39,19 +40,36 @@ const FeaturedProperties = () => {
     fetchDropdownData();
   }, []);
 
-  // Handle dropdown selection changes and fetch properties
+  // Handle dropdown selection changes
   const handleDropdownSelect = async (value, type) => {
-    const updatedFilters = { ...selectedFilters, [type]: value };
+    const updatedFilters = {
+      ...selectedFilters,
+      [type === "property" ? "prop_name" : type]: value, // Adjust "property" key to "prop_name"
+    };
     setSelectedFilters(updatedFilters);
 
+    const queryParams = new URLSearchParams(
+      Object.entries(updatedFilters).reduce((acc, [key, val]) => {
+        if (val) acc[key] = val;
+        return acc;
+      }, {})
+    ).toString();
+
     try {
-      const queryParams = new URLSearchParams(updatedFilters).toString();
       const propertiesData = await fetchDataGet(
         `${endpoints.properties}?${queryParams}`
       );
-      setFilteredProperties(propertiesData.properties);
+      if (propertiesData?.properties?.length > 0) {
+        setFilteredProperties(propertiesData.properties);
+        setIsError(false);
+      } else {
+        setFilteredProperties([]);
+        setIsError(true);
+      }
     } catch (error) {
       console.error("Error fetching filtered properties:", error);
+      setFilteredProperties([]);
+      setIsError(true);
     }
   };
 
@@ -85,26 +103,34 @@ const FeaturedProperties = () => {
         />
       </div>
 
-      {/* Slider or Default Image */}
+      {/* Conditional Rendering for Images */}
       <div className="mt-32">
-        <div>
-          {/* Check if properties exist */}
-          {filteredProperties.length > 0 ? (
-            filteredProperties.map((property, index) => (
-              <div key={index}>
-                <div className="flex items-center justify-center">
-                  <Image
-                    src={property?.pictures?.[0]?.url || defaultImage}
-                    alt="Property Image"
-                    width={800}
-                    height={200}
-                    className="pb-7"
-                  />
-                </div>
-              </div>
-            ))
-          ) : (
-            // Show default image when no properties are available
+        {isError ? (
+          <div className="flex items-center justify-center">
+            <Image
+              src={errorImage}
+              alt="Error: No Matching Properties"
+              width={800}
+              height={200}
+              className="pb-7"
+            />
+          </div>
+        ) : filteredProperties.length > 0 ? (
+          filteredProperties.map((property, index) => (
+            <div key={index} className="flex items-center justify-center">
+              <Image
+                src={property?.pictures?.[0]?.url || defaultImage}
+                alt="Property Image"
+                width={800}
+                height={200}
+                className="pb-7"
+              />
+            </div>
+          ))
+        ) : (
+          selectedFilters.location === "" &&
+          selectedFilters.property === "" &&
+          selectedFilters.price === "" && (
             <div className="flex items-center justify-center">
               <Image
                 src={defaultImage}
@@ -114,8 +140,8 @@ const FeaturedProperties = () => {
                 className="pb-7"
               />
             </div>
-          )}
-        </div>
+          )
+        )}
       </div>
     </div>
   );

@@ -7,15 +7,16 @@ const Dropdown = ({ options, onSelect, placeholder }) => {
   const [selected, setSelected] = useState(placeholder);
 
   const handleSelection = (option) => {
+    console.log(`Selected: ${option}`); // Debugging log
     setSelected(option);
     setIsOpen(false);
-    if (onSelect) onSelect(option);
+    if (onSelect) onSelect(option); // Pass to parent
   };
 
   return (
     <div className="relative w-48">
       <button
-        className={`w-full bg-white border border-gray-300 rounded-full shadow-md px-4 py-2 flex items-center justify-between hover:border-gray-400 focus:outline-none`}
+        className="w-full bg-white border border-gray-300 rounded-full shadow-md px-4 py-2 flex items-center justify-between hover:border-gray-400 focus:outline-none"
         onClick={() => setIsOpen(!isOpen)}
       >
         {selected}
