@@ -1,6 +1,7 @@
 "use client";
 
 import Dropdown from "@/components/DropDown";
+import Modal from "@/components/Modal";
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import { fetchDataGet } from "@/utils.js/fetchData";
@@ -8,6 +9,7 @@ import endpoints from "@/config/endpoints";
 import defaultImage from "../../../public/assets/home/featuredPropertiesSection/image1.png";
 import errorImage from "../../../public/assets/home/featuredPropertiesSection/error.svg";
 import Button from "@/components/Button";
+import Slider from "react-slick"; // Import React Slick
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
@@ -22,6 +24,7 @@ const FeaturedProperties = () => {
     price: "",
   });
   const [isError, setIsError] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false); // State to manage modal visibility
 
   // Fetch dropdown options from the backend
   useEffect(() => {
@@ -76,6 +79,16 @@ const FeaturedProperties = () => {
     }
   };
 
+  // React Slick settings for the image carousel
+  const sliderSettings = {
+    dots: true,
+    infinite: false,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: true,
+  };
+
   return (
     <div
       className="pb-72 bg-gradient-to-b from-[#ffffff] via-[#F9E3C8] to-[#ffffff]"
@@ -106,7 +119,7 @@ const FeaturedProperties = () => {
         />
       </div>
 
-      {/* Conditional Rendering for Images */}
+      {/* Conditional Rendering for Images with React Slick Carousel */}
       <div className="mt-32">
         {isError ? (
           <div className="flex items-center justify-center">
@@ -121,13 +134,29 @@ const FeaturedProperties = () => {
         ) : filteredProperties.length > 0 ? (
           filteredProperties.map((property, index) => (
             <div key={index} className="flex items-center justify-center">
-              <Image
-                src={property?.pictures?.[0]?.url || defaultImage}
-                alt="Property Image"
-                width={800}
-                height={200}
-                className="pb-7"
-              />
+              {property?.pictures?.length > 1 ? (
+                <Slider {...sliderSettings}>
+                  {property.pictures?.map((img, i) => (
+                    <div key={i}>
+                      <Image
+                        src={img?.url || defaultImage}
+                        alt={`Property Image ${i + 1}`}
+                        width={800}
+                        height={200}
+                        className="pb-7"
+                      />
+                    </div>
+                  ))}
+                </Slider>
+              ) : (
+                <Image
+                  src={property?.pictures?.[0]?.url || defaultImage}
+                  alt="Property Image"
+                  width={800}
+                  height={200}
+                  className="pb-7"
+                />
+              )}
             </div>
           ))
         ) : (
@@ -148,8 +177,24 @@ const FeaturedProperties = () => {
       </div>
 
       <div className="flex items-center justify-center mt-[73px]">
-        <Button className="px-20">Consultation</Button>
+        <Button onClick={() => setIsModalOpen(true)} className="px-20">
+          Consultation
+        </Button>
       </div>
+
+      {/* Modal */}
+      <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
+        <div className="w-full h-full">
+          <iframe
+            className="w-full h-full"
+            src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+            title="Consultation Video"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          ></iframe>
+        </div>
+      </Modal>
     </div>
   );
 };
