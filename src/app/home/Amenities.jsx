@@ -36,6 +36,14 @@ const Amenities = () => {
     },
   ];
 
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      easing: "ease-in-out",
+      once: true,
+    });
+  }, []);
+
   return (
     <div className="container mx-auto py-20 lg:px-20" id="amenitiesSection">
       <div className="text-center md:text-left">
@@ -50,14 +58,14 @@ const Amenities = () => {
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 pb-20">
         {amenitiesData.map((amenity, index) => (
-          <AmenityCard
-            key={index}
-            imageSrc={amenity.imageSrc}
-            title={amenity.title}
-            description={amenity.description}
-            cardIndex={index + 1}
-            data-aos={index === 0 || index === 2 ? "fade-down" : "fade-up"}
-          />
+          <div key={index}>
+            <AmenityCard
+              imageSrc={amenity.imageSrc}
+              title={amenity.title}
+              description={amenity.description}
+              cardIndex={index + 1}
+            />
+          </div>
         ))}
       </div>
     </div>
