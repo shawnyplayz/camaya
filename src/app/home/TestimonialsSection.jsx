@@ -57,7 +57,7 @@ const TestimonialsSection = () => {
 
   const sliderSettings = {
     dots: true,
-    infinite: true,
+    infinite: false,
     slidesToShow: 2,
     slidesToScroll: 1,
     nextArrow: <SampleNextArrow />,
