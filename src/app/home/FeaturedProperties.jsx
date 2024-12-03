@@ -82,11 +82,13 @@ const FeaturedProperties = () => {
   // React Slick settings for the image carousel
   const sliderSettings = {
     dots: true,
-    infinite: false,
+    infinite: true,
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
     arrows: true,
+    customPaging: (i) => <div className="custom-dot"></div>,
+    dotsClass: "slick-dots custom-dots",
   };
 
   return (
@@ -132,33 +134,35 @@ const FeaturedProperties = () => {
             />
           </div>
         ) : filteredProperties.length > 0 ? (
-          filteredProperties.map((property, index) => (
-            <div key={index} className="flex items-center justify-center">
-              {property?.pictures?.length > 1 ? (
-                <Slider {...sliderSettings}>
-                  {property.pictures?.map((img, i) => (
-                    <div key={i}>
-                      <Image
-                        src={img?.url || defaultImage}
-                        alt={`Property Image ${i + 1}`}
-                        width={800}
-                        height={200}
-                        className="pb-7"
-                      />
-                    </div>
-                  ))}
-                </Slider>
-              ) : (
-                <Image
-                  src={property?.pictures?.[0]?.url || defaultImage}
-                  alt="Property Image"
-                  width={800}
-                  height={200}
-                  className="pb-7"
-                />
-              )}
-            </div>
-          ))
+          <>
+            {filteredProperties.map((property, index) => (
+              <div key={index} className="slider-container">
+                {property?.pictures?.length > 1 ? (
+                  <Slider {...sliderSettings}>
+                    {property.pictures.map((img, i) => (
+                      <div key={i}>
+                        <Image
+                          src={img?.url || defaultImage}
+                          alt={`Property Image ${i + 1}`}
+                          width={800}
+                          height={200}
+                          className="pb-7"
+                        />
+                      </div>
+                    ))}
+                  </Slider>
+                ) : (
+                  <Image
+                    src={property?.pictures?.[0]?.url || defaultImage}
+                    alt="Property Image"
+                    width={800}
+                    height={200}
+                    className="pb-7"
+                  />
+                )}
+              </div>
+            ))}
+          </>
         ) : (
           selectedFilters.location === "" &&
           selectedFilters.property === "" &&
