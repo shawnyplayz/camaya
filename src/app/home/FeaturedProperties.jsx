@@ -1,13 +1,46 @@
 "use client";
 
 import Dropdown from "@/components/DropDown";
+import Modal from "@/components/Modal";
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import { fetchDataGet } from "@/utils.js/fetchData";
 import endpoints from "@/config/endpoints";
 import defaultImage from "../../../public/assets/home/featuredPropertiesSection/image1.png";
 import errorImage from "../../../public/assets/home/featuredPropertiesSection/error.svg";
+import Button from "@/components/Button";
+import Slider from "react-slick"; // Import React Slick
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import { FaCaretLeft } from "react-icons/fa";
+import { FaCaretRight } from "react-icons/fa";
 
+const NextArrow = ({ onClick }) => (
+  <div
+    className="absolute right-[-120px] top-[50%] transform -translate-y-1/2 cursor-pointer border-[#FFC447];
+    "
+    onClick={onClick}
+  >
+    <div className="w-20 h-20 rounded-full bg-[#FFFFFF] border-[#FFC447] flex items-center justify-center shadow-lg">
+      <span className="text-[#FFC107] text-2xl">
+        <FaCaretRight fontSize={40} />
+      </span>
+    </div>
+  </div>
+);
+
+const PrevArrow = ({ onClick }) => (
+  <div
+    className="absolute left-[-120px] top-[50%] transform -translate-y-1/2 cursor-pointer"
+    onClick={onClick}
+  >
+    <div className="w-20 h-20 rounded-full bg-[#FFFFFF] border-[#FFC447] flex items-center justify-center shadow-lg">
+      <span className="text-[#FFC107] text-2xl">
+        <FaCaretLeft fontSize={40} />
+      </span>
+    </div>
+  </div>
+);
 const FeaturedProperties = () => {
   const [locations, setLocations] = useState([]);
   const [propertyTypes, setPropertyTypes] = useState([]);
@@ -18,6 +51,8 @@ const FeaturedProperties = () => {
     property: "",
     price: "",
   });
+  const [isError, setIsError] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false); // State to manage modal visibility
 
   // Fetch dropdown options from the backend
   useEffect(() => {
@@ -39,20 +74,52 @@ const FeaturedProperties = () => {
     fetchDropdownData();
   }, []);
 
-  // Handle dropdown selection changes and fetch properties
+  // Handle dropdown selection changes
   const handleDropdownSelect = async (value, type) => {
-    const updatedFilters = { ...selectedFilters, [type]: value };
+    const updatedFilters = {
+      ...selectedFilters,
+      [type === "property" ? "prop_name" : type]: value, // Adjust "property" key to "prop_name"
+    };
     setSelectedFilters(updatedFilters);
 
+    const queryParams = new URLSearchParams(
+      Object.entries(updatedFilters).reduce((acc, [key, val]) => {
+        if (val) acc[key] = val;
+        return acc;
+      }, {})
+    ).toString();
+
     try {
-      const queryParams = new URLSearchParams(updatedFilters).toString();
       const propertiesData = await fetchDataGet(
         `${endpoints.properties}?${queryParams}`
       );
-      setFilteredProperties(propertiesData.properties);
+      if (propertiesData?.properties?.length > 0) {
+        setFilteredProperties(propertiesData.properties);
+        setIsError(false);
+      } else {
+        setFilteredProperties([]);
+        setIsError(true);
+      }
     } catch (error) {
       console.error("Error fetching filtered properties:", error);
+      setFilteredProperties([]);
+      setIsError(true);
     }
+  };
+
+  // React Slick settings for the image carousel
+  const sliderSettings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    nextArrow: <NextArrow />,
+    prevArrow: <PrevArrow />,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: true,
+    autoplay: true,
+    customPaging: (i) => <div className="custom-dot"></div>,
+    dotsClass: "slick-dots custom-dots",
   };
 
   return (
@@ -86,13 +153,37 @@ const FeaturedProperties = () => {
       </div>
 
       {/* Slider or Default/Error Image */}
+      {/* Conditional Rendering for Images with React Slick Carousel */}
       <div className="mt-32">
-        <div>
-          {/* Check if properties exist */}
-          {filteredProperties.length > 0 ? (
-            filteredProperties.map((property, index) => (
-              <div key={index}>
-                <div className="flex items-center justify-center">
+        {isError ? (
+          <div className="flex items-center justify-center">
+            <Image
+              src={errorImage}
+              alt="Error: No Matching Properties"
+              width={1000}
+              height={200}
+              className="pb-7"
+            />
+          </div>
+        ) : filteredProperties.length > 0 ? (
+          <>
+            {filteredProperties.map((property, index) => (
+              <div key={index} className="slider-container">
+                {property?.pictures?.length > 1 ? (
+                  <Slider {...sliderSettings}>
+                    {property.pictures.map((img, i) => (
+                      <div key={i}>
+                        <Image
+                          src={img?.url || defaultImage}
+                          alt={`Property Image ${i + 1}`}
+                          width={800}
+                          height={200}
+                          className="pb-7"
+                        />
+                      </div>
+                    ))}
+                  </Slider>
+                ) : (
                   <Image
                     src={property?.pictures?.[0]?.url || defaultImage}
                     alt="Property Image"
@@ -100,23 +191,46 @@ const FeaturedProperties = () => {
                     height={200}
                     className="pb-7"
                   />
-                </div>
+                )}
               </div>
-            ))
-          ) : (
-            // Show error image when no properties are available
+            ))}
+          </>
+        ) : (
+          selectedFilters.location === "" &&
+          selectedFilters.property === "" &&
+          selectedFilters.price === "" && (
             <div className="flex items-center justify-center">
               <Image
-                src={errorImage}
-                alt="Error: No Properties Found"
+                src={defaultImage}
+                alt="Default Image"
                 width={800}
-                height={400}
+                height={200}
                 className="pb-7"
               />
             </div>
-          )}
-        </div>
+          )
+        )}
       </div>
+
+      <div className="flex items-center justify-center mt-[73px]">
+        <Button onClick={() => setIsModalOpen(true)} className="px-20">
+          Consultation
+        </Button>
+      </div>
+
+      {/* Modal */}
+      <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
+        <div className="w-full h-full">
+          <iframe
+            className="w-full h-full"
+            src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+            title="Consultation Video"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          ></iframe>
+        </div>
+      </Modal>
     </div>
   );
 };

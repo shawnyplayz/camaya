@@ -1,5 +1,12 @@
+"use client";
+
+import React, { useEffect } from "react";
 import AmenityCard from "@/components/AmenityCard";
-import React from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import amenitiesImage2 from "../../../public/assets/home/amenitiesSection/amenities_image_2.png";
+import amenitiesImage3 from "../../../public/assets/home/amenitiesSection/amenities_image_3.png";
+import amenitiesImage4 from "../../../public/assets/home/amenitiesSection/amenities_image_4.png";
 
 const Amenities = () => {
   const amenitiesData = [
@@ -10,19 +17,19 @@ const Amenities = () => {
         "Enjoy breathtaking ocean views while lounging by our luxurious infinity pool.",
     },
     {
-      imageSrc: "assets/home/amenitiesSection/image2.svg",
+      imageSrc: amenitiesImage2,
       title: "Water Park",
       description:
         "A family-friendly attraction with fun water slides and play areas for all ages.",
     },
     {
-      imageSrc: "assets/home/amenitiesSection/image3.svg",
+      imageSrc: amenitiesImage3,
       title: "Sports Facilities",
       description:
         "Stay active with access to tennis courts, basketball courts, and state-of-the-art gym.",
     },
     {
-      imageSrc: "assets/home/amenitiesSection/image4.svg",
+      imageSrc: amenitiesImage4,
       title: "Private Beach Access",
       description:
         "Experience the beauty of pristine beaches, exclusively available to residents.",
@@ -49,6 +56,7 @@ const Amenities = () => {
             title={amenity.title}
             description={amenity.description}
             cardIndex={index + 1}
+            data-aos={index === 0 || index === 2 ? "fade-down" : "fade-up"}
           />
         ))}
       </div>
