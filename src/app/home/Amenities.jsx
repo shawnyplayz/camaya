@@ -36,15 +36,6 @@ const Amenities = () => {
     },
   ];
 
-  useEffect(() => {
-    AOS.init({
-      duration: 1000,
-      easing: "ease-in-out",
-      once: false,
-    });
-    console.log("AOS Initialized");
-  }, []);
-
   return (
     <div className="container mx-auto py-20 lg:px-20" id="amenitiesSection">
       <div className="text-center md:text-left">
