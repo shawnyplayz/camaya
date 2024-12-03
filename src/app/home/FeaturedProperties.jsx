@@ -6,6 +6,7 @@ import Image from "next/image";
 import { fetchDataGet } from "@/utils.js/fetchData";
 import endpoints from "@/config/endpoints";
 import defaultImage from "../../../public/assets/home/featuredPropertiesSection/image1.png";
+import errorImage from "../../../public/assets/home/featuredPropertiesSection/error.svg";
 
 const FeaturedProperties = () => {
   const [locations, setLocations] = useState([]);

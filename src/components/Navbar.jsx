@@ -23,10 +23,7 @@ const Navbar = () => {
 
   return (
     <div
-      className="bg-[#004568]  flex justify-between items-center px-4 py-5 text-white font-workSansMedium font-medium fixed top-0 left-0 right-0 z-50"
-      style={{
-        backgroundColor: "rgba(0, 69, 104, 0.7)",
-      }}
+      className="bg-[#FFE9BB] flex justify-between items-center px-4 py-5 text-black font-workSansMedium font-medium fixed top-0 left-0 right-0 z-50"
     >
       {/* Logo Section */}
       <div className="logo flex-shrink-0">
@@ -35,7 +32,7 @@ const Navbar = () => {
 
       {/* Navbar Links */}
       <div className="navbar">
-        <ul className="hidden lg:flex gap-12 text-white font-workSansMedium font-medium text-lg items-center ml-20">
+        <ul className="hidden lg:flex gap-12 text-black font-workSansMedium font-medium text-lg items-center ml-20">
           {navLinks.map((link) => (
             <li key={link.href}>
               <Link href={link.href}>{link.label}</Link>
@@ -61,11 +58,11 @@ const Navbar = () => {
             height={20}
             alt="Call Icon"
           />
-          <p className="text-white font-workSansMedium text-lg font-medium">
+          <p className="text-black font-workSansMedium text-lg font-medium">
             +63 926 053 2470
           </p>
         </div>
-        <div className="social-media-icon flex items-center gap-5">
+        <div className="social-media-icon flex items-center gap-5 text-black">
           <Image
             src="/assets/Navbar/facebook.svg"
             width={15}
