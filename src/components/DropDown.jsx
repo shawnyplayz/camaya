@@ -8,14 +8,14 @@ const Dropdown = ({ options, onSelect, placeholder }) => {
 
   const handleSelection = (option) => {
     setSelected(option);
-    setIsOpen(false);
-    if (onSelect) onSelect(option);
+    setIsOpen(false); // Auto-close dropdown
+    if (onSelect) onSelect(option); // Pass selected value to parent
   };
 
   return (
     <div className="relative w-48">
       <button
-        className={`w-full bg-white border border-gray-300 rounded-full shadow-md px-4 py-2 flex items-center justify-between hover:border-gray-400 focus:outline-none`}
+        className="w-full bg-white border border-gray-300 rounded-full shadow-md px-4 py-2 flex items-center justify-between hover:border-gray-400 focus:outline-none"
         onClick={() => setIsOpen(!isOpen)}
       >
         {selected}
