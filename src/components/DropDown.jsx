@@ -7,10 +7,9 @@ const Dropdown = ({ options, onSelect, placeholder }) => {
   const [selected, setSelected] = useState(placeholder);
 
   const handleSelection = (option) => {
-    console.log(`Selected: ${option}`); // Debugging log
     setSelected(option);
-    setIsOpen(false);
-    if (onSelect) onSelect(option); // Pass to parent
+    setIsOpen(false); // Auto-close dropdown
+    if (onSelect) onSelect(option); // Pass selected value to parent
   };
 
   return (

@@ -8,6 +8,8 @@ import endpoints from "@/config/endpoints";
 import defaultImage from "../../../public/assets/home/featuredPropertiesSection/image1.png";
 import errorImage from "../../../public/assets/home/featuredPropertiesSection/error.svg";
 import Button from "@/components/Button";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 const FeaturedProperties = () => {
   const [locations, setLocations] = useState([]);
