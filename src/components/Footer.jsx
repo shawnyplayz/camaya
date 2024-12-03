@@ -27,7 +27,7 @@ const Footer = () => {
         </div>
 
         {/* Social Media Section */}
-        <div className="flex justify-center lg:justify-end items-center gap-6 mt-8 lg:mt-4 text-white lg:mr-40">
+        <div className="flex justify-center lg:justify-end items-center gap-6 mt-8 lg:mt-4 text-white lg:mr-[15rem]">
           <Link href={"https://facebook.com"}>
             <SlSocialFacebook size={35} color="#1E1E1E" />
           </Link>
@@ -41,7 +41,7 @@ const Footer = () => {
 
         {/* Navigation Links Section */}
         <nav className="mt-12">
-          <ul className="flex flex-wrap lg:gap-20 gap-5 justify-center lg:justify-center font-workSansMedium font-medium text-sm md:text-base lg:text-lg text-black">
+          <ul className="flex flex-wrap lg:gap-[7rem] gap-5 justify-center lg:justify-center font-workSansMedium font-medium text-sm md:text-base lg:text-lg text-black">
             <li>
               <Link href="/home#home">Home</Link>
             </li>

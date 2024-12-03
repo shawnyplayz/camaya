@@ -12,7 +12,35 @@ import Button from "@/components/Button";
 import Slider from "react-slick"; // Import React Slick
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { FaCaretLeft } from "react-icons/fa";
+import { FaCaretRight } from "react-icons/fa";
 
+const NextArrow = ({ onClick }) => (
+  <div
+    className="absolute right-[-120px] top-[50%] transform -translate-y-1/2 cursor-pointer border-[#FFC447];
+    "
+    onClick={onClick}
+  >
+    <div className="w-20 h-20 rounded-full bg-[#FFFFFF] border-[#FFC447] flex items-center justify-center shadow-lg">
+      <span className="text-[#FFC107] text-2xl">
+        <FaCaretRight fontSize={40} />
+      </span>
+    </div>
+  </div>
+);
+
+const PrevArrow = ({ onClick }) => (
+  <div
+    className="absolute left-[-120px] top-[50%] transform -translate-y-1/2 cursor-pointer"
+    onClick={onClick}
+  >
+    <div className="w-20 h-20 rounded-full bg-[#FFFFFF] border-[#FFC447] flex items-center justify-center shadow-lg">
+      <span className="text-[#FFC107] text-2xl">
+        <FaCaretLeft fontSize={40} />
+      </span>
+    </div>
+  </div>
+);
 const FeaturedProperties = () => {
   const [locations, setLocations] = useState([]);
   const [propertyTypes, setPropertyTypes] = useState([]);
@@ -84,9 +112,12 @@ const FeaturedProperties = () => {
     dots: true,
     infinite: true,
     speed: 500,
+    nextArrow: <NextArrow />,
+    prevArrow: <PrevArrow />,
     slidesToShow: 1,
     slidesToScroll: 1,
     arrows: true,
+    autoplay: true,
     customPaging: (i) => <div className="custom-dot"></div>,
     dotsClass: "slick-dots custom-dots",
   };
