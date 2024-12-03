@@ -4,14 +4,17 @@ import { AboutCamayaData } from "../constants";
 
 const AboutCamaya = () => {
   return (
-    <div className="px-6 sm:px-10 lg:px-20 container mx-auto mb-36" id="AboutCamayaSection">
+    <div
+      className="px-6 sm:px-10 lg:px-20 container mx-auto mb-36"
+      id="AboutCamayaSection"
+    >
       {/* Header Section */}
-      <div className="flex flex-col lg:flex-row justify-center items-center lg:items-start gap-6 lg:gap-12 mb-12 text-center lg:text-left">
+      <div className="flex flex-col lg:flex-row justify-center items-center lg:items-center gap-6 lg:gap-12 mb-12 text-center lg:text-left">
         <div className="hidden lg:block">
           <Image
             src="/assets/home/aboutSection/arrow.svg"
-            width={400}
-            height={64}
+            width={637}
+            height={0}
             alt="Arrow"
             className="mx-auto lg:mx-0"
           />

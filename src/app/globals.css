@@ -127,3 +127,35 @@ html {
   opacity: 1;
   transform: translateY(20px);
 } */
+
+.modal-container {
+  width: 1060px;
+  height: 632px;
+}
+
+@media (max-width: 1200px) {
+  .modal-container {
+    width: 90%; /* Use 90% of the screen width */
+    height: auto; /* Allow height to adjust dynamically */
+    max-height: 90vh; /* Limit height to 90% of the viewport height */
+  }
+}
+
+@media (max-width: 768px) {
+  .modal-container {
+    width: 95%; /* Use 95% of the screen width for smaller devices */
+    padding: 16px; /* Reduce padding for smaller screens */
+    height: auto;
+    max-height: 85vh; /* Adjust height for smaller viewports */
+  }
+}
+
+@media (max-width: 480px) {
+  .modal-container {
+    width: 100%; /* Full width for very small screens */
+    height: auto;
+    padding: 12px; /* Further reduce padding */
+    border-radius: 0; /* Remove border-radius for edge-to-edge look */
+  }
+}
+

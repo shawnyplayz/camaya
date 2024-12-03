@@ -27,19 +27,15 @@ const Modal = ({ isOpen, onClose, children }) => {
       className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 modal-overlay"
       onClick={(e) => e.stopPropagation()} // Prevent clicks inside modal from triggering close
     >
-      <div className="relative w-full max-w-3xl h-[70vh] p-4 bg-white rounded shadow-lg overflow-hidden">
+      <div className="relative rounded shadow-lg bg-[#FFEBC1] p-8 overflow-hidden modal-container">
         {/* Close Button */}
         <button
           onClick={onClose}
-          className="absolute top-2 right-2 text-gray-700 hover:text-black text-xl"
-        >
-          ×
-        </button>
+          className="absolute top-2 right-2 text-gray-700 hover:text-black text-2xl"
+        />
 
         {/* Modal Content */}
-        <div className="w-full h-full flex items-center justify-center">
-          {children}
-        </div>
+        <div className="w-full h-full">{children}</div>
       </div>
     </div>
   );
