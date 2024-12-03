@@ -110,7 +110,7 @@ const FeaturedProperties = () => {
             <Image
               src={errorImage}
               alt="Error: No Matching Properties"
-              width={800}
+              width={1000}
               height={200}
               className="pb-7"
             />
