@@ -7,6 +7,7 @@ import { fetchDataGet } from "@/utils.js/fetchData";
 import endpoints from "@/config/endpoints";
 import defaultImage from "../../../public/assets/home/featuredPropertiesSection/image1.png";
 import errorImage from "../../../public/assets/home/featuredPropertiesSection/error.svg";
+import Button from "@/components/Button";
 
 const FeaturedProperties = () => {
   const [locations, setLocations] = useState([]);
@@ -142,6 +143,10 @@ const FeaturedProperties = () => {
             </div>
           )
         )}
+      </div>
+
+      <div className="flex items-center justify-center mt-[73px]">
+        <Button className="px-20">Consultation</Button>
       </div>
     </div>
   );
