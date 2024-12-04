@@ -67,7 +67,7 @@ const FeaturedProperties = () => {
         setPricingOptions(priceData);
 
         const defaultProperties = await fetchDataGet(endpoints.properties);
-        setFilteredProperties(defaultProperties.properties || []);
+        setFilteredProperties(defaultProperties.properties || []); // Populate initial results
       } catch (error) {
         console.error("Error fetching data:", error);
         setIsError(true);
@@ -80,13 +80,13 @@ const FeaturedProperties = () => {
   const handleDropdownSelect = async (value, type) => {
     const updatedFilters = {
       ...selectedFilters,
-      [type === "property" ? "prop_name" : type]: value,
+      [type]: value, // Map the dropdown type directly to the filter key
     };
-    setSelectedFilters(updatedFilters);
+    setSelectedFilters(updatedFilters); // Update the selected filters state
 
     const queryParams = new URLSearchParams(
       Object.entries(updatedFilters).reduce((acc, [key, val]) => {
-        if (val) acc[key] = val;
+        if (val) acc[key] = val; // Only include non-empty values
         return acc;
       }, {})
     ).toString();
@@ -96,16 +96,16 @@ const FeaturedProperties = () => {
         `${endpoints.properties}?${queryParams}`
       );
       if (propertiesData?.properties?.length > 0) {
-        setFilteredProperties(propertiesData.properties);
+        setFilteredProperties(propertiesData.properties); // Update the displayed properties
         setIsError(false);
       } else {
         setFilteredProperties([]);
-        setIsError(true);
+        setIsError(true); // Show error message if no matching properties
       }
     } catch (error) {
       console.error("Error fetching filtered properties:", error);
       setFilteredProperties([]);
-      setIsError(true);
+      setIsError(true); // Handle errors by showing a fallback message
     }
   };
 
