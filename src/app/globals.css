@@ -159,3 +159,13 @@ html {
   }
 }
 
+.amenity-card-container {
+  transform: translateY(50px); /* Initial offset */
+  opacity: 0; /* Hidden initially */
+  transition: all 0.8s ease-out; /* Smooth transition */
+}
+
+[data-aos="fade-in"].aos-animate {
+  transform: translateY(0); /* Reset to normal position */
+  opacity: 1; /* Fully visible */
+}

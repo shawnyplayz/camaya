@@ -132,6 +132,7 @@ const FeaturedProperties = () => {
         Featured Properties
       </h1>
 
+      {/* Dropdowns */}
       <div className="lg:flex lg:gap-11 gap-4 justify-center items-center mt-16 grid grid-cols-2">
         <Dropdown
           options={locations}
@@ -150,6 +151,8 @@ const FeaturedProperties = () => {
         />
       </div>
 
+      {/* Slider or Default/Error Image */}
+      {/* Conditional Rendering for Images with React Slick Carousel */}
       <div className="mt-32">
         {isError ? (
           <div className="flex items-center justify-center">
@@ -205,7 +208,7 @@ const FeaturedProperties = () => {
         <div className="w-full h-full">
           <iframe
             className="w-full h-full"
-            src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+            src="https://www.youtube.com/embed/qEQdZcZYB50?si=iqVe_FmqRwZ1a7XU"
             title="Consultation Video"
             frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
