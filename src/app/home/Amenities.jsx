@@ -1,14 +1,15 @@
 "use client";
 
-import React, { useEffect } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import AmenityCard from "@/components/AmenityCard";
-import AOS from "aos";
-import "aos/dist/aos.css";
 import amenitiesImage2 from "../../../public/assets/home/amenitiesSection/amenities_image_2.png";
 import amenitiesImage3 from "../../../public/assets/home/amenitiesSection/amenities_image_3.png";
 import amenitiesImage4 from "../../../public/assets/home/amenitiesSection/amenities_image_4.png";
 
 const Amenities = () => {
+  const [hasScrolled, setHasScrolled] = useState(false);
+  const sectionRef = useRef(null);
+
   const amenitiesData = [
     {
       imageSrc: "assets/home/amenitiesSection/image1.svg",
@@ -37,15 +38,31 @@ const Amenities = () => {
   ];
 
   useEffect(() => {
-    AOS.init({
-      duration: 800,
-      easing: "ease-in-out",
-      once: false,
-    });
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const entry = entries[0];
+        setHasScrolled(entry.isIntersecting);
+      },
+      { threshold: 0.2 }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
   }, []);
 
   return (
-    <div className="container mx-auto py-20 lg:px-20" id="amenitiesSection">
+    <div
+      className="container mx-auto py-20 lg:px-20"
+      id="amenitiesSection"
+      ref={sectionRef}
+    >
       <div className="text-center md:text-left">
         <h1 className="font-workSansMedium font-medium text-4xl md:text-5xl text-[#221C42] mb-6 pt-14 px-1">
           Resort-Style Amenities
@@ -56,11 +73,7 @@ const Amenities = () => {
         </p>
       </div>
 
-      <div
-        data-aos="fade-up"
-        data-aos-duration="1000"
-        data-aos-anchor-placement="top-center"
-      >
+      <div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 pb-20">
           {amenitiesData.map((amenity, index) => (
             <div key={index}>
@@ -69,6 +82,7 @@ const Amenities = () => {
                 title={amenity.title}
                 description={amenity.description}
                 cardIndex={index + 1}
+                hasScrolled={hasScrolled}
               />
             </div>
           ))}
