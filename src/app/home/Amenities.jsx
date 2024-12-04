@@ -56,17 +56,19 @@ const Amenities = () => {
         </p>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 pb-20">
-        {amenitiesData.map((amenity, index) => (
-          <div key={index}>
-            <AmenityCard
-              imageSrc={amenity.imageSrc}
-              title={amenity.title}
-              description={amenity.description}
-              cardIndex={index + 1}
-            />
-          </div>
-        ))}
+      <div data-aos="fade-up" data-aos-duration="1000" data-aos-anchor-placement="top-center">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 pb-20">
+          {amenitiesData.map((amenity, index) => (
+            <div key={index}>
+              <AmenityCard
+                imageSrc={amenity.imageSrc}
+                title={amenity.title}
+                description={amenity.description}
+                cardIndex={index + 1}
+              />
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );
