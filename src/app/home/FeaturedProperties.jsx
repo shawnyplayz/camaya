@@ -200,7 +200,7 @@ const FeaturedProperties = () => {
 
       <div className="flex items-center justify-center mt-[73px]">
         <Button onClick={() => setIsModalOpen(true)} className="px-20">
-          Consultation
+          WATCH PRESENTATION
         </Button>
       </div>
 
