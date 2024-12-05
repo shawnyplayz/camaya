@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import React, { useState, useEffect } from "react";
 
 const HeroSection = () => {
@@ -11,36 +10,22 @@ const HeroSection = () => {
   ];
 
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const [nextImageIndex, setNextImageIndex] = useState(1);
-  const [isTransitioning, setIsTransitioning] = useState(false);
-
-  // Preload the images
-  const preloadImages = () => {
-    images.forEach((image) => {
-      const img = new Image();
-      img.src = image;
-    });
-  };
 
   useEffect(() => {
-    preloadImages();
-
     const interval = setInterval(() => {
-      setIsTransitioning(true);
-
-      setTimeout(() => {
-        setCurrentImageIndex(nextImageIndex);
-        setNextImageIndex((nextImageIndex + 1) % images.length);
-        setIsTransitioning(false);
-      }, 200);
+      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
     }, 5000);
 
     return () => clearInterval(interval);
-  }, [nextImageIndex, images.length]);
+  }, [images.length]);
+
+  const handleDotClick = (index) => {
+    setCurrentImageIndex(index);
+  };
 
   return (
     <div
-      className="relative w-full h-screen overflow-hidden mx-auto container"
+      className="relative w-full h-screen overflow-hidden"
       id="home"
       style={{
         backgroundImage: `url(${images[currentImageIndex]})`,
@@ -52,8 +37,11 @@ const HeroSection = () => {
     >
       <div className="relative z-10 text-white px-4 sm:px-8 md:px-16 lg:px-20 h-full flex flex-col justify-center pt-28">
         {/* Hero Title */}
-        <div className="font-ralewaySemiBold text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold max-w-2xl md:max-w-4xl leading-tight text-center md:text-left">
-          <h1>Discover Your Dream Beachfront Home</h1>
+        <div className="font-ralewaySemiBold text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-medium max-w-2xl md:max-w-3xl leading-tight text-center md:text-left">
+          <h1>
+            <span className="text-[#FFC447]">Discover</span> Your Beach, Golf &
+            Mountain View Dream Home
+          </h1>
         </div>
 
         {/* Hero Description */}
@@ -63,13 +51,23 @@ const HeroSection = () => {
             (Station 1, Station 2)
           </p>
         </div>
+      </div>
 
-        {/* Call-to-Action Button */}
-        <div className="mt-8 flex justify-center md:justify-start">
-          <button className="bg-[#FFC447] px-10 sm:px-14 md:px-20 py-4 sm:py-5 rounded-full font-workSansRegular text-[#221C42] text-sm sm:text-base md:text-lg">
-            <Link href={"#featuredPropertiesSection"}>View Properties</Link>
-          </button>
-        </div>
+      {/* Image Indicator Dots */}
+      <div className="absolute bottom-10 w-full flex justify-center space-x-4 z-20">
+        {images.map((_, index) => (
+          <button
+            key={index}
+            onClick={() => handleDotClick(index)}
+            className={`w-3 h-3 rounded-full ${
+              currentImageIndex === index ? "bg-[#FFC447]" : "bg-gray-300"
+            }`}
+            style={{
+              cursor: "pointer",
+              transition: "background-color 0.3s ease",
+            }}
+          ></button>
+        ))}
       </div>
     </div>
   );
