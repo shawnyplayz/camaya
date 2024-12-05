@@ -61,18 +61,22 @@ const Navbar = () => {
           </p>
         </div>
         <div className="social-media-icon flex items-center gap-5 text-black">
-          <Image
-            src="/assets/Navbar/facebook.svg"
-            width={15}
-            height={15}
-            alt="Facebook Icon"
-          />
-          <Image
-            src="/assets/Navbar/instagram.svg"
-            width={24}
-            height={24}
-            alt="Instagram Icon"
-          />
+          <Link href="https://www.facebook.com/camayaresort">
+            <Image
+              src="/assets/Navbar/facebook.svg"
+              width={15}
+              height={15}
+              alt="Facebook Icon"
+            />
+          </Link>
+          <Link href="https://www.instagram.com/camayacoast_ph">
+            <Image
+              src="/assets/Navbar/instagram.svg"
+              width={24}
+              height={24}
+              alt="Instagram Icon"
+            />
+          </Link>
           <Image
             src="/assets/Navbar/x.svg"
             width={24}
