@@ -4,7 +4,7 @@ import Navbar from "@/components/Navbar";
 import AOSComponent from "@/components/AOSComponent";
 
 export const metadata = {
-  title: "Camaya",
+  title: "Camaya Pre Production",
   description: "Camaya",
 };
 
