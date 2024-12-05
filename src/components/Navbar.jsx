@@ -22,7 +22,7 @@ const Navbar = () => {
   ];
 
   return (
-    <div className="bg-white flex justify-between md:justify-evenly items-center px-4 py-5 text-black font-workSansMedium font-medium fixed top-0 left-0 right-0 z-50">
+    <div className="bg-white flex lg:justify-evenly justify-between items-center px-4 py-5 text-black font-workSansMedium font-medium fixed top-0 left-0 right-0 z-50">
       {/* Logo Section */}
       <div className="logo flex-shrink-0">
         <Image src="/assets/logo.svg" width={150} height={150} alt="Logo" />
