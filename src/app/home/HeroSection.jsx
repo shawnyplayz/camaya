@@ -40,7 +40,7 @@ const HeroSection = () => {
 
   return (
     <div
-      className="relative w-full h-screen overflow-hidden"
+      className="relative w-full h-[850px] overflow-hidden"
       id="home"
       style={{
         backgroundImage: `url(${images[currentImageIndex]})`,
