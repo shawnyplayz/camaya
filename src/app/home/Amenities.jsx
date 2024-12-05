@@ -202,7 +202,7 @@ const Amenities = () => {
     <div className="container mx-auto py-20 lg:px-5" id="amenitiesSection">
       <div className="text-center md:text-left">
         <h1 className="font-workSansMedium font-medium text-4xl md:text-5xl text-[#221C42] mb-6 pt-14 px-1">
-          Resort-Style Amenities
+          Amenities
         </h1>
         <p className="text-[#9C9C9C] max-w-4xl mx-auto md:mx-0 font-workSansMedium font-medium text-lg md:text-xl mb-12 px-3">
           At Camaya Coast, we offer a wide range of world-class amenities to
