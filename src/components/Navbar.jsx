@@ -77,12 +77,14 @@ const Navbar = () => {
               alt="Instagram Icon"
             />
           </Link>
-          <Image
-            src="/assets/Navbar/x.svg"
-            width={24}
-            height={24}
-            alt="X (Twitter) Icon"
-          />
+          <Link href="viber://chat?number=639260532470">
+            <Image
+              src="/assets/Navbar/x.svg"
+              width={24}
+              height={24}
+              alt="X (Twitter) Icon"
+            />
+          </Link>
         </div>
       </div>
 
