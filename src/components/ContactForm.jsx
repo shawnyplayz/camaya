@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Input from "./Input";
 import Button from "./Button";
 import { fetchDataPost } from "@/utils.js/fetchData";
@@ -37,6 +37,11 @@ const ContactForm = () => {
       if (response.success) {
         setSuccessMessage("Your message has been sent successfully!");
         setFormData({ name: "", email: "", mobile_number: "", message: "" });
+
+        // Automatically clear the success message after 8 seconds
+        setTimeout(() => {
+          setSuccessMessage("");
+        }, 8000);
       } else {
         throw new Error(response.message || "Failed to send message.");
       }
@@ -45,6 +50,11 @@ const ContactForm = () => {
       setErrorMessage(
         error.message || "Something went wrong. Please try again."
       );
+
+      // Automatically clear the error message after 8 seconds
+      setTimeout(() => {
+        setErrorMessage("");
+      }, 8000);
     } finally {
       setIsSubmitting(false);
     }
@@ -89,8 +99,16 @@ const ContactForm = () => {
             required
           />
         </div>
-        {successMessage && <p className="text-green-600">{successMessage}</p>}
-        {errorMessage && <p className="text-red-600">{errorMessage}</p>}
+        {successMessage && (
+          <p className="text-green-600 transition-opacity duration-500">
+            {successMessage}
+          </p>
+        )}
+        {errorMessage && (
+          <p className="text-red-600 transition-opacity duration-500">
+            {errorMessage}
+          </p>
+        )}
         <div className="flex items-center justify-center pb-8">
           <Button className="w-full" disabled={isSubmitting}>
             {isSubmitting ? "Sending..." : "Send Message"}

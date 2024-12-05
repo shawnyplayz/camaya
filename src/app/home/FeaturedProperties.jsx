@@ -67,7 +67,7 @@ const FeaturedProperties = () => {
         setPricingOptions(priceData);
 
         const defaultProperties = await fetchDataGet(endpoints.properties);
-        setFilteredProperties(defaultProperties.properties || []);
+        setFilteredProperties(defaultProperties.properties || []); // Populate initial results
       } catch (error) {
         console.error("Error fetching data:", error);
         setIsError(true);
@@ -80,7 +80,7 @@ const FeaturedProperties = () => {
   const handleDropdownSelect = async (value, type) => {
     const updatedFilters = {
       ...selectedFilters,
-      [type === "property" ? "prop_name" : type]: value,
+      [type]: value,
     };
     setSelectedFilters(updatedFilters);
 
@@ -151,8 +151,6 @@ const FeaturedProperties = () => {
         />
       </div>
 
-      {/* Slider or Default/Error Image */}
-      {/* Conditional Rendering for Images with React Slick Carousel */}
       <div className="mt-32">
         {isError ? (
           <div className="flex items-center justify-center">
