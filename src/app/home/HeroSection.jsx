@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import React, { useState, useEffect } from "react";
 
 const HeroSection = () => {
@@ -11,30 +10,17 @@ const HeroSection = () => {
   ];
 
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const [nextImageIndex, setNextImageIndex] = useState(1);
-
-  // Preload the images
-  const preloadImages = () => {
-    images.forEach((image) => {
-      const img = new Image();
-      img.src = image;
-    });
-  };
 
   useEffect(() => {
-    preloadImages();
-
     const interval = setInterval(() => {
-      setCurrentImageIndex(nextImageIndex);
-      setNextImageIndex((nextImageIndex + 1) % images.length);
+      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
     }, 5000);
 
     return () => clearInterval(interval);
-  }, [nextImageIndex, images.length]);
+  }, [images.length]);
 
   const handleDotClick = (index) => {
     setCurrentImageIndex(index);
-    setNextImageIndex((index + 1) % images.length);
   };
 
   return (
@@ -68,7 +54,7 @@ const HeroSection = () => {
       </div>
 
       {/* Image Indicator Dots */}
-      <div className="absolute bottom-10 w-full flex justify-center space-x-4">
+      <div className="absolute bottom-10 w-full flex justify-center space-x-4 z-20">
         {images.map((_, index) => (
           <button
             key={index}
@@ -76,7 +62,10 @@ const HeroSection = () => {
             className={`w-3 h-3 rounded-full ${
               currentImageIndex === index ? "bg-[#FFC447]" : "bg-gray-300"
             }`}
-            style={{ transition: "background-color 0.3s ease" }}
+            style={{
+              cursor: "pointer",
+              transition: "background-color 0.3s ease",
+            }}
           ></button>
         ))}
       </div>
