@@ -22,7 +22,7 @@ const Navbar = () => {
   ];
 
   return (
-    <div className="bg-[#FFE9BB] flex justify-between items-center px-4 py-5 text-black font-workSansMedium font-medium fixed top-0 left-0 right-0 z-50">
+    <div className="bg-white flex justify-between items-center px-4 py-5 text-black font-workSansMedium font-medium fixed top-0 left-0 right-0 z-50">
       {/* Logo Section */}
       <div className="logo flex-shrink-0">
         <Image src="/assets/logo.svg" width={120} height={120} alt="Logo" />
@@ -61,24 +61,30 @@ const Navbar = () => {
           </p>
         </div>
         <div className="social-media-icon flex items-center gap-5 text-black">
-          <Image
-            src="/assets/Navbar/facebook.svg"
-            width={15}
-            height={15}
-            alt="Facebook Icon"
-          />
-          <Image
-            src="/assets/Navbar/instagram.svg"
-            width={24}
-            height={24}
-            alt="Instagram Icon"
-          />
-          <Image
-            src="/assets/Navbar/x.svg"
-            width={24}
-            height={24}
-            alt="X (Twitter) Icon"
-          />
+          <Link href="https://www.facebook.com/camayaresort">
+            <Image
+              src="/assets/Navbar/facebook.svg"
+              width={15}
+              height={15}
+              alt="Facebook Icon"
+            />
+          </Link>
+          <Link href="https://www.instagram.com/camayacoast_ph">
+            <Image
+              src="/assets/Navbar/instagram.svg"
+              width={24}
+              height={24}
+              alt="Instagram Icon"
+            />
+          </Link>
+          <Link href="viber://chat?number=639260532470">
+            <Image
+              src="/assets/Navbar/x.svg"
+              width={24}
+              height={24}
+              alt="X (Twitter) Icon"
+            />
+          </Link>
         </div>
       </div>
 
