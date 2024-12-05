@@ -133,6 +133,21 @@ html {
   height: 632px;
 }
 
+
+.overflow-x-auto {
+  scroll-behavior: smooth;
+}
+
+
+.scrollbar-hide {
+  -ms-overflow-style: none; 
+  scrollbar-width: none; 
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none; 
+}
+
 @media (max-width: 1200px) {
   .modal-container {
     width: 90%; /* Use 90% of the screen width */

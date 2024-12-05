@@ -80,13 +80,13 @@ const FeaturedProperties = () => {
   const handleDropdownSelect = async (value, type) => {
     const updatedFilters = {
       ...selectedFilters,
-      [type]: value, // Map the dropdown type directly to the filter key
+      [type]: value,
     };
-    setSelectedFilters(updatedFilters); // Update the selected filters state
+    setSelectedFilters(updatedFilters);
 
     const queryParams = new URLSearchParams(
       Object.entries(updatedFilters).reduce((acc, [key, val]) => {
-        if (val) acc[key] = val; // Only include non-empty values
+        if (val) acc[key] = val;
         return acc;
       }, {})
     ).toString();
@@ -96,16 +96,16 @@ const FeaturedProperties = () => {
         `${endpoints.properties}?${queryParams}`
       );
       if (propertiesData?.properties?.length > 0) {
-        setFilteredProperties(propertiesData.properties); // Update the displayed properties
+        setFilteredProperties(propertiesData.properties);
         setIsError(false);
       } else {
         setFilteredProperties([]);
-        setIsError(true); // Show error message if no matching properties
+        setIsError(true);
       }
     } catch (error) {
       console.error("Error fetching filtered properties:", error);
       setFilteredProperties([]);
-      setIsError(true); // Handle errors by showing a fallback message
+      setIsError(true);
     }
   };
 
@@ -151,8 +151,6 @@ const FeaturedProperties = () => {
         />
       </div>
 
-      {/* Slider or Default/Error Image */}
-      {/* Conditional Rendering for Images with React Slick Carousel */}
       <div className="mt-32">
         {isError ? (
           <div className="flex items-center justify-center">
