@@ -63,7 +63,7 @@ const AffiliatePartners = () => {
       </div>
 
       {/* Partner Logos Section */}
-      <Marquee speed={200} gradient={true} autoFill gradientWidth={60}>
+      <Marquee speed={200} gradient={true} autoFill gradientWidth={60n}>
         <div className="flex gap-11 pr-11">
           {logos.map((logo, index) => (
             <div
