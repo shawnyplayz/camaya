@@ -14,7 +14,32 @@ import { Navigation } from "swiper/modules";
 import amenitiesImage2 from "../../../public/assets/home/amenitiesSection/amenities_image_2.png";
 import amenitiesImage3 from "../../../public/assets/home/amenitiesSection/amenities_image_3.png";
 import amenitiesImage4 from "../../../public/assets/home/amenitiesSection/amenities_image_4.png";
+import { FaCaretLeft, FaCaretRight } from "react-icons/fa";
+const NextArrow = ({ onClick }) => (
+  <div
+    className="absolute right-[0] top-[55%] transform -translate-y-1/2 cursor-pointer z-10"
+    onClick={onClick}
+  >
+    <div className="w-20 h-20 rounded-full bg-[#FFFFFF] border-[#FFC447] flex items-center justify-center shadow-lg">
+      <span className="text-[#FFC107] text-2xl">
+        <FaCaretRight fontSize={40} />
+      </span>
+    </div>
+  </div>
+);
 
+const PrevArrow = ({ onClick }) => (
+  <div
+    className="absolute left-[0] top-[55%] transform -translate-y-1/2 cursor-pointer z-10"
+    onClick={onClick}
+  >
+    <div className="w-20 h-20 rounded-full bg-[#FFFFFF] border-[#FFC447] flex items-center justify-center shadow-lg">
+      <span className="text-[#FFC107] text-2xl">
+        <FaCaretLeft fontSize={40} />
+      </span>
+    </div>
+  </div>
+);
 const Amenities = () => {
   const tabsData = [
     {
@@ -186,6 +211,13 @@ const Amenities = () => {
       </div>
 
       <div className="relative overflow-x-auto whitespace-nowrap scrollbar-hide">
+        {/* Custom Arrows */}
+        <PrevArrow
+          onClick={() => document.querySelector(".swiper-button-prev").click()}
+        />
+        <NextArrow
+          onClick={() => document.querySelector(".swiper-button-next").click()}
+        />
         <TabsContainer tabs={tabsData.map((tab) => tab.title)}>
           {tabsData.map((tab, tabIndex) => (
             <Tabs key={tabIndex}>
