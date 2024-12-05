@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import React, { useState, useEffect } from "react";
 
 const HeroSection = () => {
@@ -61,6 +62,13 @@ const HeroSection = () => {
             Experience luxury living at Camaya Coast in Mariveles Bataan
             (Station 1, Station 2)
           </p>
+        </div>
+
+        {/* Call-to-Action Button */}
+        <div className="mt-8 flex justify-center md:justify-start">
+          <button className="bg-[#FFC447] px-10 sm:px-14 md:px-20 py-4 sm:py-5 rounded-full font-workSansRegular text-[#221C42] text-sm sm:text-base md:text-lg">
+            <Link href={"#featuredPropertiesSection"}>View Properties</Link>
+          </button>
         </div>
       </div>
     </div>
