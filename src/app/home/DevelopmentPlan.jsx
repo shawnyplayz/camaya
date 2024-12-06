@@ -4,7 +4,10 @@ import { DevelopmentPlanData } from "../constants";
 
 const DevelopmentPlan = () => {
   return (
-    <div className="mx-auto container px-6 sm:px-10 lg:px-20" id="developmentPlanSection">
+    <div
+      className="mx-auto container px-6 sm:px-10 lg:px-20"
+      id="developmentPlanSection"
+    >
       {/* Header Section */}
       <div className="flex flex-col md:flex-row justify-between items-center">
         <h1 className="font-workSansMedium font-medium text-3xl sm:text-4xl lg:text-5xl text-black text-center md:text-left">
@@ -21,7 +24,7 @@ const DevelopmentPlan = () => {
 
       {/* Description Section */}
       <div className="mt-6 max-w-2xl lg:max-w-4xl mb-12">
-        <p className="text-sm sm:text-base lg:text-lg text-center md:text-left">
+        <p className="text-sm font-workSansMedium font-medium text-[#9C9C9C] sm:text-base lg:text-lg text-center md:text-left">
           {DevelopmentPlanData.description}
         </p>
       </div>

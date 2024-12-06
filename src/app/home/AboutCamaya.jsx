@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { AboutCamayaData, AboutUsData } from "../constants";
 
 const CamayaCoastSection = () => {
   return (
@@ -137,41 +138,27 @@ const CamayaCoastSection = () => {
         </div>
 
         {/* Text Content (Right Section) */}
-        <div className="md:w-[60%] md:pl-16 text-center md:text-left flex flex-col justify-center">
+        <div className="md:w-[50%] text-center md:text-left flex flex-col justify-center">
           {/* Title Section */}
 
           <div>
-            <div
+            {/* <div
               className="w-[50px]"
               style={{
                 height: "2px",
                 backgroundColor: "#CCCCCC",
               }}
-            ></div>
+            ></div> */}
             <div className="flex items-center mb-4">
-              <h2
-                className="font-work-sans text-[38px] font-bold leading-[1.2] text-gray-800 ml-0"
-                style={{
-                  textUnderlinePosition: "from-font",
-                  textDecorationSkipInk: "none",
-                }}
-              >
-                About Camaya Coast
+              <h2 className="font-workSansMedium font-medium text-[35px] tracking-[3px] leading-[1.2] text-[#221C42] ml-0">
+                {AboutUsData.title}
               </h2>
             </div>
           </div>
 
           {/* Description */}
-          <p
-            className="font-work-sans text-[16px] font-medium leading-[28px] text-gray-600 mb-6"
-            style={{
-              textUnderlinePosition: "from-font",
-              textDecorationSkipInk: "none",
-            }}
-          >
-            Nestled in the heart of Bataan, Camaya Coast offers a perfect blend
-            of nature and modernity. Enjoy the beauty of the pristine beach,
-            world-class amenities, and a vibrant community.
+          <p className="text-[16px] font-workSansMedium font-medium leading-[28px] text-[#9C9C9C] mb-6">
+            {AboutUsData.description}
           </p>
 
           {/* Button */}

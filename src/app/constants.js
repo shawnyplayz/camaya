@@ -19,3 +19,9 @@ export const GetInTouchData = {
   email: "maripaul.milanes@realestate.camayacoast.com",
   location: "acinta Bldg., Brgy Guadalupe Nuevo, Makati, Philippines",
 };
+
+export const AboutUsData = {
+  title: "About Camaya Coast",
+  description:
+    "Nestled in the heart of Bataan, Camaya Coast offers a perfect blend of nature and modernity. Enjoy the beauty of pristine beach, world-class amenities, and a vibrant community.",
+};
