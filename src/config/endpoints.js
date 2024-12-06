@@ -14,6 +14,7 @@ const endpoints = {
   locationOptions: `${baseUrl}/locationOptions`,
   pricingOptions: `${baseUrl}/pricingOptions`,
   sendInquiry: `${baseUrl}/sendInquiry`,
+  fetchAmenities: `${baseUrl}/fetchAmenities`,
 };
 
 export default endpoints;
