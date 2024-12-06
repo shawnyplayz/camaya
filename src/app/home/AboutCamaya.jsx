@@ -1,67 +1,176 @@
 import Image from "next/image";
-import React from "react";
-import { AboutCamayaData } from "../constants";
+import Link from "next/link";
+import { AboutCamayaData, AboutUsData } from "../constants";
 
-const AboutCamaya = () => {
+const CamayaCoastSection = () => {
   return (
-    <div
-      className="px-6 sm:px-10 lg:px-20 container mx-auto mb-36"
-      id="AboutCamayaSection"
+    <section
+      className="py-12 px-4"
+      style={{
+        background:
+          "linear-gradient(180deg, rgba(255, 196, 71, 0.18) 22.97%, rgba(255, 244, 221, 0) 76.05%)",
+      }}
     >
-      {/* Header Section */}
-      <div className="flex flex-col lg:flex-row justify-center items-center lg:items-center gap-6 lg:gap-12 mb-12 text-center lg:text-left">
-        <div className="hidden lg:block">
-          <Image
-            src="/assets/home/aboutSection/arrow.svg"
-            width={637}
-            height={0}
-            alt="Arrow"
-            className="mx-auto lg:mx-0"
-          />
+      <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center md:items-start">
+        {/* Staggered Image Grid (Left Section) */}
+        <div className="relative md:w-[90%] mb-8 md:mb-0">
+          {/* Row 1 */}
+          <div className="flex space-x-4 relative right-[170px]">
+            <Image
+              src="/assets/home/aboutSection/image_row_1.webp" // Replace with actual image paths
+              alt="Image 1"
+              width={150}
+              height={150}
+              className=" shadow-lg"
+            />
+            <Image
+              src="/assets/home/aboutSection/image_row_1_2.webp"
+              alt="Image 2"
+              width={150}
+              height={150}
+              className=" shadow-lg"
+            />
+            <Image
+              src="/assets/home/aboutSection/image_row_1_3.webp"
+              alt="Image 2"
+              width={150}
+              height={150}
+              className=" shadow-lg"
+            />
+            {/* Gradient Box */}
+            <div
+              className="w-[150px] h-[150px] "
+              style={{
+                background:
+                  "linear-gradient(92.3deg, #FFF1D2 1.5%, rgba(255, 231, 181, 0) 97.79%)",
+              }}
+            ></div>
+            {/* <div
+              className="w-[50px]"
+              style={{
+                height: "2px",
+                backgroundColor: "#CCCCCC",
+              }}
+            ></div> */}
+          </div>
+
+          {/* Row 2 */}
+          <div className="flex space-x-4 mt-[22px] ml-[-170px]">
+            {/* Gradient Box */}
+            <div
+              className="w-[150px] h-[150px]"
+              style={{
+                background:
+                  "linear-gradient(92.3deg, #FFF1D2 1.5%, rgba(255, 231, 181, 0) 97.79%)",
+              }}
+            ></div>
+            <Image
+              src="/assets/home/aboutSection/image_row_2_1.webp"
+              alt="Image 3"
+              width={150}
+              height={150}
+              className=" shadow-lg"
+            />
+            <Image
+              src="/assets/home/aboutSection/image_row_2_2.webp"
+              alt="Image 4"
+              width={150}
+              height={150}
+              className=" shadow-lg"
+            />
+            <Image
+              src="/assets/home/aboutSection/image_row_2_3.webp"
+              alt="Image 4"
+              width={150}
+              height={150}
+              className=" shadow-lg"
+            />
+            {/* Gradient Box */}
+            <div
+              className="w-[150px] h-[150px] "
+              style={{
+                background:
+                  "linear-gradient(92.3deg, #FFF1D2 1.5%, rgba(255, 231, 181, 0) 97.79%)",
+              }}
+            ></div>
+          </div>
+
+          {/* Row 3 */}
+          <div className="flex space-x-4 mt-[13px] ml-[-4px]">
+            {/* Gradient Box */}
+            <div
+              className="w-[150px] h-[150px]"
+              style={{
+                background:
+                  "linear-gradient(92.3deg, #FFF1D2 1.5%, rgba(255, 231, 181, 0) 97.79%)",
+              }}
+            ></div>
+            <Image
+              src="/assets/home/aboutSection/image_row_3_1.webp"
+              alt="Image 5"
+              width={150}
+              height={150}
+              className=" shadow-lg"
+            />
+            <Image
+              src="/assets/home/aboutSection/image_row_3_2.webp"
+              alt="Image 6"
+              width={150}
+              height={150}
+              className="shadow-lg"
+            />
+            <Image
+              src="/assets/home/aboutSection/image_row_3_3.webp"
+              alt="Image 6"
+              width={150}
+              height={150}
+              className=" shadow-lg"
+            />
+            {/* Gradient Box */}
+            <div
+              className="w-[50px] h-[150px] rounded-md"
+              style={{
+                background:
+                  "linear-gradient(92.3deg, #FFF1D2 1.5%, rgba(255, 231, 181, 0) 97.79%)",
+              }}
+            ></div>
+          </div>
         </div>
-        <div>
-          <h1 className="font-workSansMedium font-medium text-3xl sm:text-4xl lg:text-5xl">
-            {AboutCamayaData.title}
-          </h1>
-          <p className="font-workSansMedium font-medium text-sm sm:text-base lg:text-lg max-w-xl lg:max-w-4xl text-[#9C9C9C] mt-4 sm:mt-6">
-            {AboutCamayaData.subDescription}
+
+        {/* Text Content (Right Section) */}
+        <div className="md:w-[50%] text-center md:text-left flex flex-col justify-center">
+          {/* Title Section */}
+
+          <div>
+            {/* <div
+              className="w-[50px]"
+              style={{
+                height: "2px",
+                backgroundColor: "#CCCCCC",
+              }}
+            ></div> */}
+            <div className="flex items-center mb-4">
+              <h2 className="font-workSansMedium font-medium text-[35px] tracking-[3px] leading-[1.2] text-[#221C42] ml-0">
+                {AboutUsData.title}
+              </h2>
+            </div>
+          </div>
+
+          {/* Description */}
+          <p className="text-[16px] font-workSansMedium font-medium leading-[28px] text-[#9C9C9C] mb-6">
+            {AboutUsData.description}
           </p>
+
+          {/* Button */}
+          <div className="mt-8 flex justify-center md:justify-start">
+            <button className="bg-[#FFC447] px-10 sm:px-14 md:px-20 py-4 sm:py-5 rounded-full font-workSansRegular text-[#221C42] text-sm sm:text-base md:text-lg">
+              <Link href={"#featuredPropertiesSection"}>View Properties</Link>
+            </button>
+          </div>
         </div>
       </div>
-
-      {/* Images Section */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-6">
-        <Image
-          src="/assets/home/aboutSection/image1.svg"
-          width={300}
-          height={300}
-          alt="Image 1"
-          className="w-full"
-        />
-        <Image
-          src="/assets/home/aboutSection/image2.svg"
-          width={300}
-          height={300}
-          alt="Image 2"
-          className="w-full"
-        />
-        <Image
-          src="/assets/home/aboutSection/image3.svg"
-          width={300}
-          height={300}
-          alt="Image 3"
-          className="w-full"
-        />
-      </div>
-
-      {/* Description Section */}
-      <div>
-        <p className="max-w-xl sm:max-w-2xl lg:max-w-3xl font-workSansMedium font-medium text-sm sm:text-base lg:text-lg text-[#9C9C9C] text-center lg:text-left mb-12">
-          {AboutCamayaData.description}
-        </p>
-      </div>
-    </div>
+    </section>
   );
 };
 
-export default AboutCamaya;
+export default CamayaCoastSection;

@@ -9,6 +9,7 @@ import FrequentlyAskedQuestions from "./FrequentlyAskedQuestions";
 import Amenities from "./Amenities";
 import FeaturedProperties from "./FeaturedProperties";
 import TestimonialsSection from "./TestimonialsSection";
+import AboutSection from "./AboutUs";
 
 const Home = () => {
   return (
@@ -17,6 +18,7 @@ const Home = () => {
       <HeroSection />
       <AffiliatePartners />
       <AboutCamaya />
+      {/* <AboutSection /> */}
       <DevelopmentPlan />
       <FeaturedProperties />
       <Amenities />
