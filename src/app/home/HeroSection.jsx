@@ -4,9 +4,9 @@ import React, { useState, useEffect } from "react";
 
 const HeroSection = () => {
   const images = [
-    "/assets/home/heroSection/hero1.svg",
-    "/assets/home/heroSection/hero2.svg",
-    "/assets/home/heroSection/hero3.svg",
+    "/assets/home/heroSection/hero_section_1.png",
+    "/assets/home/heroSection/hero_section_2.png",
+    "/assets/home/heroSection/hero_section_3.png",
   ];
 
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -46,10 +46,7 @@ const HeroSection = () => {
 
         {/* Hero Description */}
         <div className="font-workSansRegular text-base sm:text-lg md:text-xl lg:text-2xl opacity-80 mt-6 text-center md:text-left max-w-lg md:max-w-3xl mx-auto md:mx-0">
-          <p>
-            Experience luxury living at Camaya Coast in Mariveles Bataan
-            (Station 1, Station 2)
-          </p>
+          <p>Experience luxury living at Camaya Coast in Mariveles Bataan</p>
         </div>
       </div>
 

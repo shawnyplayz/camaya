@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import Image from "next/image";
@@ -15,6 +15,8 @@ import amenitiesImage2 from "../../../public/assets/home/amenitiesSection/amenit
 import amenitiesImage3 from "../../../public/assets/home/amenitiesSection/amenities_image_3.png";
 import amenitiesImage4 from "../../../public/assets/home/amenitiesSection/amenities_image_4.png";
 import { FaCaretLeft, FaCaretRight } from "react-icons/fa";
+import endpoints from "@/config/endpoints";
+import { fetchDataGet } from "@/utils.js/fetchData";
 const NextArrow = ({ onClick }) => (
   <div
     className="absolute right-[0] top-[55%] transform -translate-y-1/2 cursor-pointer z-10"
@@ -189,6 +191,55 @@ const Amenities = () => {
       ],
     },
   ];
+  const [amenities, setAmenities] = useState([]);
+
+  useEffect(() => {
+    const fetchDropdownData = async () => {
+      try {
+        const amenitiesData = await fetchDataGet(endpoints.fetchAmenities);
+
+        const groupedAmenities = amenitiesData.result.reduce((acc, amenity) => {
+          const menuName = amenity.Menu.menu_name;
+          if (!acc[menuName]) {
+            acc[menuName] = [];
+          }
+          acc[menuName].push({
+            imageSrc: amenity.pictures[0].url,
+            title: amenity.amenity_name,
+            description: amenity.amenity_desc,
+          });
+          return acc;
+        }, {});
+
+        const formattedTabsData = Object.entries(groupedAmenities).map(
+          ([menuName, amenities]) => ({
+            title: menuName,
+            cards: amenities,
+          })
+        );
+
+        setAmenities(formattedTabsData);
+      } catch (error) {
+        console.error("Error fetching dropdown data:", error);
+        setIsError(true);
+      }
+    };
+
+    fetchDropdownData();
+  }, []);
+
+  const [isError, setIsError] = useState(false);
+  if (isError) {
+    return (
+      <div className="text-center text-red-500">
+        Failed to load amenities. Please try again later.
+      </div>
+    );
+  }
+
+  if (tabsData.length === 0) {
+    return <div className="text-center">Loading amenities...</div>;
+  }
 
   useEffect(() => {
     AOS.init({
@@ -218,8 +269,8 @@ const Amenities = () => {
         <NextArrow
           onClick={() => document.querySelector(".swiper-button-next").click()}
         />
-        <TabsContainer tabs={tabsData.map((tab) => tab.title)}>
-          {tabsData.map((tab, tabIndex) => (
+        <TabsContainer tabs={amenities.map((tab) => tab.title)}>
+          {amenities.map((tab, tabIndex) => (
             <Tabs key={tabIndex}>
               <Swiper
                 slidesPerView={1}
