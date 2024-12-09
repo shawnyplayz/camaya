@@ -150,7 +150,7 @@ const Amenities = () => {
 
       {amenities.length > 0 ? (
         <div className="relative overflow-x-auto whitespace-nowrap scrollbar-hide">
-          {amenities.length <= 1 && (
+          {amenities.length < 1 && (
             <>
               <PrevArrow
                 onClick={() =>
