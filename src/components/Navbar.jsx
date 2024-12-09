@@ -15,7 +15,7 @@ const Navbar = () => {
 
   const navLinks = [
     { href: "/home#home", label: "HOME" },
-    { href: "/home#AboutCamayaSection", label: "ABOUT US" },
+    { href: "/home#aboutus", label: "ABOUT US" },
     { href: "/home#featuredPropertiesSection", label: "PROPERTIES" },
     { href: "/home#amenitiesSection", label: "AMENITIES" },
     { href: "/home#contactUsSection", label: "CONTACT US" },
@@ -49,19 +49,8 @@ const Navbar = () => {
 
       {/* Contact and Social Media Section */}
       <div className="hidden lg:flex items-center gap-6">
-        <div className="flex items-center gap-2">
-          <Image
-            src="/assets/Navbar/call.svg"
-            width={20}
-            height={20}
-            alt="Call Icon"
-          />
-          <p className="text-black font-workSansMedium text-lg font-medium">
-            +63 926 053 2470
-          </p>
-        </div>
         <div className="social-media-icon flex items-center gap-5 text-black">
-          <Link href="https://www.facebook.com/camayaresort">
+          <Link href="https://www.facebook.com/OfficialCamayaCoast">
             <Image
               src="/assets/Navbar/facebook.svg"
               width={15}
@@ -69,7 +58,7 @@ const Navbar = () => {
               alt="Facebook Icon"
             />
           </Link>
-          <Link href="https://www.instagram.com/camayacoast_ph">
+          <Link href="https://www.instagram.com/camaya_prestige">
             <Image
               src="/assets/Navbar/instagram.svg"
               width={24}

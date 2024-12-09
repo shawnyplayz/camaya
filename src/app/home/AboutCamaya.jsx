@@ -1,11 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
-import { AboutCamayaData, AboutUsData } from "../constants";
+import { AboutUsData } from "../constants";
 
 const CamayaCoastSection = () => {
   return (
     <section
       className="py-12 px-4"
+      id="aboutus"
       style={{
         background:
           "linear-gradient(180deg, rgba(255, 196, 71, 0.18) 22.97%, rgba(255, 244, 221, 0) 76.05%)",
@@ -17,7 +18,7 @@ const CamayaCoastSection = () => {
           {/* Row 1 */}
           <div className="flex flex-wrap space-x-4 md:flex-nowrap md:relative right-[170px]">
             <Image
-              src="/assets/home/aboutSection/image_row_1.webp" // Replace with actual image paths
+              src="/assets/home/aboutSection/image_row_1.webp"
               alt="Image 1"
               width={150}
               height={150}
