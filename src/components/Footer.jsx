@@ -28,13 +28,13 @@ const Footer = () => {
 
         {/* Social Media Section */}
         <div className="flex justify-center lg:justify-end items-center gap-6 mt-8 lg:mt-4 text-white lg:mr-[15rem]">
-          <Link href={"https://facebook.com"}>
+          <Link href={"https://facebook.com/OfficialCamayaCoast"}>
             <SlSocialFacebook size={35} color="#1E1E1E" />
           </Link>
-          <Link href={"https://instagram.com"}>
+          <Link href={"https://instagram.com/camaya_prestige"}>
             <SlSocialInstagram size={35} color="#1E1E1E" />
           </Link>
-          <Link href={"https://www.viber.com/en/"}>
+          <Link href="viber://chat?number=639260532470">
             <SiViber size={35} color="#1E1E1E" />
           </Link>
         </div>
@@ -46,7 +46,7 @@ const Footer = () => {
               <Link href="/home#home">Home</Link>
             </li>
             <li>
-              <Link href="/home#AboutCamayaSection">About Us</Link>
+              <Link href="/home#aboutus">About Us</Link>
             </li>
             <li>
               <Link href="/home#featuredPropertiesSection">Properties</Link>

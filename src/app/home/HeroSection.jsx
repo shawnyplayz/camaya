@@ -35,7 +35,7 @@ const HeroSection = () => {
         transition: "background-image 1s ease-in-out",
       }}
     >
-      <div className="relative z-10 text-white px-4 sm:px-8 md:px-16 lg:px-20 h-full flex flex-col justify-center pt-28">
+      <div className="relative z-10 text-white px-4 sm:px-8 md:px-16 lg:px-16 h-full flex flex-col justify-center pt-28 mx-auto container">
         {/* Hero Title */}
         <div className="font-ralewaySemiBold text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-medium max-w-2xl md:max-w-3xl leading-tight text-center md:text-left">
           <h1>

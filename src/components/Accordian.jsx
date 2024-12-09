@@ -20,7 +20,7 @@ const Accordion = ({ title, content }) => {
         onClick={handleToggle}
         className="flex justify-between items-center w-full py-4 px-4 text-left"
       >
-        <span className="font-semibold text-lg">{title}</span>
+        <span className="font-semibold text-md md:text-lg">{title}</span>
         <span className="text-xl">{isOpen ? "-" : "+"}</span>
       </button>
 

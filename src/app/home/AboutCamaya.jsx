@@ -12,7 +12,7 @@ const CamayaCoastSection = () => {
           "linear-gradient(180deg, rgba(255, 196, 71, 0.18) 22.97%, rgba(255, 244, 221, 0) 76.05%)",
       }}
     >
-      <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center md:items-start">
+      <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center md:items-start container">
         {/* Staggered Image Grid (Left Section) */}
         <div className="relative md:w-[90%] mb-8 md:mb-0">
           {/* Row 1 */}

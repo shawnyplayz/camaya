@@ -1,14 +1,10 @@
 "use client";
 
-import Dropdown from "@/components/DropDown";
-import Modal from "@/components/Modal";
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import { fetchDataGet } from "@/utils.js/fetchData";
 import endpoints from "@/config/endpoints";
 import defaultImage from "../../../public/assets/home/featuredPropertiesSection/image1.png";
-import errorImage from "../../../public/assets/home/featuredPropertiesSection/error.svg";
-import Button from "@/components/Button";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -103,27 +99,8 @@ const FeaturedProperties = () => {
       id="featuredPropertiesSection"
     >
       <h1 className="text-[#221C42] flex justify-center items-center font-workSansMedium font-medium lg:text-6xl pt-20 text-center text-3xl">
-        Featured Queries
+        Featured Properties
       </h1>
-
-      {/* Dropdowns */}
-      {/* <div className="lg:flex lg:gap-11 gap-4 justify-center items-center mt-16 grid grid-cols-2">
-        <Dropdown
-          options={locations}
-          onSelect={(value) => handleDropdownSelect(value, "location")}
-          placeholder="Location"
-        />
-        <Dropdown
-          options={propertyTypes}
-          onSelect={(value) => handleDropdownSelect(value, "property")}
-          placeholder="Property"
-        />
-        <Dropdown
-          options={pricingOptions}
-          onSelect={(value) => handleDropdownSelect(value, "price")}
-          placeholder="Price"
-        />
-      </div> */}
 
       <div className="mt-32">
         {isError ? (
@@ -155,13 +132,6 @@ const FeaturedProperties = () => {
                     ))}
                   </Slider>
                 ) : (
-                  // <Image
-                  //   src={property?.pictures?.[0]?.url || defaultImage}
-                  //   alt="Property Image"
-                  //   width={800}
-                  //   height={200}
-                  //   className="pb-7"
-                  // />
                   <></>
                 )}
               </div>
@@ -169,25 +139,6 @@ const FeaturedProperties = () => {
           </div>
         )}
       </div>
-
-      {/* <div className="flex items-center justify-center mt-[73px]">
-        <Button onClick={() => setIsModalOpen(true)} className="px-20">
-          WATCH PRESENTATION
-        </Button>
-      </div> */}
-
-      {/* <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
-        <div className="w-full h-full">
-          <iframe
-            className="w-full h-full"
-            src="https://www.youtube.com/embed/qEQdZcZYB50?si=iqVe_FmqRwZ1a7XU"
-            title="Consultation Video"
-            frameBorder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-          ></iframe>
-        </div>
-      </Modal> */}
     </div>
   );
 };

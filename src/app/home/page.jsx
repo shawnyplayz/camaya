@@ -13,6 +13,7 @@ import Amenities from "./Amenities";
 import FeaturedProperties from "./FeaturedProperties";
 import TestimonialsSection from "./TestimonialsSection";
 import AboutCamayaMobile from "./AboutCamayaMobile";
+import Video from "./Video";
 
 const Home = () => {
   const [isMobile, setIsMobile] = useState(false);
@@ -30,15 +31,16 @@ const Home = () => {
   }, []);
 
   return (
-    <div>
+    <div className="mx-auto">
       <Navbar />
       <HeroSection />
-      <AffiliatePartners />
       {isMobile ? <AboutCamayaMobile /> : <AboutCamaya />}
-      <DevelopmentPlan />
+      {/* <DevelopmentPlan /> */}
       <FeaturedProperties />
       <Amenities />
-      <TestimonialsSection />
+      {/* <TestimonialsSection /> */}
+      <Video/>
+      <AffiliatePartners />
       <FrequentlyAskedQuestions />
       <GetInTouchSection />
     </div>

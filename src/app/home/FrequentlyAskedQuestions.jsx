@@ -16,20 +16,12 @@ const FrequentlyAskedQuestions = () => {
       <div className="right">
         <div className="max-w-xl space-y-4">
           <Accordion
-            title="1. What types of properties are available at Camaya Coast?"
-            content="We offer a variety of properties, including beachfront villas, cozy condominiums, and residential lots. Each option is designed for comfort, luxury, and different lifestyle needs."
+            title="1. How to get there?"
+            content="With a few hours away from Metro Manila, Camaya Coast Stations 1 to 3 can be reached directly via SEA, LAND and soon by AIR."
           />
           <Accordion
-            title="2. Can non-residents access the amenities at Camaya Coast?"
+            title="2. Can I set a sample computation  on a best discount in the smallest lot cut ?"
             content="Here's some more content for the second accordion item. It can also include more complex elements."
-          />
-          <Accordion
-            title="3. Are there financing options available for purchasing a property?"
-            content="And here is content for the third item. The accordion will smoothly open and close."
-          />
-          <Accordion
-            title="4. What is the process for scheduling a property tour?"
-            content="And here is content for the third item. The accordion will smoothly open and close."
           />
         </div>
       </div>

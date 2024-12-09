@@ -45,41 +45,6 @@ const Amenities = () => {
   const [amenities, setAmenities] = useState([]);
   const [isError, setIsError] = useState(false);
 
-  // useEffect(() => {
-  //   const fetchDropdownData = async () => {
-  //     try {
-  //       const amenitiesData = await fetchDataGet(endpoints.fetchAmenities);
-
-  //       const groupedAmenities = amenitiesData.result.reduce((acc, amenity) => {
-  //         const menuName = amenity.Menu.menu_name;
-  //         if (!acc[menuName]) {
-  //           acc[menuName] = [];
-  //         }
-  //         acc[menuName].push({
-  //           imageSrc: amenity.pictures[0].url,
-  //           title: amenity.amenity_name,
-  //           description: amenity.amenity_desc,
-  //         });
-  //         return acc;
-  //       }, {});
-
-  //       const formattedTabsData = Object.entries(groupedAmenities).map(
-  //         ([menuName, amenities]) => ({
-  //           title: menuName,
-  //           cards: amenities,
-  //         })
-  //       );
-
-  //       setAmenities(formattedTabsData);
-  //     } catch (error) {
-  //       console.error("Error fetching dropdown data:", error);
-  //       setIsError(true);
-  //     }
-  //   };
-
-  //   fetchDropdownData();
-  // }, []);
-
   useEffect(() => {
     const fetchDropdownData = async () => {
       try {
@@ -128,23 +93,17 @@ const Amenities = () => {
     );
   }
 
-  // useEffect(() => {
-  //   AOS.init({
-  //     duration: 800,
-  //     easing: "ease-in-out",
-  //     once: false,
-  //   });
-  // }, []);
-
   return (
     <div className="container mx-auto py-20 lg:px-5" id="amenitiesSection">
-      <div className="text-center md:text-left">
-        <h1 className="font-workSansMedium font-medium text-4xl md:text-5xl text-[#221C42] mb-6 pt-14 px-1">
-          Amenities
+      <div className="text-center md:text-left md:ml-14">
+        <h1 className="font-workSansMedium font-medium text-3xl sm:text-4xl md:text-5xl text-[#221C42] mb-6 pt-14 px-1">
+          Living Your Best Life in Camaya Coast
         </h1>
-        <p className="text-[#9C9C9C] max-w-4xl mx-auto md:mx-0 font-workSansMedium font-medium text-lg md:text-xl mb-12 px-3">
-          At Camaya Coast, we offer a wide range of world-class amenities to
-          ensure relaxation and recreation for our residents.
+        <p className="text-[#9C9C9C] max-w-5xl mx-auto md:mx-0 font-workSansMedium font-medium text-lg md:text-xl mb-12 px-3 lg:px-2">
+          Imagine waking up to the sound of the surf. A gentle breeze enters the
+          bedrooms as you open the windows to a breathtaking view of the sea in
+          your own tropical vacation home. Now imagine making this come true.
+          You can - with Camaya Coast's residential developments.
         </p>
       </div>
 
