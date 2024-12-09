@@ -121,13 +121,13 @@ const CamayaCoastSection = () => {
               className="mb-4 md:mb-0 shadow-lg"
             />
             {/* Gradient Box */}
-            <div
+            {/* <div
               className="w-[50px] h-[150px] rounded-md"
               style={{
                 background:
                   "linear-gradient(92.3deg, #FFF1D2 1.5%, rgba(255, 231, 181, 0) 97.79%)",
               }}
-            ></div>
+            ></div> */}
           </div>
         </div>
 

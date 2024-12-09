@@ -111,6 +111,7 @@ html {
   width: 100%;
   max-width: 800px;
   margin: 0 auto;
+  padding: 10px;
 }
 .card {
   transition: transform 0.6s ease-out, opacity 0.6s ease-out;
@@ -133,19 +134,17 @@ html {
   height: 632px;
 }
 
-
 .overflow-x-auto {
   scroll-behavior: smooth;
 }
 
-
 .scrollbar-hide {
-  -ms-overflow-style: none; 
-  scrollbar-width: none; 
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 .scrollbar-hide::-webkit-scrollbar {
-  display: none; 
+  display: none;
 }
 
 @media (max-width: 1200px) {

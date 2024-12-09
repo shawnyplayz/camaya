@@ -5,6 +5,7 @@ import Image from "next/image";
 import { fetchDataGet } from "@/utils.js/fetchData";
 import endpoints from "@/config/endpoints";
 import defaultImage from "../../../public/assets/home/featuredPropertiesSection/image1.png";
+import oneImage from "../../../public/assets/home/featuredPropertiesSection/one_image.png";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -114,29 +115,53 @@ const FeaturedProperties = () => {
             />
           </div>
         ) : (
-          <div>
-            {filteredProperties.map((property, index) => (
-              <div key={index} className="slider-container">
-                {property?.pictures?.length > 1 ? (
-                  <Slider {...sliderSettings}>
-                    {property.pictures.map((img, i) => (
-                      <div key={i}>
-                        <Image
-                          src={img?.url || defaultImage}
-                          alt={`Property Image ${i + 1}`}
-                          width={800}
-                          height={200}
-                          className="pb-7"
-                        />
-                      </div>
-                    ))}
-                  </Slider>
-                ) : (
-                  <></>
-                )}
+          <>
+            <div className="slider-container">
+              <div className="flex gap-3">
+                <div>
+                  <Image
+                    src={oneImage}
+                    width={61}
+                    height={154}
+                    alt="one-image-feature"
+                  />
+                </div>
+                <div className="ml-[-13px]">
+                  <div className="relative top-4 left-4 flex flex-col gap-[10px]">
+                    <h2 className="font-workSansMedium font-medium text-lg sm:text-xl lg:text-2xl text-[#FFC447] uppercase">
+                      Station
+                    </h2>
+                    <h3 className="font-workSansMedium font-medium text-2xl sm:text-3xl lg:text-[3.25rem] text-[#4CAF50] uppercase italic">
+                      MARIVELES, Bataan
+                    </h3>
+                  </div>
+                </div>
               </div>
-            ))}
-          </div>
+            </div>
+            <div>
+              {filteredProperties.map((property, index) => (
+                <div key={index} className="slider-container">
+                  {property?.pictures?.length > 1 ? (
+                    <Slider {...sliderSettings}>
+                      {property.pictures.map((img, i) => (
+                        <div key={i}>
+                          <Image
+                            src={img?.url || defaultImage}
+                            alt={`Property Image ${i + 1}`}
+                            width={800}
+                            height={200}
+                            className="pb-7"
+                          />
+                        </div>
+                      ))}
+                    </Slider>
+                  ) : (
+                    <></>
+                  )}
+                </div>
+              ))}
+            </div>
+          </>
         )}
       </div>
     </div>
