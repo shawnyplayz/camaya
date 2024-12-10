@@ -1,4 +1,5 @@
 import Accordion from "@/components/Accordian";
+import Accordian2 from "@/components/Accordian2";
 import React from "react";
 
 const FrequentlyAskedQuestions = () => {
@@ -18,8 +19,8 @@ const FrequentlyAskedQuestions = () => {
           title="1. How to get there?"
           content="Camaya Coast is a luxury beach resort and residential community in the Philippines."
         />
-        <Accordion
-          title="How do I get to Camaya Coast?"
+        <Accordian2
+          title="2. Can I set a sample computation  on a best discount in the smallest lot cut ?"
           content="You can reach Camaya Coast via ferry from Manila or by land travel through Bataan."
         />
       </div>

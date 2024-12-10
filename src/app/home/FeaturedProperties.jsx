@@ -55,38 +55,38 @@ const PrevArrow = ({ onClick }) => (
 );
 
 const FeaturedProperties = () => {
-  const [locations, setLocations] = useState([]);
-  const [propertyTypes, setPropertyTypes] = useState([]);
-  const [pricingOptions, setPricingOptions] = useState([]);
-  const [filteredProperties, setFilteredProperties] = useState([]);
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const [selectedFilters, setSelectedFilters] = useState({
-    location: "",
-    property: "",
-    price: "",
-  });
+  // const [locations, setLocations] = useState([]);
+  // const [propertyTypes, setPropertyTypes] = useState([]);
+  // const [pricingOptions, setPricingOptions] = useState([]);
+  // const [filteredProperties, setFilteredProperties] = useState([]);
+  // const [isModalOpen, setIsModalOpen] = useState(false);
+  // const [selectedFilters, setSelectedFilters] = useState({
+  //   location: "",
+  //   property: "",
+  //   price: "",
+  // });
 
-  useEffect(() => {
-    const fetchDropdownData = async () => {
-      try {
-        const locationData = await fetchDataGet(endpoints.locationOptions);
-        setLocations(locationData);
+  // useEffect(() => {
+  //   const fetchDropdownData = async () => {
+  //     try {
+  //       const locationData = await fetchDataGet(endpoints.locationOptions);
+  //       setLocations(locationData);
 
-        const propertyData = await fetchDataGet(endpoints.propertyOptions);
-        setPropertyTypes(propertyData);
+  //       const propertyData = await fetchDataGet(endpoints.propertyOptions);
+  //       setPropertyTypes(propertyData);
 
-        const priceData = await fetchDataGet(endpoints.pricingOptions);
-        setPricingOptions(priceData);
+  //       const priceData = await fetchDataGet(endpoints.pricingOptions);
+  //       setPricingOptions(priceData);
 
-        const defaultProperties = await fetchDataGet(endpoints.properties);
-        setFilteredProperties(defaultProperties.properties || []); // Populate initial results
-      } catch (error) {
-        console.error("Error fetching data:", error);
-      }
-    };
+  //       const defaultProperties = await fetchDataGet(endpoints.properties);
+  //       setFilteredProperties(defaultProperties.properties || []); // Populate initial results
+  //     } catch (error) {
+  //       console.error("Error fetching data:", error);
+  //     }
+  //   };
 
-    fetchDropdownData();
-  }, []);
+  //   fetchDropdownData();
+  // }, []);
 
   const data = [
     {

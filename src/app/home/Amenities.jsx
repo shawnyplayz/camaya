@@ -45,53 +45,53 @@ const Amenities = () => {
   const [amenities, setAmenities] = useState([]);
   const [isError, setIsError] = useState(false);
 
-  useEffect(() => {
-    const fetchDropdownData = async () => {
-      try {
-        const amenitiesData = await fetchDataGet(endpoints.fetchAmenities);
+  // useEffect(() => {
+  //   const fetchDropdownData = async () => {
+  //     try {
+  //       const amenitiesData = await fetchDataGet(endpoints.fetchAmenities);
 
-        const groupedAmenities = amenitiesData.result.reduce((acc, amenity) => {
-          const menuName = amenity.Menu.menu_name;
-          if (!acc[menuName]) {
-            acc[menuName] = [];
-          }
-          acc[menuName].push({
-            imageSrc: amenity.pictures[0].url,
-            title: amenity.amenity_name,
-            description: amenity.amenity_desc,
-          });
-          return acc;
-        }, {});
+  //       const groupedAmenities = amenitiesData?.result.reduce((acc, amenity) => {
+  //         const menuName = amenity.Menu.menu_name;
+  //         if (!acc[menuName]) {
+  //           acc[menuName] = [];
+  //         }
+  //         acc[menuName].push({
+  //           imageSrc: amenity.pictures[0].url,
+  //           title: amenity.amenity_name,
+  //           description: amenity.amenity_desc,
+  //         });
+  //         return acc;
+  //       }, {});
 
-        const formattedTabsData = Object.entries(groupedAmenities).map(
-          ([menuName, amenities]) => ({
-            title: menuName,
-            cards: amenities,
-          })
-        );
+  //       const formattedTabsData = Object.entries(groupedAmenities).map(
+  //         ([menuName, amenities]) => ({
+  //           title: menuName,
+  //           cards: amenities,
+  //         })
+  //       );
 
-        setAmenities(formattedTabsData);
-      } catch (error) {
-        console.error("Error fetching dropdown data:", error);
-        setIsError(true);
-      }
-    };
-    fetchDropdownData();
+  //       setAmenities(formattedTabsData);
+  //     } catch (error) {
+  //       console.error("Error fetching dropdown data:", error);
+  //       setIsError(true);
+  //     }
+  //   };
+  //   fetchDropdownData();
 
-    // Initialize AOS
-    AOS.init({
-      duration: 800,
-      easing: "ease-in-out",
-      once: false,
-    });
-  }, []);
-  if (isError) {
-    return (
-      <div className="text-center text-red-500">
-        Failed to load amenities. Please try again later.
-      </div>
-    );
-  }
+  //   // Initialize AOS
+  //   AOS.init({
+  //     duration: 800,
+  //     easing: "ease-in-out",
+  //     once: false,
+  //   });
+  // }, []);
+  // if (isError) {
+  //   return (
+  //     <div className="text-center text-red-500">
+  //       Failed to load amenities. Please try again later.
+  //     </div>
+  //   );
+  // }
 
   return (
     <div className="container mx-auto py-20 lg:px-5" id="amenitiesSection">
