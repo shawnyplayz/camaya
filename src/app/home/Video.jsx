@@ -24,7 +24,7 @@ const Video = () => {
 
   return (
     <div
-      className="px-4flex flex-col mb-[200px]"
+      className="px-4 flex flex-col"
       style={{
         background:
           "linear-gradient(180deg, rgba(255, 196, 71, 0.18) 22.97%, rgba(255, 244, 221, 0) 76.05%)",
@@ -37,10 +37,9 @@ const Video = () => {
         <div className="w-full flex items-center justify-center py-12 md:py-0 px-16">
           <iframe
             className="w-full h-[450px] md:h-[450px] max-w-4xl"
-            src="https://player.vimeo.com/video/1037350824?title=0&byline=0&portrait=0&badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1"
+            src="https://drive.google.com/file/d/1Kk3vFfI2IL1vZrWOo2qN9F4v4Z5BWQvG/preview"
             width="100%"
             height="100%"
-            frameBorder="0"
             allow="autoplay; fullscreen; picture-in-picture; clipboard-write"
             title="CC Community Update FINAL HR_110824"
           />
