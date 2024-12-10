@@ -4,9 +4,12 @@ import React, { useState, useEffect } from "react";
 
 const HeroSection = () => {
   const images = [
-    "/assets/home/heroSection/hero_section_1.png",
-    "/assets/home/heroSection/hero_section_2.png",
-    "/assets/home/heroSection/hero_section_3.png",
+    "/assets/home/heroSection/hero1.webp",
+    "/assets/home/heroSection/hero2.webp",
+    "/assets/home/heroSection/hero3.webp",
+    "/assets/home/heroSection/hero4.webp",
+    "/assets/home/heroSection/hero5.webp",
+    "/assets/home/heroSection/hero6.webp",
   ];
 
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -24,17 +27,22 @@ const HeroSection = () => {
   };
 
   return (
-    <div
-      className="relative w-full h-screen overflow-hidden"
-      id="home"
-      style={{
-        backgroundImage: `url(${images[currentImageIndex]})`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        backgroundRepeat: "no-repeat",
-        transition: "background-image 1s ease-in-out",
-      }}
-    >
+    <div className="relative w-full h-screen overflow-hidden" id="home">
+      {/* Images for background */}
+      <div className="absolute inset-0 w-full h-full">
+        {images.map((image, index) => (
+          <img
+            key={index}
+            src={image}
+            alt={`Slide ${index}`}
+            className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${
+              currentImageIndex === index ? "opacity-100" : "opacity-0"
+            }`}
+          />
+        ))}
+      </div>
+
+      {/* Hero Content */}
       <div className="relative z-10 text-white px-4 sm:px-8 md:px-16 lg:px-16 h-full flex flex-col justify-center pt-28 mx-auto container">
         {/* Hero Title */}
         <div className="font-ralewaySemiBold text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-medium max-w-2xl md:max-w-3xl leading-tight text-center md:text-left">
