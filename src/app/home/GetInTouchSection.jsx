@@ -22,35 +22,42 @@ const GetInTouchSection = () => {
             </p>
 
             <div className="contact-info mt-8 sm:mt-12 lg:mt-16 font-workSansMedium font-medium text-base sm:text-lg text-[#182A64]">
-              {/* Phone */}
-              <div className="flex items-center gap-2 mt-4 sm:mt-6 justify-center lg:justify-start">
-                <p className="md:block ">
-                  <IoMdCall />
-                </p>
-                <p className="md:block hidden">Call -</p>
-                <p className="text-xs sm:text-base">
-                  {GetInTouchData.phoneNumber}
-                </p>
-                <PH title="Phillipines" className="w-5" />
+              <div className="flex flex-col items-start gap-4 mt-4 sm:mt-6">
+                {/* Phone */}
+                <div className="flex items-center gap-2">
+                  <p className="md:block">
+                    <IoMdCall />
+                  </p>
+                  <p className="md:block hidden">Call -</p>
+                  <p className="text-xs sm:text-base">
+                    {GetInTouchData.phoneNumber}
+                  </p>
+                  <PH title="Phillipines" className="w-5" />
+                </div>
+
+                {/* Viber */}
+                <div className="flex items-center gap-2">
+                  <p className="md:block">
+                    <FaViber />
+                  </p>
+                  <p className="md:block">Viber -</p>
+                  <p className="text-xs sm:text-base">{GetInTouchData.viber}</p>
+                  <PH title="Phillipines" className="w-5" />
+                </div>
+
+                {/* Canada */}
+                <div className="flex items-center gap-2">
+                  <p className="md:block">
+                    <IoMdCall />
+                  </p>
+                  <p className="md:block hidden">Canada -</p>
+                  <p className="text-xs sm:text-base">
+                    {GetInTouchData.canada}
+                  </p>
+                  <CA title="Canada" className="w-5" />
+                </div>
               </div>
-              {/* Viber */}
-              <div className="flex items-center gap-2 mt-4 sm:mt-6 justify-center lg:justify-start">
-                <p className="md:block ">
-                  <FaViber />
-                </p>
-                <p className="md:block ">Viber -</p>
-                <p className="text-xs sm:text-base">{GetInTouchData.viber}</p>
-                <PH title="Phillipines" className="w-5" />
-              </div>
-              {/* Canada */}
-              <div className="flex items-center gap-2 mt-4 sm:mt-6 justify-center lg:justify-start">
-                <p className="md:block ">
-                  <IoMdCall />
-                </p>
-                <p className="md:block hidden">Canada -</p>
-                <p className="text-xs sm:text-base">{GetInTouchData.canada}</p>
-                <CA title="Canada" className="w-5" />
-              </div>
+
               {/* Email */}
               <div className="flex items-center gap-2 mt-4 sm:mt-6 justify-center lg:justify-start">
                 {/* <Image
