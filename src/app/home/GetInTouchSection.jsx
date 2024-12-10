@@ -4,6 +4,8 @@ import Image from "next/image";
 import ContactForm from "@/components/ContactForm";
 import { FaLocationDot } from "react-icons/fa6";
 import { CA, PH } from "country-flag-icons/react/3x2";
+import { IoMdCall } from "react-icons/io";
+import { FaViber } from "react-icons/fa";
 
 const GetInTouchSection = () => {
   return (
@@ -22,6 +24,9 @@ const GetInTouchSection = () => {
             <div className="contact-info mt-8 sm:mt-12 lg:mt-16 font-workSansMedium font-medium text-base sm:text-lg text-[#182A64]">
               {/* Phone */}
               <div className="flex items-center gap-2 mt-4 sm:mt-6 justify-center lg:justify-start">
+                <p className="md:block hidden">
+                  <IoMdCall />
+                </p>
                 <p className="md:block hidden">Call -</p>
                 <p className="text-xs sm:text-base">
                   {GetInTouchData.phoneNumber}
@@ -30,12 +35,18 @@ const GetInTouchSection = () => {
               </div>
               {/* Viber */}
               <div className="flex items-center gap-2 mt-4 sm:mt-6 justify-center lg:justify-start">
+                <p className="md:block hidden">
+                  <FaViber />
+                </p>
                 <p className="md:block ">Viber -</p>
                 <p className="text-xs sm:text-base">{GetInTouchData.viber}</p>
                 <PH title="Phillipines" className="w-5" />
               </div>
               {/* Canada */}
               <div className="flex items-center gap-2 mt-4 sm:mt-6 justify-center lg:justify-start">
+                <p className="md:block hidden">
+                  <IoMdCall />
+                </p>
                 <p className="md:block hidden">Canada -</p>
                 <p className="text-xs sm:text-base">{GetInTouchData.canada}</p>
                 <CA title="Canada" className="w-5" />

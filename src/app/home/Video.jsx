@@ -31,34 +31,34 @@ const Video = () => {
       }}
     >
       <div className="mx-auto container">
-        <div className="pt-[40px] ml-[60px] font-workSansMedium text-5xl mb-[33px] text-left font-medium text-[#221C42]">
+        <div className="pt-5 sm:pt-10 ml-5 sm:ml-[60px] font-workSansMedium text-3xl sm:text-5xl mb-6 sm:mb-[33px] text-left font-medium text-[#221C42]">
           <h1>Discover Camaya Coast</h1>
         </div>
-        <div className="w-full flex items-center justify-center py-12 md:py-0 px-16">
+        <div className="w-full flex flex-col md:flex-row items-center justify-center py-6 md:py-0 px-4 sm:px-16">
           <iframe
-            className="w-full h-[450px] md:h-[450px] max-w-4xl"
+            className="w-full h-[250px] sm:h-[450px] max-w-4xl"
             src="https://drive.google.com/file/d/1Kk3vFfI2IL1vZrWOo2qN9F4v4Z5BWQvG/preview"
             width="100%"
             height="100%"
             allow="autoplay; fullscreen; picture-in-picture; clipboard-write"
             title="CC Community Update FINAL HR_110824"
           />
-          <div className="max-w-[600px] px-12 text-[#9C9C9C] font-workSansMedium font-medium text-base">
+          <div className="mt-6 md:mt-0 max-w-full md:max-w-[600px] px-4 md:px-12 text-[#9C9C9C] font-workSansMedium font-medium text-sm sm:text-base">
             <h1>{data.description}</h1>
-            <div className="border-b border-[#ECA34C] border mt-7" />
-            <h1 className="text-[#373737] mt-9 font-workSansMedium font-medium text-2xl">
+            <div className="border-b border-[#ECA34C] mt-5 sm:mt-7" />
+            <h1 className="text-[#373737] mt-6 sm:mt-9 font-workSansMedium font-medium text-lg sm:text-2xl">
               #LifeAtCamayaCoast
             </h1>
           </div>
         </div>
-        <div className="info mt-4 font-workSansRegular font-normal text-lg px-16">
+        <div className="info mt-4 font-workSansRegular font-normal text-base sm:text-lg px-4 sm:px-16">
           Follow us On
         </div>
-        <div className="border-b border-[#ECA34C] border mt-2 max-w-[130px] ml-16" />
-        <div className="flex gap-3 mt-4 px-16">
+        <div className="border-b border-[#ECA34C] mt-2 max-w-[130px] ml-4 sm:ml-16" />
+        <div className="flex gap-3 mt-4 px-4 sm:px-16">
           <Link href={"https://www.instagram.com/camaya_prestige"}>
             <div
-              className="rounded-full border p-4 border-[#FEA439] hover:bg-[#FEA439]"
+              className="rounded-full border p-2 sm:p-4 border-[#FEA439] hover:bg-[#FEA439] transition-all duration-300 ease-in-out"
               onMouseEnter={() => handleMouseEnter("instagram")}
               onMouseLeave={handleMouseLeave}
             >
@@ -72,7 +72,7 @@ const Video = () => {
           </Link>
           <Link href={"https://www.facebook.com/OfficialCamayaCoast"}>
             <div
-              className="border p-4 rounded-full border-[#FEA439] hover:bg-[#FEA439]"
+              className="border p-2 sm:p-4 rounded-full border-[#FEA439] hover:bg-[#FEA439] transition-all duration-300 ease-in-out"
               onMouseEnter={() => handleMouseEnter("facebook")}
               onMouseLeave={handleMouseLeave}
             >
@@ -86,7 +86,7 @@ const Video = () => {
           </Link>
           <Link href={"https://www.youtube.com/@camayacoast.realestateph"}>
             <div
-              className="border p-4 rounded-full border-[#FEA439] hover:bg-[#FEA439]"
+              className="border p-2 sm:p-4 rounded-full border-[#FEA439] hover:bg-[#FEA439] transition-all duration-300 ease-in-out"
               onMouseEnter={() => handleMouseEnter("youtube")}
               onMouseLeave={handleMouseLeave}
             >

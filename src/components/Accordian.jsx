@@ -77,92 +77,97 @@ const Accordion = ({ title }) => {
 
       {/* Collapsible section */}
       <div
-        className={`overflow-hidden transition-all duration-500 ease-in-out  ${
+        className={`overflow-hidden transition-all duration-500 ease-in-out ${
           isOpen
-            ? "max-h-[1000px] opacity-100 px-10 py-10 bg-[#FFF4E8]"
+            ? "max-h-[1000px] opacity-100 px-4 py-6 md:px-10 md:py-10 bg-[#FFF4E8]"
             : "max-h-0 opacity-0"
         }`}
       >
-        <Card className="h-full w-full mt-4 border-[2.83px] rounded-none border-[#FFBA68] ">
-          <table className="w-full table-auto text-left">
-            <thead className="">
-              <tr>
-                {TABLE_HEAD.map((head) => (
-                  <th
-                    key={head}
-                    className="border-b border-[1.83px] border-[#FFBA68] bg-[#FFD099] p-4"
-                  >
-                    <Typography
-                      variant="small"
-                      color="blue-gray"
-                      className="font-semibold leading-none text-[#515151]"
+        <Card className="h-full w-full mt-4 border-[2.83px] rounded-none border-[#FFBA68]">
+          <div className="overflow-x-auto">
+            <table className="w-full table-auto text-left min-w-[600px]">
+              <thead>
+                <tr>
+                  {TABLE_HEAD.map((head) => (
+                    <th
+                      key={head}
+                      className="border-b border-[1.83px] border-[#FFBA68] bg-[#FFD099] p-3 text-sm md:p-4 md:text-base"
                     >
-                      {head}
-                    </Typography>
-                  </th>
-                ))}
-              </tr>
-            </thead>
-            <tbody>
-              {TABLE_ROWS.map(({ mode, origin, route, time, image }, index) => {
-                const isLast = index === TABLE_ROWS.length - 1;
-                const classes = isLast
-                  ? "p-4 border-b border-[1.83px] border-[#FFBA68]"
-                  : "p-4 border-b border-[1.83px] border-[#FFBA68]";
+                      <Typography
+                        variant="small"
+                        color="blue-gray"
+                        className="font-semibold leading-none text-[#515151]"
+                      >
+                        {head}
+                      </Typography>
+                    </th>
+                  ))}
+                </tr>
+              </thead>
+              <tbody>
+                {TABLE_ROWS.map(
+                  ({ mode, origin, route, time, image }, index) => {
+                    const isLast = index === TABLE_ROWS.length - 1;
+                    const classes = isLast
+                      ? "p-3 border-b border-[1.83px] border-[#FFBA68]"
+                      : "p-3 border-b border-[1.83px] border-[#FFBA68]";
 
-                return (
-                  <tr key={`${mode}-${index}`}>
-                    <td className={`${classes} text-[#7C7C7C]`}>
-                      <Typography
-                        variant="small"
-                        color="#7C7C7C"
-                        className="font-semibold"
-                      >
-                        <span className="flex justify-center items-center gap-3">
-                          <Image
-                            src={image}
-                            width={40}
-                            height={40}
-                            alt="image"
-                          />
-                          {mode}
-                        </span>
-                      </Typography>
-                    </td>
-                    <td className={`${classes} text-[#7C7C7C]`}>
-                      <Typography
-                        variant="small"
-                        color="#7C7C7C"
-                        className="font-semibold"
-                      >
-                        {origin}
-                      </Typography>
-                    </td>
-                    <td className={`${classes} text-[#7C7C7C]`}>
-                      <Typography
-                        variant="small"
-                        color="#7C7C7C"
-                        className="font-semibold"
-                      >
-                        {route}
-                      </Typography>
-                    </td>
-                    <td className={`${classes} text-[#7C7C7C]`}>
-                      <Typography
-                        as="a"
-                        href="#"
-                        variant="small"
-                        color="#7C7C7C"
-                        className="font-medium"
-                      >
-                        {time}
-                      </Typography>
-                    </td>
-                  </tr>
-                );
-              })}
-            </tbody>
-          </table>
+                    return (
+                      <tr key={`${mode}-${index}`}>
+                        <td className={`${classes} text-[#7C7C7C]`}>
+                          <Typography
+                            variant="small"
+                            color="#7C7C7C"
+                            className="font-semibold"
+                          >
+                            <span className="flex justify-center items-center gap-3">
+                              <Image
+                                src={image}
+                                width={30}
+                                height={30}
+                                alt="image"
+                                className="w-8 h-8 md:w-10 md:h-10"
+                              />
+                              {mode}
+                            </span>
+                          </Typography>
+                        </td>
+                        <td className={`${classes} text-[#7C7C7C]`}>
+                          <Typography
+                            variant="small"
+                            color="#7C7C7C"
+                            className="font-semibold text-sm md:text-base"
+                          >
+                            {origin}
+                          </Typography>
+                        </td>
+                        <td className={`${classes} text-[#7C7C7C]`}>
+                          <Typography
+                            variant="small"
+                            color="#7C7C7C"
+                            className="font-semibold text-sm md:text-base"
+                          >
+                            {route}
+                          </Typography>
+                        </td>
+                        <td className={`${classes} text-[#7C7C7C]`}>
+                          <Typography
+                            as="a"
+                            href="#"
+                            variant="small"
+                            color="#7C7C7C"
+                            className="font-medium text-sm md:text-base"
+                          >
+                            {time}
+                          </Typography>
+                        </td>
+                      </tr>
+                    );
+                  }
+                )}
+              </tbody>
+            </table>
+          </div>
         </Card>
       </div>
     </div>
