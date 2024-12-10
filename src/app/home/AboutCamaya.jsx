@@ -16,7 +16,7 @@ const CamayaCoastSection = () => {
         {/* Staggered Image Grid (Left Section) */}
         <div className="relative md:w-[90%] mb-8 md:mb-0">
           {/* Row 1 */}
-          <div className="flex flex-wrap space-x-4 md:flex-nowrap md:relative right-[170px]">
+          <div className="flex flex-wrap space-x-4 md:flex-nowrap md:relative right-[127px]">
             <Image
               src="/assets/home/aboutSection/image_row_1.webp"
               alt="Image 1"
@@ -49,7 +49,7 @@ const CamayaCoastSection = () => {
           </div>
 
           {/* Row 2 */}
-          <div className="flex flex-wrap space-x-4 mt-4 md:mt-[22px] md:ml-[-170px]">
+          <div className="flex flex-wrap space-x-4 mt-4 md:mt-[22px] md:ml-[-129px]">
             {/* Gradient Box */}
             <div
               className="w-[150px] h-[150px]"
@@ -90,7 +90,7 @@ const CamayaCoastSection = () => {
           </div>
 
           {/* Row 3 */}
-          <div className="flex flex-wrap space-x-4 mt-4 md:mt-[13px] md:ml-[-4px]">
+          <div className="flex flex-wrap space-x-4 mt-4 md:mt-[13px] md:ml-[39px]">
             {/* Gradient Box */}
             <div
               className="w-[150px] h-[150px]"
