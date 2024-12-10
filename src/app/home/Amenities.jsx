@@ -15,12 +15,12 @@ import { FaCaretLeft, FaCaretRight } from "react-icons/fa";
 import endpoints from "@/config/endpoints";
 import { fetchDataGet } from "@/utils.js/fetchData";
 
-const NextArrow = ({ onClick }) => (
+const NextArrow = ({ className, onClick }) => (
   <div
-    className="absolute right-[0] top-[55%] transform -translate-y-1/2 cursor-pointer z-10"
+    className={`absolute right-[3px] top-[50%] transform -translate-y-1/2 cursor-pointer z-10 ${className}`}
     onClick={onClick}
   >
-    <div className="w-20 h-20 rounded-full bg-[#FFFFFF] border-[#FFC447] flex items-center justify-center shadow-lg">
+    <div className="w-20 h-20 rounded-full bg-[#FFFFFF] border-[#FFC447] border-2 flex items-center justify-center">
       <span className="text-[#FFC107] text-2xl">
         <FaCaretRight fontSize={40} />
       </span>
@@ -28,12 +28,12 @@ const NextArrow = ({ onClick }) => (
   </div>
 );
 
-const PrevArrow = ({ onClick }) => (
+const PrevArrow = ({ className, onClick }) => (
   <div
-    className="absolute left-[0] top-[55%] transform -translate-y-1/2 cursor-pointer z-10"
+    className={`absolute left-[1px] top-[50%] transform -translate-y-1/2 cursor-pointer z-10 ${className}`}
     onClick={onClick}
   >
-    <div className="w-20 h-20 rounded-full bg-[#FFFFFF] border-[#FFC447] flex items-center justify-center shadow-lg">
+    <div className="w-20 h-20 rounded-full bg-[#FFFFFF] border-[#FFC447] border-2 flex items-center justify-center">
       <span className="text-[#FFC107] text-2xl">
         <FaCaretLeft fontSize={40} />
       </span>
@@ -109,20 +109,8 @@ const Amenities = () => {
 
       {amenities.length > 0 ? (
         <div className="relative overflow-x-auto whitespace-nowrap scrollbar-hide">
-          {amenities.length < 1 && (
-            <>
-              <PrevArrow
-                onClick={() =>
-                  document.querySelector(".swiper-button-prev").click()
-                }
-              />
-              <NextArrow
-                onClick={() =>
-                  document.querySelector(".swiper-button-next").click()
-                }
-              />
-            </>
-          )}
+          <PrevArrow className="custom-prev-arrow" />
+          <NextArrow className="custom-next-arrow" />
 
           <TabsContainer tabs={amenities.map((tab) => tab.title)}>
             {amenities.map((tab, tabIndex) => (
@@ -130,17 +118,14 @@ const Amenities = () => {
                 <Swiper
                   slidesPerView={1}
                   spaceBetween={20}
-                  navigation={true}
+                  navigation={{
+                    prevEl: ".custom-prev-arrow",
+                    nextEl: ".custom-next-arrow",
+                  }}
                   breakpoints={{
-                    640: {
-                      slidesPerView: 1,
-                    },
-                    768: {
-                      slidesPerView: 2,
-                    },
-                    1024: {
-                      slidesPerView: 3,
-                    },
+                    640: { slidesPerView: 1 },
+                    768: { slidesPerView: 2 },
+                    1024: { slidesPerView: 3 },
                   }}
                   modules={[Navigation]}
                   className="swiper-container"
@@ -163,7 +148,7 @@ const Amenities = () => {
                         <h3 className="text-xl md:text-2xl font-semibold text-[#221C42] mt-4">
                           {card.title}
                         </h3>
-                        <p className="text-[#646464] text-sm md:text-base mt-2 leading-relaxed max-w-xs line-clamp-2">
+                        <p className="text-[#646464] text-sm md:text-base mt-2 leading-relaxed max-w-xs">
                           {card.description}
                         </p>
                       </div>
