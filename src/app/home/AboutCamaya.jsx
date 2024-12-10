@@ -5,7 +5,7 @@ import { AboutUsData } from "../constants";
 const CamayaCoastSection = () => {
   return (
     <section
-      className="py-12 px-4"
+      className="py-[7rem] px-4"
       id="aboutus"
       style={{
         background:
