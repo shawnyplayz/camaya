@@ -103,7 +103,7 @@ const Amenities = () => {
           Imagine waking up to the sound of the surf. A gentle breeze enters the
           bedrooms as you open the windows to a breathtaking view of the sea in
           your own tropical vacation home. Now imagine making this come true.
-          You can - with Camaya Coast's residential developments.
+          You can - with Camaya Coast&apos;s residential developments.
         </p>
       </div>
 

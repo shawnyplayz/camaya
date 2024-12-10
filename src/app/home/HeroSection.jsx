@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import React, { useState, useEffect } from "react";
 
 const HeroSection = () => {
@@ -31,7 +32,9 @@ const HeroSection = () => {
       {/* Images for background */}
       <div className="absolute inset-0 w-full h-full">
         {images.map((image, index) => (
-          <img
+          <Image
+          width={100}
+          height={100}
             key={index}
             src={image}
             alt={`Slide ${index}`}
