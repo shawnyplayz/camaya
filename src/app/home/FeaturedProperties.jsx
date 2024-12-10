@@ -19,12 +19,10 @@ import station1_3 from "../../../public/assets/home/featuredPropertiesSection/st
 import station1_4 from "../../../public/assets/home/featuredPropertiesSection/station1/4.jpg";
 import station1_5 from "../../../public/assets/home/featuredPropertiesSection/station1/5.jpg";
 
-
 import station2_1 from "../../../public/assets/home/featuredPropertiesSection/station2/1.jpg";
 import station2_2 from "../../../public/assets/home/featuredPropertiesSection/station2/2.jpg";
 import station2_3 from "../../../public/assets/home/featuredPropertiesSection/station2/3.jpg";
 import station2_4 from "../../../public/assets/home/featuredPropertiesSection/station2/4.jpg";
-
 
 import station3_1 from "../../../public/assets/home/featuredPropertiesSection/station2/1.jpg";
 import station3_2 from "../../../public/assets/home/featuredPropertiesSection/station2/2.jpg";
@@ -97,11 +95,28 @@ const FeaturedProperties = () => {
     },
     {
       id: 2,
-      pictures: [{ url: station1_1 }, { url: station1_1 }],
+      pictures: [{ url: station2_3 }, { url: station1_4 }],
     },
     {
       id: 3,
-      pictures: [{ url: station1_1 }, { url: station1_1 }],
+      pictures: [{ url: station1_5 }, { url: station1_5 }],
+    },
+  ];
+
+  const data2 = [
+    {
+      id: 1,
+      pictures: [{ url: station2_1 }, { url: station2_2 }],
+    },
+    {
+      id: 2,
+      pictures: [{ url: station1_3 }, { url: station2_4 }],
+    },
+  ];
+  const data3 = [
+    {
+      id: 1,
+      pictures: [{ url: station3_1 }, { url: station3_2 }],
     },
   ];
 
@@ -186,29 +201,24 @@ const FeaturedProperties = () => {
               </div>
             ))
           } */}
-          
-            <div className="slider-container">
+
+          <div className="slider-container">
             <Slider {...sliderSettings}>
-                  {
-                    data?.map((el,index)=>{
-                      debugger
-                      return(
-                        <div key={i}>
-                      <Image
-                        src={el?.url || defaultImage}
-                        alt={`Property Image ${i + 1}`}
-                        width={800}
-                        height={200}
-                        className="pb-7"
-                      />
-                    </div>
-                      )
-                    })
-                  }
-                </Slider>
-            </div>
-           
-          
+              {data?.map((el, index) => {
+                return (
+                  <div key={index}>
+                    <Image
+                      src={el?.pictures[0]?.url || defaultImage}
+                      alt={`Property Image ${index + 1}`}
+                      width={800}
+                      height={200}
+                      className="pb-7"
+                    />
+                  </div>
+                );
+              })}
+            </Slider>
+          </div>
         </div>
       </div>
 
@@ -236,7 +246,7 @@ const FeaturedProperties = () => {
           </div>
         </div>
         <div>
-          {filteredProperties.map((property, index) => (
+          {/* {filteredProperties.map((property, index) => (
             <div key={index} className="slider-container">
               {property?.pictures?.length > 1 ? (
                 <Slider {...sliderSettings}>
@@ -256,7 +266,24 @@ const FeaturedProperties = () => {
                 <></>
               )}
             </div>
-          ))}
+          ))} */}
+          <div className="slider-container">
+            <Slider {...sliderSettings}>
+              {data2?.map((el, index) => {
+                return (
+                  <div key={index}>
+                    <Image
+                      src={el?.pictures[0]?.url || defaultImage}
+                      alt={`Property Image ${index + 1}`}
+                      width={800}
+                      height={200}
+                      className="pb-7"
+                    />
+                  </div>
+                );
+              })}
+            </Slider>
+          </div>
         </div>
       </div>
       <div className="mt-32">
@@ -283,7 +310,7 @@ const FeaturedProperties = () => {
           </div>
         </div>
         <div>
-          {filteredProperties.map((property, index) => (
+          {/* {filteredProperties.map((property, index) => (
             <div key={index} className="slider-container">
               {property?.pictures?.length > 1 ? (
                 <Slider {...sliderSettings}>
@@ -303,7 +330,38 @@ const FeaturedProperties = () => {
                 <></>
               )}
             </div>
-          ))}
+          ))} */}
+          <div className="slider-container">
+            {data3?.map((el, index) => {
+              return (
+                <div key={index}>
+                  {el?.pictures?.length > 1 ? (
+                    <Slider {...sliderSettings}>
+                      {el.pictures.map((img, i) => (
+                        <div key={i}>
+                          <Image
+                            src={img?.url}
+                            alt={`Property Image ${i + 1}`}
+                            width={800}
+                            height={200}
+                            className="pb-7"
+                          />
+                        </div>
+                      ))}
+                    </Slider>
+                  ) : (
+                    <Image
+                      src={el?.pictures[0]?.url}
+                      alt={`Property Image ${index + 1}`}
+                      width={800}
+                      height={200}
+                      className="pb-7"
+                    />
+                  )}
+                </div>
+              );
+            })}
+          </div>
         </div>
       </div>
     </div>
