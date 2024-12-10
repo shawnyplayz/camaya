@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function AboutSection() {
   return (
     <div className="bg-gradient-to-r from-[#fffaf0] to-[#fdf2e9] py-16">
@@ -8,9 +10,10 @@ export default function AboutSection() {
           <Image
           width={100}
           height={100}
-            src="/assets/home/aboutSection/arrow.svg" // Replace with actual image
-            alt="Image 1"
-            className="col-span-1 row-span-1  rounded-lg"
+          src="/assets/home/aboutSection/arrow.svg" // Replace with actual image
+          alt="Image 1"
+
+          className="col-span-1 row-span-1  rounded-lg "
           />
           <Image
           width={100}
