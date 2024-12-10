@@ -5,7 +5,7 @@ import Input from "./Input";
 import Button from "./Button";
 import { fetchDataPost } from "@/utils.js/fetchData";
 import endpoints from "@/config/endpoints";
-import { showToastError } from "@/config/toast";
+import { showToastError, showToastSuccess } from "@/config/toast";
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -16,7 +16,10 @@ const ContactForm = () => {
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [feedbackMessage, setFeedbackMessage] = useState({ type: "", text: "" });
+  const [feedbackMessage, setFeedbackMessage] = useState({
+    type: "",
+    text: "",
+  });
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -36,11 +39,23 @@ const ContactForm = () => {
       const response = await fetchDataPost(endpoints.sendInquiry, formData);
 
       if (response.success) {
-        setFeedbackMessage({ type: "success", text: "Your message has been sent successfully!" });
+        setFeedbackMessage({
+          type: "success",
+          text: "Your message has been sent successfully!",
+        });
         setFormData({ name: "", email: "", mobile_number: "", message: "" });
-
+        showToastSuccess(response.message);
         // Clear the message after 8 seconds
-        setTimeout(() => setFeedbackMessage({ type: "", text: "" }), 8000);
+        setTimeout(
+          () =>
+            setFeedbackMessage({
+              name: "",
+              email: "",
+              mobile_number: "",
+              message: "",
+            }),
+          8000
+        );
       } else {
         const errorMsg = response.message || "Failed to send message.";
         setFeedbackMessage({ type: "error", text: errorMsg });
@@ -97,7 +112,9 @@ const ContactForm = () => {
         {feedbackMessage.text && (
           <p
             className={`${
-              feedbackMessage.type === "success" ? "text-green-600" : "text-red-600"
+              feedbackMessage.type === "success"
+                ? "text-green-600"
+                : "text-red-600"
             } transition-opacity duration-500`}
           >
             {feedbackMessage.text}
