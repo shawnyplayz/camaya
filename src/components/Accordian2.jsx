@@ -4,6 +4,8 @@ import React from "react";
 import { useState } from "react";
 import { Card, Typography } from "@material-tailwind/react";
 import Image from "next/image";
+import { MdKeyboardArrowUp } from "react-icons/md";
+import { MdKeyboardArrowDown } from "react-icons/md";
 
 const Accordian2 = ({ title }) => {
   const TABLE_HEAD = [
@@ -162,7 +164,9 @@ const Accordian2 = ({ title }) => {
         className="flex justify-between items-center w-full py-4 px-4 text-left"
       >
         <span className="font-semibold text-md md:text-lg">{title}</span>
-        <span className="text-xl">{isOpen ? "-" : "+"}</span>
+        <span className="text-xl">
+          {isOpen ? <MdKeyboardArrowUp /> : <MdKeyboardArrowDown />}
+        </span>
       </button>
 
       {/* Collapsible section */}
