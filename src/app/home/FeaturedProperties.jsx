@@ -99,7 +99,7 @@ const FeaturedProperties = () => {
     },
     {
       id: 3,
-      pictures: [{ url: station1_5 }, { url: station1_5 }],
+      pictures: [{ url: station1_5 }],
     },
   ];
 
@@ -142,7 +142,7 @@ const FeaturedProperties = () => {
 
   return (
     <div
-      className="pb-72 bg-gradient-to-b from-[#ffffff] via-[#F9E3C8] to-[#ffffff]"
+      className="bg-gradient-to-b from-[#ffffff] via-[#F9E3C8] to-[#ffffff]"
       id="featuredPropertiesSection"
     >
       <h1 className="text-[#221C42] flex justify-center items-center font-workSansMedium font-medium lg:text-6xl pt-20 text-center text-3xl">
@@ -212,7 +212,7 @@ const FeaturedProperties = () => {
                       alt={`Property Image ${index + 1}`}
                       width={800}
                       height={200}
-                      className="pb-7"
+                      className="pb-7 object-fill"
                     />
                   </div>
                 );

@@ -36,7 +36,7 @@ const Home = () => {
       <HeroSection />
       {isMobile ? <AboutCamayaMobile /> : <AboutCamaya />}
       {/* <DevelopmentPlan /> */}
-      {/* <FeaturedProperties /> */}
+      <FeaturedProperties />
       <Amenities />
       {/* <TestimonialsSection /> */}
       <Video />
