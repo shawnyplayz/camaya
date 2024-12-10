@@ -55,38 +55,38 @@ const PrevArrow = ({ onClick }) => (
 );
 
 const FeaturedProperties = () => {
-  const [locations, setLocations] = useState([]);
-  const [propertyTypes, setPropertyTypes] = useState([]);
-  const [pricingOptions, setPricingOptions] = useState([]);
-  const [filteredProperties, setFilteredProperties] = useState([]);
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const [selectedFilters, setSelectedFilters] = useState({
-    location: "",
-    property: "",
-    price: "",
-  });
+  // const [locations, setLocations] = useState([]);
+  // const [propertyTypes, setPropertyTypes] = useState([]);
+  // const [pricingOptions, setPricingOptions] = useState([]);
+  // const [filteredProperties, setFilteredProperties] = useState([]);
+  // const [isModalOpen, setIsModalOpen] = useState(false);
+  // const [selectedFilters, setSelectedFilters] = useState({
+  //   location: "",
+  //   property: "",
+  //   price: "",
+  // });
 
-  useEffect(() => {
-    const fetchDropdownData = async () => {
-      try {
-        const locationData = await fetchDataGet(endpoints.locationOptions);
-        setLocations(locationData);
+  // useEffect(() => {
+  //   const fetchDropdownData = async () => {
+  //     try {
+  //       const locationData = await fetchDataGet(endpoints.locationOptions);
+  //       setLocations(locationData);
 
-        const propertyData = await fetchDataGet(endpoints.propertyOptions);
-        setPropertyTypes(propertyData);
+  //       const propertyData = await fetchDataGet(endpoints.propertyOptions);
+  //       setPropertyTypes(propertyData);
 
-        const priceData = await fetchDataGet(endpoints.pricingOptions);
-        setPricingOptions(priceData);
+  //       const priceData = await fetchDataGet(endpoints.pricingOptions);
+  //       setPricingOptions(priceData);
 
-        const defaultProperties = await fetchDataGet(endpoints.properties);
-        setFilteredProperties(defaultProperties.properties || []); // Populate initial results
-      } catch (error) {
-        console.error("Error fetching data:", error);
-      }
-    };
+  //       const defaultProperties = await fetchDataGet(endpoints.properties);
+  //       setFilteredProperties(defaultProperties.properties || []); // Populate initial results
+  //     } catch (error) {
+  //       console.error("Error fetching data:", error);
+  //     }
+  //   };
 
-    fetchDropdownData();
-  }, []);
+  //   fetchDropdownData();
+  // }, []);
 
   const data = [
     {
@@ -99,7 +99,7 @@ const FeaturedProperties = () => {
     },
     {
       id: 3,
-      pictures: [{ url: station1_5 }, { url: station1_5 }],
+      pictures: [{ url: station1_5 }],
     },
   ];
 
@@ -142,7 +142,7 @@ const FeaturedProperties = () => {
 
   return (
     <div
-      className="pb-72 bg-gradient-to-b from-[#ffffff] via-[#F9E3C8] to-[#ffffff]"
+      className="bg-gradient-to-b from-[#ffffff] via-[#F9E3C8] to-[#ffffff]"
       id="featuredPropertiesSection"
     >
       <h1 className="text-[#221C42] flex justify-center items-center font-workSansMedium font-medium lg:text-6xl pt-20 text-center text-3xl">
@@ -212,7 +212,7 @@ const FeaturedProperties = () => {
                       alt={`Property Image ${index + 1}`}
                       width={800}
                       height={200}
-                      className="pb-7"
+                      className="pb-7 object-fill"
                     />
                   </div>
                 );
