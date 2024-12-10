@@ -24,7 +24,7 @@ const GetInTouchSection = () => {
             <div className="contact-info mt-8 sm:mt-12 lg:mt-16 font-workSansMedium font-medium text-base sm:text-lg text-[#182A64]">
               {/* Phone */}
               <div className="flex items-center gap-2 mt-4 sm:mt-6 justify-center lg:justify-start">
-                <p className="md:block hidden">
+                <p className="md:block ">
                   <IoMdCall />
                 </p>
                 <p className="md:block hidden">Call -</p>
@@ -35,7 +35,7 @@ const GetInTouchSection = () => {
               </div>
               {/* Viber */}
               <div className="flex items-center gap-2 mt-4 sm:mt-6 justify-center lg:justify-start">
-                <p className="md:block hidden">
+                <p className="md:block ">
                   <FaViber />
                 </p>
                 <p className="md:block ">Viber -</p>
@@ -44,7 +44,7 @@ const GetInTouchSection = () => {
               </div>
               {/* Canada */}
               <div className="flex items-center gap-2 mt-4 sm:mt-6 justify-center lg:justify-start">
-                <p className="md:block hidden">
+                <p className="md:block ">
                   <IoMdCall />
                 </p>
                 <p className="md:block hidden">Canada -</p>
