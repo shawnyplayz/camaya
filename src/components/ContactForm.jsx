@@ -1,10 +1,11 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Input from "./Input";
 import Button from "./Button";
 import { fetchDataPost } from "@/utils.js/fetchData";
 import endpoints from "@/config/endpoints";
+import { showToastError } from "@/config/toast";
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -15,8 +16,7 @@ const ContactForm = () => {
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [successMessage, setSuccessMessage] = useState("");
-  const [errorMessage, setErrorMessage] = useState("");
+  const [feedbackMessage, setFeedbackMessage] = useState({ type: "", text: "" });
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -25,9 +25,10 @@ const ContactForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    if (isSubmitting) return; // Prevent duplicate submissions
     setIsSubmitting(true);
-    setSuccessMessage("");
-    setErrorMessage("");
+    setFeedbackMessage({ type: "", text: "" });
 
     try {
       console.log("Sending data:", formData);
@@ -35,26 +36,20 @@ const ContactForm = () => {
       const response = await fetchDataPost(endpoints.sendInquiry, formData);
 
       if (response.success) {
-        setSuccessMessage("Your message has been sent successfully!");
+        setFeedbackMessage({ type: "success", text: "Your message has been sent successfully!" });
         setFormData({ name: "", email: "", mobile_number: "", message: "" });
 
-        // Automatically clear the success message after 8 seconds
-        setTimeout(() => {
-          setSuccessMessage("");
-        }, 8000);
+        // Clear the message after 8 seconds
+        setTimeout(() => setFeedbackMessage({ type: "", text: "" }), 8000);
       } else {
-        throw new Error(response.message || "Failed to send message.");
+        const errorMsg = response.message || "Failed to send message.";
+        setFeedbackMessage({ type: "error", text: errorMsg });
+        showToastError(errorMsg);
       }
     } catch (error) {
-      console.error("Error sending inquiry:", error);
-      setErrorMessage(
-        error.message || "Something went wrong. Please try again."
-      );
-
-      // Automatically clear the error message after 8 seconds
-      setTimeout(() => {
-        setErrorMessage("");
-      }, 8000);
+      const errorMsg = error.message || "An unexpected error occurred.";
+      setFeedbackMessage({ type: "error", text: errorMsg });
+      showToastError(errorMsg);
     } finally {
       setIsSubmitting(false);
     }
@@ -99,14 +94,13 @@ const ContactForm = () => {
             required
           />
         </div>
-        {successMessage && (
-          <p className="text-green-600 transition-opacity duration-500">
-            {successMessage}
-          </p>
-        )}
-        {errorMessage && (
-          <p className="text-red-600 transition-opacity duration-500">
-            {errorMessage}
+        {feedbackMessage.text && (
+          <p
+            className={`${
+              feedbackMessage.type === "success" ? "text-green-600" : "text-red-600"
+            } transition-opacity duration-500`}
+          >
+            {feedbackMessage.text}
           </p>
         )}
         <div className="flex items-center justify-center pb-8">

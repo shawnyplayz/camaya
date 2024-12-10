@@ -55,7 +55,7 @@ const AffiliatePartners = () => {
   ];
 
   return (
-    <div className="flex flex-col items-center py-8 mt-10">
+    <div className="flex flex-col items-center py-8">
       {/* Header Section */}
       <div className="text-xl sm:text-2xl font-medium mb-7 font-workSansMedium mt-16 sm:mt-32 text-center text-[#2851D1]">
         OUR SUBSIDIARIES & AFFILIATES
