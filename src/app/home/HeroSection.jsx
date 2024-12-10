@@ -5,12 +5,12 @@ import React, { useState, useEffect } from "react";
 
 const HeroSection = () => {
   const images = [
-    "/assets/home/heroSection/hero1.webp",
-    "/assets/home/heroSection/hero2.webp",
-    "/assets/home/heroSection/hero3.webp",
-    "/assets/home/heroSection/hero4.webp",
-    "/assets/home/heroSection/hero5.webp",
-    "/assets/home/heroSection/hero6.webp",
+    "/assets/home/heroSection/hero1.svg",
+    "/assets/home/heroSection/hero2.svg",
+    "/assets/home/heroSection/hero3.svg",
+    "/assets/home/heroSection/hero4.svg",
+    "/assets/home/heroSection/hero5.svg",
+    "/assets/home/heroSection/hero6.svg",
   ];
 
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
