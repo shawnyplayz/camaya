@@ -148,9 +148,18 @@ const Amenities = () => {
                         <h3 className="text-xl md:text-2xl font-semibold text-[#221C42] mt-4">
                           {card.title}
                         </h3>
-                        <p className="text-[#646464] text-sm md:text-base mt-2 leading-relaxed max-w-xs">
-                          {card.description}
-                        </p>
+                        <div className="flex flex-col items-center">
+                          <p className="text-[#646464] text-sm md:text-[10px] mt-2 leading-relaxed max-w-[29rem] text-center font-bold	">
+                            {card.description.length > 100
+                              ? card.description.substring(0, 100) + "..."
+                              : card.description}
+                          </p>
+                          {card.description.length > 100 && (
+                            <p className="text-[#646464] text-sm md:text-[10px] mt-2 leading-relaxed max-w-[29rem] text-center font-bold	">
+                              {card.description.substring(100)}
+                            </p>
+                          )}
+                        </div>
                       </div>
                     </SwiperSlide>
                   ))}
