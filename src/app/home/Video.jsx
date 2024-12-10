@@ -35,14 +35,23 @@ const Video = () => {
           <h1>Discover Camaya Coast</h1>
         </div>
         <div className="w-full flex flex-col md:flex-row items-center justify-center py-6 md:py-0 px-4 sm:px-16">
-          <iframe
+          {/* <iframe
             className="w-full h-[250px] sm:h-[450px] max-w-4xl"
             src="https://drive.google.com/file/d/1Kk3vFfI2IL1vZrWOo2qN9F4v4Z5BWQvG/preview"
             width="100%"
             height="100%"
             allow="autoplay; fullscreen; picture-in-picture; clipboard-write"
             title="CC Community Update FINAL HR_110824"
-          />
+          /> */}
+          <iframe
+            src="https://player.vimeo.com/video/1037350824?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
+            width="1280"
+            height="720"
+            frameBorder="0"
+            allow="autoplay; fullscreen; picture-in-picture; clipboard-write"
+            title="CC Community Update FINAL HR_110824"
+          ></iframe>
+
           <div className="mt-6 md:mt-0 max-w-full md:max-w-[600px] px-4 md:px-12 text-[#9C9C9C] font-workSansMedium font-medium text-sm sm:text-base">
             <h1>{data.description}</h1>
             <div className="border-b border-[#ECA34C] mt-5 sm:mt-7" />
