@@ -15,9 +15,9 @@ export const AboutCamayaData = {
 export const GetInTouchData = {
   description:
     "We'd love to hear from you! Whether you have questions about our properties, want to schedule a tour, or need more information, feel free to reach out to us.",
-  phoneNumber: "0926 053 2470",
-  viber: "0945 566 6565",
-  canada: "778 241 4895",
+  phoneNumber: "+63 926 053 2470",
+  viber: "+63 945 566 6565",
+  canada: "+1 778 241 4895",
   email: "lizzume.custodio@realestate.camayacoast.com",
   location: "PET Plans Tower Guadalupe Viejo EDSA Makati City, Philippines",
 };
