@@ -175,7 +175,7 @@ const FeaturedProperties = () => {
                 <h2 className="font-workSansMedium font-medium text-lg sm:text-xl lg:text-[26px] text-[#FFC447] uppercase">
                   Station
                 </h2>
-                <h3 className="font-workSansMedium font-medium text-2xl sm:text-3xl lg:text-[48px] text-[#4CAF50] uppercase italic">
+                <h3 className="font-workSansMedium font-medium text-2xl sm:text-3xl lg:text-[48px] text-[#4CAF50] uppercase">
                   MARIVELES, Bataan
                 </h3>
               </div>
@@ -248,7 +248,7 @@ const FeaturedProperties = () => {
                 <h2 className="font-workSansMedium font-medium text-lg sm:text-xl lg:text-[26px] text-[#FFC447] uppercase">
                   Station
                 </h2>
-                <h3 className="font-workSansMedium font-medium text-2xl sm:text-3xl lg:text-[48px] text-[#4CAF50] uppercase italic">
+                <h3 className="font-workSansMedium font-medium text-2xl sm:text-3xl lg:text-[48px] text-[#4CAF50] uppercase">
                   BAGAC, Bataan
                 </h3>
               </div>
@@ -312,7 +312,7 @@ const FeaturedProperties = () => {
                 <h2 className="font-workSansMedium font-medium text-lg sm:text-xl lg:text-[26px] text-[#FFC447] uppercase">
                   Station
                 </h2>
-                <h3 className="font-workSansMedium font-medium text-2xl sm:text-3xl lg:text-[48px] text-[#4CAF50] uppercase italic">
+                <h3 className="font-workSansMedium font-medium text-2xl sm:text-3xl lg:text-[48px] text-[#4CAF50] uppercase">
                   Balanga, Bataan
                 </h3>
               </div>

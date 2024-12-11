@@ -49,10 +49,7 @@ const HeroSection = () => {
       <div className="relative z-10 text-white px-4 sm:px-8 md:px-16 lg:px-16 h-full flex flex-col justify-center pt-28 mx-auto container">
         {/* Hero Title */}
         <div
-          className="font-ralewaySemiBold text-3xl sm:text-4xl md:text-5xl lg:text-[58px] font-medium max-w-2xl md:max-w-4xl text-center md:text-left"
-          style={{
-            lineHeight: "68px",
-          }}
+          className="font-ralewaySemiBold text-2xl sm:text-4xl md:text-5xl lg:text-[58px] font-semibold max-w-2xl md:max-w-[971px] text-center md:text-left lg:leading-68"
         >
           <h1>
             We've created an affordable beach, golf & mountain view
@@ -62,7 +59,7 @@ const HeroSection = () => {
         </div>
 
         {/* Hero Description */}
-        <div className="font-workSansRegular text-base sm:text-lg md:text-xl lg:text-2xl opacity-80 mt-6 text-center md:text-left max-w-lg md:max-w-3xl mx-auto md:mx-0">
+        <div className="font-workSansRegular text-base sm:text-lg md:text-xl lg:text-2xl opacity-80 mt-12 text-center md:text-left max-w-xs md:max-w-[599px] mx-auto md:mx-0">
           <p>Experience Luxury Resort Living only in Camaya Coast</p>
         </div>
       </div>
