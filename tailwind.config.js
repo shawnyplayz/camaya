@@ -7,6 +7,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      lineHeight: {
+        '68': '68px',
+      },
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
