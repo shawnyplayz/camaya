@@ -50,18 +50,21 @@ const Amenities = () => {
       try {
         const amenitiesData = await fetchDataGet(endpoints.fetchAmenities);
 
-        const groupedAmenities = amenitiesData?.result.reduce((acc, amenity) => {
-          const menuName = amenity.Menu.menu_name;
-          if (!acc[menuName]) {
-            acc[menuName] = [];
-          }
-          acc[menuName].push({
-            imageSrc: amenity.pictures[0].url,
-            title: amenity.amenity_name,
-            description: amenity.amenity_desc,
-          });
-          return acc;
-        }, {});
+        const groupedAmenities = amenitiesData?.result.reduce(
+          (acc, amenity) => {
+            const menuName = amenity.Menu.menu_name;
+            if (!acc[menuName]) {
+              acc[menuName] = [];
+            }
+            acc[menuName].push({
+              imageSrc: amenity.pictures[0].url,
+              title: amenity.amenity_name,
+              description: amenity.amenity_desc,
+            });
+            return acc;
+          },
+          {}
+        );
 
         const formattedTabsData = Object.entries(groupedAmenities).map(
           ([menuName, amenities]) => ({
@@ -149,16 +152,11 @@ const Amenities = () => {
                           {card.title}
                         </h3>
                         <div className="flex flex-col items-center">
-                          <p className="text-[#646464] text-sm md:text-[10px] mt-2 leading-relaxed max-w-[29rem] text-center font-bold	">
+                          <p className="text-[#646464] text-sm md:text-[14px] mt-2 leading-relaxed max-w-[29rem] text-center font-bold">
                             {card.description.length > 100
-                              ? card.description.substring(0, 100) + "..."
+                              ? `${card.description.substring(0, 50)}...`
                               : card.description}
                           </p>
-                          {card.description.length > 100 && (
-                            <p className="text-[#646464] text-sm md:text-[10px] mt-2 leading-relaxed max-w-[29rem] text-center font-bold	">
-                              {card.description.substring(100)}
-                            </p>
-                          )}
                         </div>
                       </div>
                     </SwiperSlide>
