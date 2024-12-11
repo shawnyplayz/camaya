@@ -12,7 +12,7 @@ const GetInTouchSection = () => {
     <div className="bg-[#FDFAF3]" id="contactUsSection">
       <div className="h-auto relative mx-auto container flex flex-col lg:flex-row items-center gap-8 lg:gap-20 px-4 sm:px-6 lg:px-16 py-8 sm:py-12 lg:py-16">
         {/* Left Section */}
-        <div className="text-center lg:text-left">
+        <div className=" lg:text-left">
           <div className="pt-8 sm:pt-12 lg:pt-20 pl-2 pb-8 sm:pb-12 lg:pb-20">
             <h1 className="font-workSansMedium font-medium text-2xl sm:text-3xl lg:text-5xl text-[#221C42]">
               Get in Touch
@@ -22,61 +22,80 @@ const GetInTouchSection = () => {
             </p>
 
             <div className="contact-info mt-8 sm:mt-12 lg:mt-16 font-workSansMedium font-medium text-base sm:text-lg text-[#182A64]">
-              <div className="flex flex-col items-start gap-4 mt-4 sm:mt-6">
-                {/* Phone */}
-                <div className="flex items-center gap-2">
-                  <p className="md:block">
-                    <IoMdCall />
-                  </p>
-                  <p className="md:block hidden">Call -</p>
-                  <p className="text-xs sm:text-base">
-                    {GetInTouchData.phoneNumber}
-                  </p>
-                  <PH title="Phillipines" className="w-5" />
-                </div>
+              <div className="flex  items-center text-start md:block">
+                <div className="flex flex-col items-start gap-4 mt-4 sm:mt-6">
+                  {/* Phone */}
+                  <div className="flex items-center gap-2">
+                    <p className="md:block">
+                      <IoMdCall />
+                    </p>
+                    <p className="md:block ">Call -</p>
+                    <p className="text-xs sm:text-base">
+                      {GetInTouchData.phoneNumber}
+                    </p>
+                    <PH title="Phillipines" className="w-5" />
+                  </div>
 
-                {/* Viber */}
-                <div className="flex items-center gap-2">
-                  <p className="md:block">
-                    <FaViber />
-                  </p>
-                  <p className="md:block">Viber -</p>
-                  <p className="text-xs sm:text-base">{GetInTouchData.viber}</p>
-                  <PH title="Phillipines" className="w-5" />
-                </div>
+                  {/* Viber */}
+                  <div className="flex items-center gap-2">
+                    <p className="md:block">
+                      <FaViber />
+                    </p>
+                    <p className="md:block">Viber -</p>
+                    <p className="text-xs sm:text-base">
+                      {GetInTouchData.viber}
+                    </p>
+                    <PH title="Phillipines" className="w-5" />
+                  </div>
 
-                {/* Canada */}
-                <div className="flex items-center gap-2">
-                  <p className="md:block">
-                    <IoMdCall />
-                  </p>
-                  <p className="md:block hidden">Canada -</p>
-                  <p className="text-xs sm:text-base">
-                    {GetInTouchData.canada}
-                  </p>
-                  <CA title="Canada" className="w-5" />
+                  {/* Canada */}
+                  <div className="flex items-center gap-2">
+                    <p className="md:block">
+                      <IoMdCall />
+                    </p>
+                    <p className="md:block ">Call -</p>
+                    <p className="text-xs sm:text-base">
+                      {GetInTouchData.canada}
+                    </p>
+                    <CA title="Canada" className="w-5" />
+                  </div>
+
+                  {/* Email */}
+                  {/* <div className="flex items-center gap-2">
+                    <p className="md:block ">Email -</p>
+                    <p className="text-xs sm:text-base">
+                      {GetInTouchData.email}
+                    </p>
+                  </div> */}
+                  <div className="flex justify-between items-center gap-4">
+                    <div className="leftPlaceholder">Email</div>
+                    <div className="dash"> - </div>
+                    <div className="rightPlaceholder">
+                      {GetInTouchData.email}
+                    </div>
+                  </div>
+                  {/* Address */}
+                  <div className="flex justify-between items-center gap-4">
+                    <div className="leftPlaceholder">Address</div>
+                    <div className="dash"> - </div>
+                    <div className="rightPlaceholder">
+                      {GetInTouchData.location}
+                    </div>
+                  </div>
+                  {/* <div className="">
+                      <p className="md:block ">Address -</p>
+                    </div>
+                    <div className="flex items-start">
+                      <p className="text-xs sm:text-base">
+                        {GetInTouchData.location}
+                      </p>
+                    </div> */}
                 </div>
               </div>
 
               {/* Email */}
-              <div className="flex items-center gap-2 mt-4 sm:mt-6 justify-center lg:justify-start">
-                {/* <Image
-                  src="assets/home/getInTouchSection/icons/mail.svg"
-                  width={20}
-                  height={20}
-                  alt="Email Icon"
-                /> */}
-                <p className="md:block hidden">Email -</p>
-                <p className="text-xs sm:text-base">{GetInTouchData.email}</p>
-              </div>
+
               {/* Location */}
-              <div className="flex items-center gap-2 mt-4 sm:mt-6 justify-center lg:justify-start">
-                {/* <FaLocationDot /> */}
-                <p className="md:block hidden">Address - </p>
-                <p className="text-xs sm:text-base">
-                  {GetInTouchData.location}
-                </p>
-              </div>
             </div>
           </div>
         </div>
