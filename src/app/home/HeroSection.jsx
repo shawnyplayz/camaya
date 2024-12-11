@@ -33,8 +33,8 @@ const HeroSection = () => {
       <div className="absolute inset-0 w-full h-full">
         {images.map((image, index) => (
           <Image
-          width={100}
-          height={100}
+            width={100}
+            height={100}
             key={index}
             src={image}
             alt={`Slide ${index}`}
@@ -48,16 +48,22 @@ const HeroSection = () => {
       {/* Hero Content */}
       <div className="relative z-10 text-white px-4 sm:px-8 md:px-16 lg:px-16 h-full flex flex-col justify-center pt-28 mx-auto container">
         {/* Hero Title */}
-        <div className="font-ralewaySemiBold text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-medium max-w-2xl md:max-w-3xl leading-tight text-center md:text-left">
+        <div
+          className="font-ralewaySemiBold text-3xl sm:text-4xl md:text-5xl lg:text-[58px] font-medium max-w-2xl md:max-w-4xl text-center md:text-left"
+          style={{
+            lineHeight: "68px",
+          }}
+        >
           <h1>
-            <span className="text-[#FFC447]">Discover</span> Your Beach, Golf &
-            Mountain View Dream Home
+            We've created an affordable beach, golf & mountain view
+            <span className="text-[#FFC447]"> dream home </span> for you and
+            your family !
           </h1>
         </div>
 
         {/* Hero Description */}
         <div className="font-workSansRegular text-base sm:text-lg md:text-xl lg:text-2xl opacity-80 mt-6 text-center md:text-left max-w-lg md:max-w-3xl mx-auto md:mx-0">
-          <p>Experience luxury living at Camaya Coast in Mariveles Bataan</p>
+          <p>Experience Luxury Resort Living only in Camaya Coast</p>
         </div>
       </div>
 

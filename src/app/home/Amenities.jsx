@@ -20,9 +20,9 @@ const NextArrow = ({ className, onClick }) => (
     className={`absolute right-[3px] top-[50%] transform -translate-y-1/2 cursor-pointer z-10 ${className}`}
     onClick={onClick}
   >
-    <div className="w-20 h-20 rounded-full bg-[#FFFFFF] border-[#FFC447] border-2 flex items-center justify-center">
+    <div className="w-16 h-16 rounded-full bg-[#FFFFFF] border-[#FFC447] border-2 flex items-center justify-center">
       <span className="text-[#FFC107] text-2xl">
-        <FaCaretRight fontSize={40} />
+        <FaCaretRight fontSize={30} />
       </span>
     </div>
   </div>
@@ -33,9 +33,9 @@ const PrevArrow = ({ className, onClick }) => (
     className={`absolute left-[1px] top-[50%] transform -translate-y-1/2 cursor-pointer z-10 ${className}`}
     onClick={onClick}
   >
-    <div className="w-20 h-20 rounded-full bg-[#FFFFFF] border-[#FFC447] border-2 flex items-center justify-center">
+    <div className="w-16 h-16 rounded-full bg-[#FFFFFF] border-[#FFC447] border-2 flex items-center justify-center">
       <span className="text-[#FFC107] text-2xl">
-        <FaCaretLeft fontSize={40} />
+        <FaCaretLeft fontSize={30} />
       </span>
     </div>
   </div>
@@ -133,7 +133,7 @@ const Amenities = () => {
                   {tab.cards.map((card, cardIndex) => (
                     <SwiperSlide key={cardIndex}>
                       <div
-                        className="flex flex-col items-center text-center p-6 bg-white"
+                        className="flex flex-col items-center text-center p-6 bg-white max-w-[90%] mx-auto"
                         data-aos="fade-up"
                         data-aos-duration="1000"
                         data-aos-anchor-placement="top-center"
@@ -149,16 +149,9 @@ const Amenities = () => {
                           {card.title}
                         </h3>
                         <div className="flex flex-col items-center">
-                          <p className="text-[#646464] text-sm md:text-[10px] mt-2 leading-relaxed max-w-[29rem] text-center font-bold	">
-                            {card.description.length > 100
-                              ? card.description.substring(0, 100) + "..."
-                              : card.description}
+                          <p className="text-[#646464] text-sm md:text-base mt-2 leading-relaxed max-w-lg font-normal break-words">
+                            {card.description}
                           </p>
-                          {card.description.length > 100 && (
-                            <p className="text-[#646464] text-sm md:text-[10px] mt-2 leading-relaxed max-w-[29rem] text-center font-bold	">
-                              {card.description.substring(100)}
-                            </p>
-                          )}
                         </div>
                       </div>
                     </SwiperSlide>
