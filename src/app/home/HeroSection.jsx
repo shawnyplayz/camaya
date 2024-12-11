@@ -59,7 +59,7 @@ const HeroSection = () => {
         </div>
 
         {/* Hero Description */}
-        <div className="font-workSansRegular text-base sm:text-lg md:text-xl lg:text-2xl opacity-80 mt-12 text-center md:text-left max-w-xs md:max-w-[599px] mx-auto md:mx-0">
+        <div className="font-workSansRegular text-base sm:text-lg md:text-xl lg:text-[29px] lg:leading-[47.91px] opacity-80 mt-12 text-center md:text-left max-w-xs md:max-w-[550px] mx-auto md:mx-0">
           <p>Experience Luxury Resort Living only in Camaya Coast</p>
         </div>
       </div>

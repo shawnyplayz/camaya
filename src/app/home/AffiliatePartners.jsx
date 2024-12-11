@@ -1,3 +1,4 @@
+import { Divider } from "antd";
 import Image from "next/image";
 import React from "react";
 import Marquee from "react-fast-marquee";
@@ -55,11 +56,25 @@ const AffiliatePartners = () => {
   ];
 
   return (
-    <div className="flex flex-col items-center pb-4">
+    <div className="flex flex-col items-center mt-4">
       {/* Header Section */}
-      <div className="text-xl sm:text-2xl font-medium mb-7 font-workSansMedium mt-16 sm:mt-32 text-center text-[#2851D1]">
-        OUR SUBSIDIARIES & AFFILIATES
-        <div className="border-b-2 border-[#FFC447] mx-20 mt-2" />
+
+      <Divider
+        variant="solid"
+        className="px-96 pt-4"
+        style={{
+          borderColor: "#000000",
+        }}
+      >
+        <div className="hidden md:block">
+          <div className="text-[32px] md:pt-0 pt-10 sm:text-2xl font-medium font-workSansMedium text-center text-[#221C42]">
+            OUR SUBSIDIARIES & AFFILIATED PARTNERS
+          </div>
+        </div>
+      </Divider>
+
+      <div className="md:hidden text-sm md:pt-0 pt-10 sm:text-2xl font-medium font-workSansMedium text-center text-[#221C42]">
+        OUR SUBSIDIARIES & AFFILIATED PARTNERS
       </div>
 
       {/* Partner Logos Section */}

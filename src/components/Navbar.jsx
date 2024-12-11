@@ -23,7 +23,7 @@ const Navbar = () => {
 
   return (
     <div className="bg-white fixed top-0 left-0 right-0 z-50 shadow-md">
-      <div className="container mx-auto flex justify-between items-center px-4 lg:px-14 py-5">
+      <div className="container mx-auto flex justify-between items-center px-4 lg:px-14">
         {/* Logo Section */}
         <div className="logo flex-shrink-0">
           <Image src="/assets/logo.svg" width={150} height={150} alt="Logo" />
@@ -40,7 +40,7 @@ const Navbar = () => {
           </ul>
 
           <button
-            className="lg:hidden"
+            className="lg:hidden items-center flex"
             onClick={handleMenuToggle}
             aria-label="Open Menu"
           >
@@ -85,7 +85,10 @@ const Navbar = () => {
           }`}
         >
           {/* Sidebar Background */}
-          <div className="flex-1 bg-black bg-opacity-50" onClick={closeMenu}></div>
+          <div
+            className="flex-1 bg-black bg-opacity-50"
+            onClick={closeMenu}
+          ></div>
 
           {/* Sidebar Content */}
           <div className="w-64 bg-white h-full flex flex-col shadow-lg">
