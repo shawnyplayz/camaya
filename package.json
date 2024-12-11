@@ -10,7 +10,9 @@
   },
   "dependencies": {
     "@material-tailwind/react": "^2.1.10",
+    "@nextui-org/divider": "^2.2.4",
     "@tailwindcss/aspect-ratio": "^0.4.2",
+    "antd": "^5.22.4",
     "aos": "^2.3.4",
     "axios": "^1.7.8",
     "country-flag-icons": "^1.5.13",

@@ -2,8 +2,6 @@
 
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
-import { fetchDataGet } from "@/utils.js/fetchData";
-import endpoints from "@/config/endpoints";
 import defaultImage from "../../../public/assets/home/featuredPropertiesSection/image1.png";
 import oneImage from "../../../public/assets/home/featuredPropertiesSection/one_image.png";
 import twoImage from "../../../public/assets/home/featuredPropertiesSection/two_image.png";
@@ -13,19 +11,19 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { FaCaretLeft, FaCaretRight } from "react-icons/fa";
 
-import station1_1 from "../../../public/assets/home/featuredPropertiesSection/station1/1.jpg";
+import station1_1 from "../../../public/assets/home/featuredPropertiesSection/station1/1.svg";
 import station1_2 from "../../../public/assets/home/featuredPropertiesSection/station1/2.jpg";
 import station1_3 from "../../../public/assets/home/featuredPropertiesSection/station1/3.jpg";
 import station1_4 from "../../../public/assets/home/featuredPropertiesSection/station1/4.jpg";
 import station1_5 from "../../../public/assets/home/featuredPropertiesSection/station1/5.jpg";
 
-import station2_1 from "../../../public/assets/home/featuredPropertiesSection/station2/1.jpg";
+import station2_1 from "../../../public/assets/home/featuredPropertiesSection/station2/1.svg";
 import station2_2 from "../../../public/assets/home/featuredPropertiesSection/station2/2.jpg";
 import station2_3 from "../../../public/assets/home/featuredPropertiesSection/station2/3.jpg";
 import station2_4 from "../../../public/assets/home/featuredPropertiesSection/station2/4.jpg";
 
-import station3_1 from "../../../public/assets/home/featuredPropertiesSection/station2/1.jpg";
-import station3_2 from "../../../public/assets/home/featuredPropertiesSection/station2/2.jpg";
+import station3_1 from "../../../public/assets/home/featuredPropertiesSection/station3/1.svg";
+import station3_2 from "../../../public/assets/home/featuredPropertiesSection/station3/2.jpg";
 
 // Custom Next and Prev arrows for the slider
 const NextArrow = ({ onClick }) => (
@@ -55,71 +53,10 @@ const PrevArrow = ({ onClick }) => (
 );
 
 const FeaturedProperties = () => {
-  // const [locations, setLocations] = useState([]);
-  // const [propertyTypes, setPropertyTypes] = useState([]);
-  // const [pricingOptions, setPricingOptions] = useState([]);
-  // const [filteredProperties, setFilteredProperties] = useState([]);
-  // const [isModalOpen, setIsModalOpen] = useState(false);
-  // const [selectedFilters, setSelectedFilters] = useState({
-  //   location: "",
-  //   property: "",
-  //   price: "",
-  // });
+  const data = [station1_1, station1_2, station1_3, station1_4, station1_5];
 
-  // useEffect(() => {
-  //   const fetchDropdownData = async () => {
-  //     try {
-  //       const locationData = await fetchDataGet(endpoints.locationOptions);
-  //       setLocations(locationData);
-
-  //       const propertyData = await fetchDataGet(endpoints.propertyOptions);
-  //       setPropertyTypes(propertyData);
-
-  //       const priceData = await fetchDataGet(endpoints.pricingOptions);
-  //       setPricingOptions(priceData);
-
-  //       const defaultProperties = await fetchDataGet(endpoints.properties);
-  //       setFilteredProperties(defaultProperties.properties || []); // Populate initial results
-  //     } catch (error) {
-  //       console.error("Error fetching data:", error);
-  //     }
-  //   };
-
-  //   fetchDropdownData();
-  // }, []);
-
-  const data = [
-    {
-      id: 1,
-      pictures: [{ url: station1_1 }, { url: station1_2 }],
-    },
-    {
-      id: 2,
-      pictures: [{ url: station2_3 }, { url: station1_4 }],
-    },
-    {
-      id: 3,
-      pictures: [{ url: station1_5 }],
-    },
-  ];
-
-  const data2 = [
-    {
-      id: 1,
-      pictures: [{ url: station2_1 }, { url: station2_2 }],
-    },
-    {
-      id: 2,
-      pictures: [{ url: station1_3 }, { url: station2_4 }],
-    },
-  ];
-  const data3 = [
-    {
-      id: 1,
-      pictures: [{ url: station3_1 }, { url: station3_2 }],
-    },
-  ];
-
+  const data2 = [station2_1, station2_2, station2_3, station2_4];
+  const data3 = [station3_1, station3_2];
   const sliderSettings = {
     dots: true,
     infinite: true,
@@ -183,42 +120,13 @@ const FeaturedProperties = () => {
           </div>
         </div>
         <div>
-          {/* {data.map((property, index) => (
-            <div key={index} className="slider-container">
-              {property?.pictures?.length > 1 ? (
-                <Slider {...sliderSettings}>
-                  {property.pictures.map((img, i) => (
-                    <div key={i}>
-                      <Image
-                        src={img?.url || defaultImage}
-                        alt={`Property Image ${i + 1}`}
-                        width={800}
-                        height={200}
-                        className="pb-7"
-                      />
-                    </div>
-                  ))}
-                </Slider>
-              ) : (
-                <></>
-              )}
-            </div>
-          ))} */}
-          {/* {
-            data?.map((el,id)=>(
-              <div className="slider-container" key={id}>
-               
-              </div>
-            ))
-          } */}
-
           <div className="slider-container">
             <Slider {...sliderSettings}>
               {data?.map((el, index) => {
                 return (
                   <div key={index}>
                     <Image
-                      src={el?.pictures[0]?.url || defaultImage}
+                      src={el || defaultImage}
                       alt={`Property Image ${index + 1}`}
                       width={800}
                       height={200}
@@ -231,7 +139,6 @@ const FeaturedProperties = () => {
           </div>
         </div>
       </div>
-
       <div className="mt-[4rem]">
         <div className="slider-container">
           <div className="flex gap-3">
@@ -256,38 +163,17 @@ const FeaturedProperties = () => {
           </div>
         </div>
         <div>
-          {/* {filteredProperties.map((property, index) => (
-            <div key={index} className="slider-container">
-              {property?.pictures?.length > 1 ? (
-                <Slider {...sliderSettings}>
-                  {property.pictures.map((img, i) => (
-                    <div key={i}>
-                      <Image
-                        src={img?.url || defaultImage}
-                        alt={`Property Image ${i + 1}`}
-                        width={800}
-                        height={200}
-                        className="pb-7"
-                      />
-                    </div>
-                  ))}
-                </Slider>
-              ) : (
-                <></>
-              )}
-            </div>
-          ))} */}
           <div className="slider-container">
             <Slider {...sliderSettings}>
               {data2?.map((el, index) => {
                 return (
                   <div key={index}>
                     <Image
-                      src={el?.pictures[0]?.url || defaultImage}
+                      src={el || defaultImage}
                       alt={`Property Image ${index + 1}`}
                       width={800}
                       height={200}
-                      className="pb-7"
+                      className="pb-7 object-fill"
                     />
                   </div>
                 );
@@ -296,13 +182,14 @@ const FeaturedProperties = () => {
           </div>
         </div>
       </div>
+
       <div className="mt-[4rem]">
         <div className="slider-container">
           <div className="flex gap-3">
             <div>
               <Image
                 src={threeImage}
-                width={79}
+                width={81}
                 height={154}
                 alt="one-image-feature"
               />
@@ -320,57 +207,22 @@ const FeaturedProperties = () => {
           </div>
         </div>
         <div>
-          {/* {filteredProperties.map((property, index) => (
-            <div key={index} className="slider-container">
-              {property?.pictures?.length > 1 ? (
-                <Slider {...sliderSettings}>
-                  {property.pictures.map((img, i) => (
-                    <div key={i}>
-                      <Image
-                        src={img?.url || defaultImage}
-                        alt={`Property Image ${i + 1}`}
-                        width={800}
-                        height={200}
-                        className="pb-7"
-                      />
-                    </div>
-                  ))}
-                </Slider>
-              ) : (
-                <></>
-              )}
-            </div>
-          ))} */}
           <div className="slider-container">
-            {data3?.map((el, index) => {
-              return (
-                <div key={index}>
-                  {el?.pictures?.length > 1 ? (
-                    <Slider {...sliderSettings}>
-                      {el.pictures.map((img, i) => (
-                        <div key={i}>
-                          <Image
-                            src={img?.url}
-                            alt={`Property Image ${i + 1}`}
-                            width={800}
-                            height={200}
-                            className="pb-7"
-                          />
-                        </div>
-                      ))}
-                    </Slider>
-                  ) : (
+            <Slider {...sliderSettings}>
+              {data3?.map((el, index) => {
+                return (
+                  <div key={index}>
                     <Image
-                      src={el?.pictures[0]?.url}
+                      src={el || defaultImage}
                       alt={`Property Image ${index + 1}`}
                       width={800}
                       height={200}
-                      className="pb-7"
+                      className="pb-7 object-fill"
                     />
-                  )}
-                </div>
-              );
-            })}
+                  </div>
+                );
+              })}
+            </Slider>
           </div>
         </div>
       </div>
