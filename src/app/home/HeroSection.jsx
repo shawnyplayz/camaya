@@ -5,12 +5,12 @@ import React, { useState, useEffect } from "react";
 
 const HeroSection = () => {
   const images = [
-    "/assets/home/heroSection/hero1.svg",
-    "/assets/home/heroSection/hero2.svg",
-    "/assets/home/heroSection/hero3.svg",
-    "/assets/home/heroSection/hero4.svg",
-    "/assets/home/heroSection/hero5.svg",
-    "/assets/home/heroSection/hero6.svg",
+    "/assets/home/heroSection/property_image_1.png",
+    "/assets/home/heroSection/property_image_2.png",
+    "/assets/home/heroSection/property_image_3.png",
+    "/assets/home/heroSection/property_image_4.png",
+    "/assets/home/heroSection/property_image_5.png",
+    "/assets/home/heroSection/property_image_6.png",
   ];
 
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -41,6 +41,7 @@ const HeroSection = () => {
             className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${
               currentImageIndex === index ? "opacity-100" : "opacity-0"
             }`}
+            sizes="(max-width: 768px) 100vw, 100vw"
           />
         ))}
       </div>
@@ -48,9 +49,7 @@ const HeroSection = () => {
       {/* Hero Content */}
       <div className="relative z-10 text-white px-4 sm:px-8 md:px-16 lg:px-16 h-full flex flex-col justify-center pt-28 mx-auto container">
         {/* Hero Title */}
-        <div
-          className="font-ralewaySemiBold text-2xl sm:text-4xl md:text-5xl lg:text-[58px] font-semibold max-w-2xl md:max-w-[971px] text-center md:text-left lg:leading-68"
-        >
+        <div className="font-ralewaySemiBold text-xl sm:text-4xl md:text-5xl lg:text-[58px] font-semibold max-w-full md:max-w-[971px] text-center md:text-left lg:leading-68">
           <h1>
             We've created an affordable beach, golf & mountain view
             <span className="text-[#FFC447]"> dream home </span> for you and
@@ -59,7 +58,7 @@ const HeroSection = () => {
         </div>
 
         {/* Hero Description */}
-        <div className="font-workSansRegular text-base sm:text-lg md:text-xl lg:text-2xl opacity-80 mt-12 text-center md:text-left max-w-xs md:max-w-[599px] mx-auto md:mx-0">
+        <div className="font-workSansRegular text-sm sm:text-lg md:text-xl lg:text-2xl opacity-80 mt-12 text-center md:text-left max-w-xs md:max-w-[599px] mx-auto md:mx-0">
           <p>Experience Luxury Resort Living only in Camaya Coast</p>
         </div>
       </div>
