@@ -17,13 +17,13 @@ import station1_3 from "../../../public/assets/home/featuredPropertiesSection/st
 import station1_4 from "../../../public/assets/home/featuredPropertiesSection/station1/4.jpg";
 import station1_5 from "../../../public/assets/home/featuredPropertiesSection/station1/5.jpg";
 
-import station2_1 from "../../../public/assets/home/featuredPropertiesSection/station2/1.jpg";
+import station2_1 from "../../../public/assets/home/featuredPropertiesSection/station2/1.svg";
 import station2_2 from "../../../public/assets/home/featuredPropertiesSection/station2/2.jpg";
 import station2_3 from "../../../public/assets/home/featuredPropertiesSection/station2/3.jpg";
 import station2_4 from "../../../public/assets/home/featuredPropertiesSection/station2/4.jpg";
 
-import station3_1 from "../../../public/assets/home/featuredPropertiesSection/station2/1.jpg";
-import station3_2 from "../../../public/assets/home/featuredPropertiesSection/station2/2.jpg";
+import station3_1 from "../../../public/assets/home/featuredPropertiesSection/station3/1.svg";
+import station3_2 from "../../../public/assets/home/featuredPropertiesSection/station3/2.jpg";
 
 // Custom Next and Prev arrows for the slider
 const NextArrow = ({ onClick }) => (
