@@ -149,9 +149,11 @@ const CamayaCoastSection = () => {
 
           {/* Button */}
           <div className="mt-8 flex justify-center md:justify-start">
-            <button className="bg-[#FFC447] px-6 sm:px-14 md:px-20 py-3 sm:py-5 rounded-full font-workSansRegular text-[#221C42] text-sm sm:text-base md:text-lg">
-              <Link href={"#featuredPropertiesSection"}>View Properties</Link>
-            </button>
+            <Link href={"#featuredPropertiesSection"}>
+              <button className="bg-[#FFC447] px-6 sm:px-14 md:px-20 py-3 sm:py-5 rounded-full font-workSansRegular text-[#221C42] text-sm sm:text-base md:text-lg">
+                View Properties
+              </button>
+            </Link>
           </div>
         </div>
       </div>
