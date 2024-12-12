@@ -24,6 +24,7 @@ import station2_4 from "../../../public/assets/home/featuredPropertiesSection/st
 
 import station3_1 from "../../../public/assets/home/featuredPropertiesSection/station3/1.svg";
 import station3_2 from "../../../public/assets/home/featuredPropertiesSection/station3/2.jpg";
+import { Divider } from "antd";
 
 // Custom Next and Prev arrows for the slider
 const NextArrow = ({ onClick }) => (
@@ -79,12 +80,36 @@ const FeaturedProperties = () => {
 
   return (
     <div
-      className="bg-gradient-to-b from-[#ffffff] via-[#F9E3C8] to-[#ffffff]"
+      className="bg-gradient-to-b from-[#ffffff] via-[#F9E3C8] to-[#ffffff] flex flex-col gap-12"
       id="featuredPropertiesSection"
     >
-      <h1 className="text-[#221C42] flex justify-center items-center font-workSansMedium font-medium lg:text-[64px] text-center text-3xl">
+      <div className="mx-32 hidden md:block">
+        <Divider
+          variant="solid"
+          className=""
+          style={{
+            borderColor: "#000000",
+          }}
+        >
+          <h1 className="text-[#221C42] flex justify-center items-center font-workSansMedium font-medium lg:text-[64px] text-center text-3xl">
+            Featured Properties
+          </h1>
+        </Divider>
+      </div>
+
+      <h1 className="text-[#221C42] md:hidden flex justify-center items-center font-workSansMedium font-medium lg:text-[64px] text-center text-3xl">
         Featured Properties
       </h1>
+
+      {/* <div className="hidden relative lg:flex py-12 items-center px-30 pt-[4rem]">
+        <div className="border-t border-[#CCCCCC] w-48 mx-auto"></div>
+        <span className="flex-shrink mx-4 text-gray-400">
+          <h1 className="text-[#221C42] flex justify-center items-center font-workSansMedium font-medium lg:text-[64px] text-center text-3xl">
+            Featured Properties
+          </h1>
+        </span>
+        <div className="border-t border-[#CCCCCC] w-48 mx-auto"></div>
+      </div> */}
 
       <div className="mt-[4rem]">
         <div className="slider-container">

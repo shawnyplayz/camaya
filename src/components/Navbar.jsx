@@ -67,7 +67,7 @@ const Navbar = () => {
                 alt="Instagram Icon"
               />
             </Link>
-            <Link href="viber://chat?number=639260532470">
+            <Link href="viber://chat?number=+639455666565">
               <Image
                 src="/assets/Navbar/x.svg"
                 width={24}
