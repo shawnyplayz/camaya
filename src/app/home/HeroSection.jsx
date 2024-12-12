@@ -51,7 +51,7 @@ const HeroSection = () => {
         {/* Hero Title */}
         <div className="font-ralewaySemiBold text-xl sm:text-4xl md:text-5xl lg:text-[58px] font-semibold max-w-full md:max-w-[971px] text-center md:text-left lg:leading-68">
           <h1>
-            We've created an affordable beach, golf & mountain view
+            We&apos;ve created an affordable beach, golf & mountain view
             <span className="text-[#FFC447]"> dream home </span> for you and
             your family !
           </h1>
