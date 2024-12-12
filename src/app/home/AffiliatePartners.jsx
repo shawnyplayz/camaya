@@ -63,7 +63,7 @@ const AffiliatePartners = () => {
         variant="solid"
         className="px-96 pt-4"
         style={{
-          borderColor: "#000000",
+          borderColor: "#CCCCC",
         }}
       >
         <div className="hidden md:block">

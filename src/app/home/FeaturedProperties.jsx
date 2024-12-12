@@ -80,16 +80,16 @@ const FeaturedProperties = () => {
 
   return (
     <div
-      className="bg-gradient-to-b from-[#ffffff] via-[#F9E3C8] to-[#ffffff] flex flex-col gap-12"
+      className="bg-gradient-to-b from-[#ffffff] via-[#F9E3C8] to-[#ffffff] mt-6"
       id="featuredPropertiesSection"
     >
-      <div className="container mx-auto">
+      <div className="container mx-auto flex flex-col gap-3 lg:gap-12">
         <div className="mx-32 hidden md:block">
           <Divider
             variant="solid"
             className=""
             style={{
-              borderColor: "#000000",
+              borderColor: "#CCCCCC",
             }}
           >
             <h1 className="text-[#221C42] flex justify-center items-center font-workSansMedium font-medium lg:text-[64px] text-center text-3xl">
@@ -101,7 +101,6 @@ const FeaturedProperties = () => {
         <h1 className="text-[#221C42] md:hidden flex justify-center items-center font-workSansMedium font-medium lg:text-[64px] text-center text-3xl">
           Featured Properties
         </h1>
-
 
         <div className="mt-[4rem]">
           <div className="slider-container">
