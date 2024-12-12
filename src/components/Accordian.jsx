@@ -89,13 +89,28 @@ const Accordion = ({ title }) => {
       >
         <Card className="h-full w-full mt-4 border-[2.83px] rounded-none border-[#FFBA68]">
           <div className="overflow-x-auto">
+            <div className="bg-[#FFEAC8] py-4 px-6 rounded-t-lg text-center">
+              <Typography
+                variant="h6"
+                className="font-bold text-lg md:text-xl text-[#EB9126]"
+              >
+                ACCESSIBILITY
+              </Typography>
+              <Typography
+                variant="paragraph"
+                className="text-sm md:text-base text-[#7C7C7C] mt-2"
+              >
+                With a few hours away from Metro Manila, Camaya Coast Stations 1
+                to 3 can be reached directly via Sea, Land and soon by Air.
+              </Typography>
+            </div>
             <table className="w-full table-auto text-left min-w-[600px]">
               <thead>
                 <tr>
                   {TABLE_HEAD.map((head) => (
                     <th
                       key={head}
-                      className="border-b border-[1.83px] border-[#FFBA68] bg-[#FFD099] p-3 text-sm md:p-4 md:text-base"
+                      className="border-b border-[1.83px] border-[#FFBA68] bg-[#FFF6E8] p-3 text-sm md:p-4 md:text-base"
                     >
                       <Typography
                         variant="small"
