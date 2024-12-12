@@ -6,6 +6,7 @@ import { Card, Typography } from "@material-tailwind/react";
 import Image from "next/image";
 import { MdKeyboardArrowUp } from "react-icons/md";
 import { MdKeyboardArrowDown } from "react-icons/md";
+import SkyTownForestPromo from "./SkyTownForestPromo";
 
 const Accordian2 = ({ title }) => {
   const TABLE_HEAD = [
@@ -180,6 +181,7 @@ const Accordian2 = ({ title }) => {
         <Card className="h-full w-full mt-4 border-[2.83px] rounded-none border-[#FFBA68]">
           {/* Add responsive scroll */}
           <div className="overflow-x-auto">
+            <SkyTownForestPromo />
             <table className="w-full table-auto text-left">
               <thead>
                 <tr>

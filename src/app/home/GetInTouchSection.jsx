@@ -51,18 +51,18 @@ const GetInTouchSection = () => {
                   <CA title="Canada" className="w-5" />
                 </div>
 
-                <div className="flex flex-col items-center sm:flex-row sm:items-center gap-2">
+                <div className="flex flex-col sm:flex-row items-center sm:items-start gap-2 sm:gap-4">
                   <MdEmail className="text-lg" />
                   <span className="hidden sm:inline">Email -</span>
-                  <span className="text-xs sm:text-base text-center">
+                  <span className="text-xs sm:text-base">
                     {GetInTouchData.email}
                   </span>
                 </div>
 
-                <div className="flex flex-col items-center sm:flex-row sm:items-center gap-2">
+                <div className="flex flex-col sm:flex-row items-center sm:items-start gap-2 sm:gap-4">
                   <FaLocationDot className="text-lg" />
                   <span className="hidden sm:inline">Address -</span>
-                  <span className="text-xs sm:text-base text-center">
+                  <span className="text-xs sm:text-base">
                     {GetInTouchData.location}
                   </span>
                 </div>
