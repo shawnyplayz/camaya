@@ -82,17 +82,7 @@ const FeaturedProperties = () => {
       className="bg-gradient-to-b from-[#ffffff] via-[#F9E3C8] to-[#ffffff]"
       id="featuredPropertiesSection"
     >
-      <div className="hidden relative md:flex py-12 items-center px-40 pt-[4rem]">
-        <div className="border-t border-[#CCCCCC] w-1/4 mx-auto"></div>
-        <span className="flex-shrink mx-4 text-gray-400">
-          <h1 className="text-[#221C42] flex justify-center items-center font-workSansMedium font-medium lg:text-[64px] text-center text-3xl">
-            Featured Properties
-          </h1>
-        </span>
-        <div className="border-t border-[#CCCCCC] w-1/4 mx-auto"></div>
-      </div>
-
-      <h1 className="text-[#221C42] md:hidden flex justify-center items-center font-workSansMedium font-medium lg:text-[64px] text-center text-3xl">
+      <h1 className="text-[#221C42] flex justify-center items-center font-workSansMedium font-medium lg:text-[64px] text-center text-3xl">
         Featured Properties
       </h1>
 
