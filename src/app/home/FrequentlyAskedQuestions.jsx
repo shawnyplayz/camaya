@@ -1,5 +1,7 @@
 import Accordion from "@/components/Accordian";
 import Accordian2 from "@/components/Accordian2";
+import StationTable from "@/components/AccordianTable";
+
 import React from "react";
 
 const FrequentlyAskedQuestions = () => {
@@ -25,6 +27,7 @@ const FrequentlyAskedQuestions = () => {
           title="2. Can I set a sample computation on a best discount in the smallest lot cut?"
           content="You can reach Camaya Coast via ferry from Manila or by land travel through Bataan."
         />
+        <StationTable title="3. Can I get the price list?" />
       </div>
     </div>
   );
