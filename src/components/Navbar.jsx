@@ -3,15 +3,36 @@
 import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
+import { useRouter } from "next/navigation";
 import { IoClose } from "react-icons/io5";
 import { IoMdMenu } from "react-icons/io";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const router = useRouter();
 
   const handleMenuToggle = () => setMenuOpen((prev) => !prev);
 
   const closeMenu = () => setMenuOpen(false);
+
+  const handleNavigation = (event, href) => {
+    event.preventDefault();
+
+    const id = href.split("#")[1]; // Get the section ID
+    if (!id) return; // Exit if ID is undefined or null
+
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+
+    closeMenu(); // Close the menu
+
+    // Clear the hash from the URL
+    if (router.pathname) {
+      router.replace(router.pathname, undefined, { shallow: true });
+    }
+  };
 
   const navLinks = [
     { href: "/home#home", label: "HOME" },
@@ -34,7 +55,12 @@ const Navbar = () => {
           <ul className="hidden lg:flex gap-8 text-black font-workSansMedium font-medium text-lg items-center">
             {navLinks.map((link) => (
               <li key={link.href}>
-                <Link href={link.href}>{link.label}</Link>
+                <a
+                  href={link.href}
+                  onClick={(e) => handleNavigation(e, link.href)}
+                >
+                  {link.label}
+                </a>
               </li>
             ))}
           </ul>
@@ -113,9 +139,12 @@ const Navbar = () => {
             <ul className="flex flex-col gap-4 mt-6 px-4 text-gray-800">
               {navLinks.map((link) => (
                 <li key={link.href}>
-                  <Link href={link.href} onClick={closeMenu}>
+                  <a
+                    href={link.href}
+                    onClick={(e) => handleNavigation(e, link.href)}
+                  >
                     {link.label}
-                  </Link>
+                  </a>
                 </li>
               ))}
             </ul>
