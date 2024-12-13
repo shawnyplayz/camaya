@@ -1,5 +1,7 @@
+import { AOS } from "aos";
+import "aos/dist/aos.css";
 import Link from "next/link";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   BiLogoFacebookCircle,
   BiLogoInstagram,
@@ -7,6 +9,14 @@ import {
 } from "react-icons/bi";
 
 const Video = () => {
+  useEffect(() => {
+    // Initialize AOS
+    AOS?.init({
+      duration: 800,
+      easing: "ease-in-out",
+      once: false,
+    });
+  }, []);
   const [hoveredIcon, setHoveredIcon] = useState(null);
 
   const data = {
@@ -34,7 +44,10 @@ const Video = () => {
         <div className="pt-5 sm:pt-10 ml-5 sm:ml-[60px] font-workSansMedium text-3xl sm:text-5xl mb-6 sm:mb-[33px] text-left font-medium text-[#221C42]">
           <h1>Discover Camaya Coast</h1>
         </div>
-        <div className="w-full flex flex-col md:flex-row items-center justify-center py-6 md:py-0 px-4 sm:px-16">
+        <div
+          className="w-full flex flex-col md:flex-row items-center justify-center py-6 md:py-0 px-4 sm:px-16"
+          data-aos="zoom-in"
+        >
           <iframe
             className="w-full h-[250px] sm:h-[450px] max-w-4xl"
             src="https://player.vimeo.com/video/1037350824?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"

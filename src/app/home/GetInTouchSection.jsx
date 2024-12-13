@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { GetInTouchData } from "../constants";
 import Image from "next/image";
 import ContactForm from "@/components/ContactForm";
@@ -7,8 +7,18 @@ import { CA, PH } from "country-flag-icons/react/3x2";
 import { IoMdCall } from "react-icons/io";
 import { FaViber } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
+import { AOS } from "aos";
+import "aos/dist/aos.css";
 
 const GetInTouchSection = () => {
+  useEffect(() => {
+    // Initialize AOS
+    AOS?.init({
+      duration: 800,
+      easing: "ease-in-out",
+      once: false,
+    });
+  }, []);
   return (
     <div className="bg-[#FDFAF3]" id="contactUsSection">
       <div className="h-auto relative mx-auto container flex flex-col lg:flex-row items-center gap-8 lg:gap-20 px-4 sm:px-6 lg:px-16 py-8 sm:py-12 lg:py-16">
@@ -80,7 +90,10 @@ const GetInTouchSection = () => {
         </div>
 
         {/* Right Section - Contact Form */}
-        <div className="mt-8 lg:mt-0 px-4 lg:px-0 w-full lg:w-auto flex justify-center items-center">
+        <div
+          className="mt-8 lg:mt-0 px-4 lg:px-0 w-full lg:w-auto flex justify-center items-center"
+          data-aos="flip-right"
+        >
           <ContactForm />
         </div>
       </div>

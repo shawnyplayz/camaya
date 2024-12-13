@@ -7,8 +7,23 @@ module.exports = {
   ],
   theme: {
     extend: {
+      animation: {
+        fade: "fadeIn .5s ease-in-out",
+        wiggle: "wiggle 1s ease-in-out infinite",
+      },
+
+      keyframes: {
+        fadeIn: {
+          from: { opacity: 0 },
+          to: { opacity: 1 },
+          wiggle: {
+            "0%, 100%": { transform: "rotate(-3deg)" },
+            "50%": { transform: "rotate(3deg)" },
+          },
+        },
+      },
       lineHeight: {
-        '68': '68px',
+        68: "68px",
       },
       colors: {
         background: "var(--background)",

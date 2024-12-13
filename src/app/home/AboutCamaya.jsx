@@ -1,8 +1,20 @@
 import Image from "next/image";
 import Link from "next/link";
 import { AboutUsData } from "../constants";
+import { AOS } from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 
 const CamayaCoastSection = () => {
+  useEffect(() => {
+    // Initialize AOS
+    AOS?.init({
+      duration: 800,
+      easing: "ease-in-out",
+      once: false,
+    });
+  }, []);
+
   return (
     <section
       className="py-[7rem] px-4"
@@ -14,7 +26,7 @@ const CamayaCoastSection = () => {
     >
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center md:items-start container">
         {/* Staggered Image Grid (Left Section) */}
-        <div className="relative md:w-[90%] mb-8 md:mb-0">
+        <div className="relative md:w-[90%] mb-8 md:mb-0" data-aos="fade-right">
           {/* Row 1 */}
           <div className="flex flex-wrap space-x-4 md:flex-nowrap md:relative right-[127px]">
             <Image
@@ -132,7 +144,10 @@ const CamayaCoastSection = () => {
         </div>
 
         {/* Text Content (Right Section) */}
-        <div className="md:w-[50%] text-center md:text-left flex flex-col justify-center">
+        <div
+          className="md:w-[50%] text-center md:text-left flex flex-col justify-center"
+          data-aos="fade-left"
+        >
           {/* Title Section */}
           <div>
             <div className="flex items-center mb-4">
