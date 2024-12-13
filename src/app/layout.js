@@ -17,7 +17,7 @@ export default function RootLayout({ children }) {
       {/* Open Graph Meta Tags */}
       <meta property="og:title" content="Camaya" />
       <meta property="og:description" content="Camaya" />
-      <meta property="og:image" content="/assets/home/heroSection/hero6.png" />
+      <meta property="og:image" content="/assets/thumbnail.png" />
       <meta property="og:image:alt" content="About Camaya" />
       <meta property="og:image:type" content="image/png" />
       <meta property="og:image:width" content="1200" />
