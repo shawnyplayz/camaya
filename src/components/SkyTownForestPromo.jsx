@@ -79,7 +79,7 @@ const SkyTownForestPromo = () => {
           variant="small"
           className="text-xs md:text-lg font-bold text-[#574D4D] tracking-wider uppercase"
         >
-          Sample Computation - Camaya Prestige Philippines & Aiainternational
+          Sample Computation - Camaya Prestige Philippines & international
           Sales
         </Typography>
       </div>

@@ -51,7 +51,7 @@ const Navbar = () => {
         {/* Contact and Social Media Section */}
         <div className="hidden lg:flex items-center gap-6">
           <div className="social-media-icon flex items-center gap-5 text-black">
-            <Link href="https://www.facebook.com/OfficialCamayaCoast">
+            <Link href="https://www.facebook.com/camayaresort">
               <Image
                 src="/assets/Navbar/facebook.svg"
                 width={15}
@@ -67,7 +67,7 @@ const Navbar = () => {
                 alt="Instagram Icon"
               />
             </Link>
-            <Link href="viber://chat?number=639260532470">
+            <Link href="viber://chat?number=+639455666565">
               <Image
                 src="/assets/Navbar/x.svg"
                 width={24}

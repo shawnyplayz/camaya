@@ -24,6 +24,7 @@ import station2_4 from "../../../public/assets/home/featuredPropertiesSection/st
 
 import station3_1 from "../../../public/assets/home/featuredPropertiesSection/station3/1.svg";
 import station3_2 from "../../../public/assets/home/featuredPropertiesSection/station3/2.jpg";
+import { Divider } from "antd";
 
 // Custom Next and Prev arrows for the slider
 const NextArrow = ({ onClick }) => (
@@ -79,150 +80,156 @@ const FeaturedProperties = () => {
 
   return (
     <div
-      className="bg-gradient-to-b from-[#ffffff] via-[#F9E3C8] to-[#ffffff]"
+      className="bg-gradient-to-b from-[#ffffff] via-[#F9E3C8] to-[#ffffff] mt-6"
       id="featuredPropertiesSection"
     >
-      <div className="hidden relative md:flex py-12 items-center px-40 pt-[4rem]">
-        <div className="border-t border-[#CCCCCC] w-1/4 mx-auto"></div>
-        <span className="flex-shrink mx-4 text-gray-400">
-          <h1 className="text-[#221C42] flex justify-center items-center font-workSansMedium font-medium lg:text-[64px] text-center text-3xl">
-            Featured Properties
-          </h1>
-        </span>
-        <div className="border-t border-[#CCCCCC] w-1/4 mx-auto"></div>
-      </div>
+      <div className="container mx-auto flex flex-col gap-3 lg:gap-12">
+        <div className="mx-32 hidden md:block">
+          <Divider
+            variant="solid"
+            className=""
+            style={{
+              borderColor: "#CCCCCC",
+            }}
+          >
+            <h1 className="text-[#221C42] flex justify-center items-center font-workSansMedium font-medium lg:text-[64px] text-center text-3xl">
+              Featured Properties
+            </h1>
+          </Divider>
+        </div>
 
-      <h1 className="text-[#221C42] md:hidden flex justify-center items-center font-workSansMedium font-medium lg:text-[64px] text-center text-3xl">
-        Featured Properties
-      </h1>
+        <h1 className="text-[#221C42] md:hidden flex justify-center items-center font-workSansMedium font-medium lg:text-[64px] text-center text-3xl">
+          Featured Properties
+        </h1>
 
-      <div className="mt-[4rem]">
-        <div className="slider-container">
-          <div className="flex gap-3">
-            <div>
-              <Image
-                src={oneImage}
-                width={61}
-                height={154}
-                alt="one-image-feature"
-              />
-            </div>
-            <div className="ml-[-13px]">
-              <div className="relative top-4 left-4 flex flex-col gap-[10px]">
-                <h2 className="font-workSansMedium font-medium text-lg sm:text-xl lg:text-[26px] text-[#FFC447] uppercase">
-                  Station
-                </h2>
-                <h3 className="font-workSansMedium font-medium text-2xl sm:text-3xl lg:text-[48px] text-[#4CAF50] uppercase">
-                  MARIVELES, Bataan
-                </h3>
+        <div className="mt-[4rem]">
+          <div className="slider-container">
+            <div className="flex gap-3">
+              <div>
+                <Image
+                  src={oneImage}
+                  width={61}
+                  height={154}
+                  alt="one-image-feature"
+                />
+              </div>
+              <div className="ml-[-13px]">
+                <div className="relative top-4 left-4 flex flex-col gap-[10px]">
+                  <h2 className="font-workSansMedium font-medium text-lg sm:text-xl lg:text-[26px] text-[#FFC447] uppercase">
+                    Station
+                  </h2>
+                  <h3 className="font-workSansMedium font-medium text-2xl sm:text-3xl lg:text-[48px] text-[#4CAF50] uppercase">
+                    MARIVELES, Bataan
+                  </h3>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-        <div>
-          <div className="slider-container">
-            <Slider {...sliderSettings}>
-              {data?.map((el, index) => {
-                return (
-                  <div key={index}>
-                    <Image
-                      src={el || defaultImage}
-                      alt={`Property Image ${index + 1}`}
-                      width={800}
-                      height={200}
-                      className="pb-7 object-fill"
-                    />
-                  </div>
-                );
-              })}
-            </Slider>
+          <div>
+            <div className="slider-container">
+              <Slider {...sliderSettings}>
+                {data?.map((el, index) => {
+                  return (
+                    <div key={index}>
+                      <Image
+                        src={el || defaultImage}
+                        alt={`Property Image ${index + 1}`}
+                        width={800}
+                        height={200}
+                        className="pb-7 object-fill"
+                      />
+                    </div>
+                  );
+                })}
+              </Slider>
+            </div>
           </div>
         </div>
-      </div>
-      <div className="mt-[4rem]">
-        <div className="slider-container">
-          <div className="flex gap-3">
-            <div>
-              <Image
-                src={twoImage}
-                width={80}
-                height={154}
-                alt="one-image-feature"
-              />
-            </div>
-            <div className="ml-[-13px]">
-              <div className="relative top-4 left-4 flex flex-col gap-[10px]">
-                <h2 className="font-workSansMedium font-medium text-lg sm:text-xl lg:text-[26px] text-[#FFC447] uppercase">
-                  Station
-                </h2>
-                <h3 className="font-workSansMedium font-medium text-2xl sm:text-3xl lg:text-[48px] text-[#4CAF50] uppercase">
-                  BAGAC, Bataan
-                </h3>
+        <div className="mt-[4rem]">
+          <div className="slider-container">
+            <div className="flex gap-3">
+              <div>
+                <Image
+                  src={twoImage}
+                  width={80}
+                  height={154}
+                  alt="one-image-feature"
+                />
+              </div>
+              <div className="ml-[-13px]">
+                <div className="relative top-4 left-4 flex flex-col gap-[10px]">
+                  <h2 className="font-workSansMedium font-medium text-lg sm:text-xl lg:text-[26px] text-[#FFC447] uppercase">
+                    Station
+                  </h2>
+                  <h3 className="font-workSansMedium font-medium text-2xl sm:text-3xl lg:text-[48px] text-[#4CAF50] uppercase">
+                    BAGAC, Bataan
+                  </h3>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-        <div>
-          <div className="slider-container">
-            <Slider {...sliderSettings}>
-              {data2?.map((el, index) => {
-                return (
-                  <div key={index}>
-                    <Image
-                      src={el || defaultImage}
-                      alt={`Property Image ${index + 1}`}
-                      width={800}
-                      height={200}
-                      className="pb-7 object-fill"
-                    />
-                  </div>
-                );
-              })}
-            </Slider>
+          <div>
+            <div className="slider-container">
+              <Slider {...sliderSettings}>
+                {data2?.map((el, index) => {
+                  return (
+                    <div key={index}>
+                      <Image
+                        src={el || defaultImage}
+                        alt={`Property Image ${index + 1}`}
+                        width={800}
+                        height={200}
+                        className="pb-7 object-fill"
+                      />
+                    </div>
+                  );
+                })}
+              </Slider>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div className="mt-[4rem]">
-        <div className="slider-container">
-          <div className="flex gap-3">
-            <div>
-              <Image
-                src={threeImage}
-                width={81}
-                height={154}
-                alt="one-image-feature"
-              />
-            </div>
-            <div className="ml-[-13px]">
-              <div className="relative top-4 left-4 flex flex-col gap-[10px]">
-                <h2 className="font-workSansMedium font-medium text-lg sm:text-xl lg:text-[26px] text-[#FFC447] uppercase">
-                  Station
-                </h2>
-                <h3 className="font-workSansMedium font-medium text-2xl sm:text-3xl lg:text-[48px] text-[#4CAF50] uppercase">
-                  Balanga, Bataan
-                </h3>
+        <div className="mt-[4rem]">
+          <div className="slider-container">
+            <div className="flex gap-3">
+              <div>
+                <Image
+                  src={threeImage}
+                  width={81}
+                  height={154}
+                  alt="one-image-feature"
+                />
+              </div>
+              <div className="ml-[-13px]">
+                <div className="relative top-4 left-4 flex flex-col gap-[10px]">
+                  <h2 className="font-workSansMedium font-medium text-lg sm:text-xl lg:text-[26px] text-[#FFC447] uppercase">
+                    Station
+                  </h2>
+                  <h3 className="font-workSansMedium font-medium text-2xl sm:text-3xl lg:text-[48px] text-[#4CAF50] uppercase">
+                    Balanga, Bataan
+                  </h3>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-        <div>
-          <div className="slider-container">
-            <Slider {...sliderSettings}>
-              {data3?.map((el, index) => {
-                return (
-                  <div key={index}>
-                    <Image
-                      src={el || defaultImage}
-                      alt={`Property Image ${index + 1}`}
-                      width={800}
-                      height={200}
-                      className="pb-7 object-fill"
-                    />
-                  </div>
-                );
-              })}
-            </Slider>
+          <div>
+            <div className="slider-container">
+              <Slider {...sliderSettings}>
+                {data3?.map((el, index) => {
+                  return (
+                    <div key={index}>
+                      <Image
+                        src={el || defaultImage}
+                        alt={`Property Image ${index + 1}`}
+                        width={800}
+                        height={200}
+                        className="pb-7 object-fill"
+                      />
+                    </div>
+                  );
+                })}
+              </Slider>
+            </div>
           </div>
         </div>
       </div>

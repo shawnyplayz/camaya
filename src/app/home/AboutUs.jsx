@@ -8,23 +8,22 @@ export default function AboutSection() {
         <div className="grid grid-cols-3 grid-rows-3 gap-2">
           {/* Top Row */}
           <Image
-          width={100}
-          height={100}
-          src="/assets/home/aboutSection/arrow.svg" // Replace with actual image
-          alt="Image 1"
-
-          className="col-span-1 row-span-1  rounded-lg "
+            width={100}
+            height={100}
+            src="/assets/home/aboutSection/arrow.svg" // Replace with actual image
+            alt="Image 1"
+            className="col-span-1 row-span-1  rounded-lg "
           />
           <Image
-          width={100}
-          height={100}
+            width={100}
+            height={100}
             src="/assets/home/aboutSection/arrow.svg"
             alt="Image 2"
             className="col-span-1 row-span-1  rounded-lg"
           />
           <Image
-          width={100}
-          height={100}
+            width={100}
+            height={100}
             src="/image3.jpg"
             alt="Image 3"
             className="col-span-1 row-span-2  rounded-lg"
@@ -32,15 +31,15 @@ export default function AboutSection() {
 
           {/* Middle Row */}
           <Image
-          width={100}
-          height={100}
+            width={100}
+            height={100}
             src="/image4.jpg"
             alt="Image 4"
             className="col-span-1 row-span-1  rounded-lg"
           />
           <Image
-          width={100}
-          height={100}
+            width={100}
+            height={100}
             src="/image5.jpg"
             alt="Image 5"
             className="col-span-1 row-span-1  rounded-lg"
@@ -48,22 +47,22 @@ export default function AboutSection() {
 
           {/* Bottom Row */}
           <Image
-          width={100}
-          height={100}
+            width={100}
+            height={100}
             src="/image6.jpg"
             alt="Image 6"
             className="col-span-1 row-span-1  rounded-lg"
           />
           <Image
-          width={100}
-          height={100}
+            width={100}
+            height={100}
             src="/image7.jpg"
             alt="Image 7"
             className="col-span-1 row-span-1  rounded-lg"
           />
           <Image
-          width={100}
-          height={100}
+            width={100}
+            height={100}
             src="/image8.jpg"
             alt="Image 8"
             className="col-span-1 row-span-1  rounded-lg"

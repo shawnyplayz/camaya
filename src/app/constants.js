@@ -19,6 +19,7 @@ export const GetInTouchData = {
   viber: "+63 945 566 6565",
   canada: "+1 778 241 4895",
   email: "lizzume.custodio@realestate.camayacoast.com",
+  email2: "maripaul.milanes@realestate.camayacoast.com",
   location: "PET Plans Tower Guadalupe Viejo EDSA Makati City, Philippines",
 };
 
