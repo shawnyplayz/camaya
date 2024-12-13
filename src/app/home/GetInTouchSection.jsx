@@ -21,10 +21,10 @@ const GetInTouchSection = () => {
   }, []);
   return (
     <div className="bg-[#FDFAF3]" id="contactUsSection">
-      <div className="h-auto relative mx-auto container flex flex-col lg:flex-row items-center gap-8 lg:gap-20 px-4 sm:px-6 lg:px-16 py-8 sm:py-12 lg:py-16">
+      <div className="h-auto relative mx-auto container flex flex-col lg:flex-row items-center gap-8 lg:gap-20 px-4 sm:px-6 lg:px-16 py-8 sm:py-12 lg:py-16 lg:flex lg:justify-center lg:items-baseline">
         {/* Left Section */}
         <div className="text-center lg:text-start max-w-96 md:max-w-full">
-          <div className="pt-8 sm:pt-12 lg:pt-20 pb-8 max-w-[20rem] lg:max-w-full sm:pb-12 lg:pb-20">
+          <div className="pt-8 sm:pt-12  pb-8 max-w-[20rem] lg:max-w-full sm:pb-12 ">
             <h1 className="font-workSansMedium font-medium text-2xl sm:text-3xl lg:text-5xl text-[#221C42]">
               Get in Touch
             </h1>
@@ -80,7 +80,7 @@ const GetInTouchSection = () => {
                 <div className="flex flex-col sm:flex-row items-center sm:items-start gap-2 sm:gap-4">
                   <FaLocationDot className="text-lg" />
                   <span className="hidden sm:inline">Address -</span>
-                  <span className="text-xs sm:text-base">
+                  <span className="text-xs sm:text-base max-w-96 lg:text-start">
                     {GetInTouchData.location}
                   </span>
                 </div>
