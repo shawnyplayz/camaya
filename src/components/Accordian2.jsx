@@ -174,7 +174,7 @@ const Accordian2 = ({ title }) => {
       <div
         className={`overflow-hidden transition-all duration-500 ease-in-out ${
           isOpen
-            ? "max-h-[1000px] opacity-100 px-4 py-6 md:px-10 md:py-10 bg-[#FFF4E8]"
+            ? "opacity-100 px-4 py-6 md:px-10 md:py-10 bg-[#FFF4E8]"
             : "max-h-0 opacity-0"
         }`}
       >
