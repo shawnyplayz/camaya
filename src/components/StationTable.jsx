@@ -63,7 +63,7 @@ const StationTable = ({ title }) => {
         {
           name: "Golf Town Camaya",
           regularPrice: "₱50,000",
-          premiumPrice: "₱50,000",
+          premiumPrice: "₱55,000",
           fairwayPrice: "-",
           notes: "-",
         },
@@ -72,7 +72,7 @@ const StationTable = ({ title }) => {
           regularPrice: "₱5,750,000",
           premiumPrice: "₱9,750,000",
           fairwayPrice: "-",
-          notes: "-",
+          notes: "Premium & Premium Corner",
         },
         {
           name: "Golf Villas B1",
@@ -152,7 +152,7 @@ const StationTable = ({ title }) => {
           regularPrice: "₱20,500",
           premiumPrice: "₱22,000",
           fairwayPrice: "₱23,500",
-          notes: "Regular, Premium/Corner, & Sky Golf",
+          notes: "-",
         },
         // Other properties...
       ],
