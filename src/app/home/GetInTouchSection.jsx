@@ -60,6 +60,14 @@ const GetInTouchSection = () => {
                 </div>
 
                 <div className="flex flex-col sm:flex-row items-center sm:items-start gap-2 sm:gap-4">
+                  <MdEmail className="text-lg" />
+                  <span className="hidden sm:inline">Email -</span>
+                  <span className="text-xs sm:text-base">
+                    {GetInTouchData.email2}
+                  </span>
+                </div>
+
+                <div className="flex flex-col sm:flex-row items-center sm:items-start gap-2 sm:gap-4">
                   <FaLocationDot className="text-lg" />
                   <span className="hidden sm:inline">Address -</span>
                   <span className="text-xs sm:text-base">

@@ -4,6 +4,7 @@ import Navbar from "@/components/Navbar";
 import AOSComponent from "@/components/AOSComponent";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Head from "next/head";
 export const metadata = {
   title: "Camaya",
   description: "Camaya",
@@ -12,6 +13,13 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <Head>
+        <meta
+          property="og:image"
+          content="/assets/home/heroSection/hero6.png"
+        />
+        <meta property="og:type" content="website" />
+      </Head>
       <body className={`antialiased`}>
         <ToastContainer
           position="top-center"
