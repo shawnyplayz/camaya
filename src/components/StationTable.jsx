@@ -239,7 +239,7 @@ const StationTable = ({ title }) => {
                                 margin: "auto",
                               }}
                               src={station}
-                              alt=""
+                              alt="stations"
                             />
                           </td>
                         )}
