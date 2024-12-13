@@ -1,6 +1,6 @@
 // baseURLLive and baseURLDev are defined for live and development
-const baseURLLive = `https://api.innovativecursor.com`;
-const baseURLDev = `https://api.innovativecursor.com`;
+const baseURLLive = `https://api.camayacoastprestige.com`;
+const baseURLDev = `https://api.camayacoastprestige.com`;
 
 const isLive = false;
 
