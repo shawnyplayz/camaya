@@ -37,15 +37,15 @@ const PrevArrow = ({ onClick }) => (
 const FeaturedProperties = () => {
   const [properties, setProperties] = useState([]);
 
-  const sliderSettings = {
-    dots: true,
-    infinite: true,
+  const sliderSettings = (numImages) => ({
+    dots: numImages > 1,
+    infinite: numImages > 1,
     speed: 500,
-    nextArrow: <NextArrow />,
-    prevArrow: <PrevArrow />,
+    nextArrow: numImages > 1 ? <NextArrow /> : null,
+    prevArrow: numImages > 1 ? <PrevArrow /> : null,
     slidesToShow: 1,
     slidesToScroll: 1,
-    arrows: true,
+    arrows: numImages > 1,
     autoplay: true,
     customPaging: (i) => (
       <div
@@ -54,7 +54,27 @@ const FeaturedProperties = () => {
       ></div>
     ),
     dotsClass: "slick-dots custom-dots",
-  };
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          infinite: numImages > 1,
+          arrows: numImages > 1,
+        },
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          infinite: numImages > 1,
+          arrows: numImages > 1,
+        },
+      },
+    ],
+  });
 
   useEffect(() => {
     const fetchProperties = async () => {
@@ -68,6 +88,10 @@ const FeaturedProperties = () => {
 
     fetchProperties();
   }, []);
+
+  if (properties.length === 0) {
+    return null;
+  }
 
   return (
     <div
@@ -83,53 +107,51 @@ const FeaturedProperties = () => {
           </Divider>
         </div>
 
-        {properties.map((property, index) => (
-          <div key={property.prop_id} className="mt-[4rem]">
-            <div className="slider-container">
-              <div className="flex gap-3">
-                <div>
-                  <Image
-                    src={
-                      index === 0
-                        ? "/assets/home/featuredPropertiesSection/one_image.png"
-                        : index === 1
-                        ? "/assets/home/featuredPropertiesSection/two_image.png"
-                        : "/assets/home/featuredPropertiesSection/three_image.png"
-                    }
-                    width={80}
-                    height={80}
-                    alt={`Station Image ${property.station_number}`}
-                  />
-                </div>
-                <div className="ml-[-13px]">
-                  <div className="relative top-4 left-4 flex flex-col gap-[10px]">
-                    <h2 className="font-workSansMedium font-medium text-lg sm:text-xl lg:text-[26px] text-[#FFC447] uppercase">
-                      Station
-                    </h2>
-                    <h3 className="font-workSansMedium font-medium text-2xl sm:text-3xl lg:text-[48px] text-[#4CAF50] uppercase">
-                      {property.location.toUpperCase()}
-                    </h3>
+        {properties.map((property, index) => {
+          const numImages = property.pictures.length;
+          return (
+            <div key={property.prop_id} className="mt-[4rem]">
+              <div className="slider-container">
+                <div className="flex gap-3">
+                  <span
+                    className="text-[#FFC107] font-extrabold"
+                    style={{
+                      fontSize: "139px",
+                    }}
+                  >
+                    {index + 1}{" "}
+                  </span>
+
+                  <div className="ml-[-13px] mt-[60px]">
+                    <div className="relative top-4 left-4 flex flex-col gap-[10px]">
+                      <h2 className="font-workSansMedium font-medium text-lg sm:text-xl lg:text-[26px] text-[#FFC447] uppercase">
+                        Station
+                      </h2>
+                      <h3 className="font-workSansMedium font-medium text-2xl sm:text-3xl lg:text-[48px] text-[#4CAF50] uppercase">
+                        {property.location.toUpperCase()}
+                      </h3>
+                    </div>
                   </div>
                 </div>
               </div>
+              <div className="slider-container">
+                <Slider {...sliderSettings(numImages)}>
+                  {property.pictures.map((pic, i) => (
+                    <div key={i}>
+                      <Image
+                        src={pic.secure_url}
+                        alt={`Property Image ${i + 1}`}
+                        width={800}
+                        height={200}
+                        className="pb-7 object-fill"
+                      />
+                    </div>
+                  ))}
+                </Slider>
+              </div>
             </div>
-            <div className="slider-container">
-              <Slider {...sliderSettings}>
-                {property.pictures.map((pic, i) => (
-                  <div key={i}>
-                    <Image
-                      src={pic.secure_url}
-                      alt={`Property Image ${i + 1}`}
-                      width={800}
-                      height={200}
-                      className="pb-7 object-fill"
-                    />
-                  </div>
-                ))}
-              </Slider>
-            </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
     </div>
   );
