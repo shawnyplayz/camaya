@@ -229,12 +229,18 @@ const StationTable = ({ title }) => {
                               backgroundSize: "contain",
                               backgroundPosition: "center",
                               backgroundRepeat: "no-repeat",
-                              height: `${properties.length * 100}px`,
-                              padding: "40px",
-                              margin: "10px",
                             }}
                           >
-                            <img src={station} alt="" />
+                            <img
+                              style={{
+                                maxWidth: "100%",
+                                height: "auto",
+                                display: "block",
+                                margin: "auto",
+                              }}
+                              src={station}
+                              alt=""
+                            />
                           </td>
                         )}
                         <td className="p-2 md:p-4 border-b border-[1.83px] border-[#FFBA68] text-[#7C7C7C]">
