@@ -80,7 +80,7 @@ const Video = () => {
               />
             </div>
           </Link>
-          <Link href={"https://www.facebook.com/OfficialCamayaCoast"}>
+          <Link href={"https://www.facebook.com/camayaresort"}>
             <div
               className="border p-2 sm:p-4 rounded-full border-[#FEA439] hover:bg-[#FEA439] transition-all duration-300 ease-in-out"
               onMouseEnter={() => handleMouseEnter("facebook")}
@@ -94,7 +94,11 @@ const Video = () => {
               />
             </div>
           </Link>
-          <Link href={"https://www.youtube.com/@camayacoast.realestateph"}>
+          <Link
+            href={
+              "https://www.youtube.com/@camayacoastrealestateprope3388/featured"
+            }
+          >
             <div
               className="border p-2 sm:p-4 rounded-full border-[#FEA439] hover:bg-[#FEA439] transition-all duration-300 ease-in-out"
               onMouseEnter={() => handleMouseEnter("youtube")}
