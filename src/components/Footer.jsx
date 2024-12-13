@@ -1,12 +1,33 @@
+"use client"
+
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import { MdOutlinePolicy, MdEditDocument } from "react-icons/md";
+import { useRouter } from "next/navigation";
 import { SlSocialFacebook, SlSocialInstagram } from "react-icons/sl";
 import { SiViber } from "react-icons/si";
 import { GoDotFill } from "react-icons/go";
 
 const Footer = () => {
+  const router = useRouter();
+
+  const handleNavigation = (event, href) => {
+    event.preventDefault();
+
+    const id = href.split("#")[1]; // Extract section ID
+    if (!id) return; // Exit if ID is undefined or null
+
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+
+    // Clear the hash from the URL
+    if (router.pathname) {
+      router.replace(router.pathname, undefined, { shallow: true });
+    }
+  };
+
   return (
     <footer className="bg-[#FFE9BB]">
       <div className="container mx-auto px-6 lg:px-16">
@@ -43,19 +64,38 @@ const Footer = () => {
         <nav className="mt-12">
           <ul className="flex flex-wrap lg:gap-[7rem] gap-5 justify-center lg:justify-center font-workSansMedium font-medium text-sm md:text-base lg:text-lg text-black">
             <li>
-              <Link href="/home#home">Home</Link>
+              <a href="/home#home" onClick={(e) => handleNavigation(e, "/home#home")}>
+                Home
+              </a>
             </li>
             <li>
-              <Link href="/home#aboutus">About Us</Link>
+              <a href="/home#aboutus" onClick={(e) => handleNavigation(e, "/home#aboutus")}>
+                About Us
+              </a>
             </li>
             <li>
-              <Link href="/home#featuredPropertiesSection">Properties</Link>
+              <a
+                href="/home#featuredPropertiesSection"
+                onClick={(e) => handleNavigation(e, "/home#featuredPropertiesSection")}
+              >
+                Properties
+              </a>
             </li>
             <li>
-              <Link href="/home#amenitiesSection">Amenities</Link>
+              <a
+                href="/home#amenitiesSection"
+                onClick={(e) => handleNavigation(e, "/home#amenitiesSection")}
+              >
+                Amenities
+              </a>
             </li>
             <li>
-              <Link href="/home#contactUsSection">Contact Us</Link>
+              <a
+                href="/home#contactUsSection"
+                onClick={(e) => handleNavigation(e, "/home#contactUsSection")}
+              >
+                Contact Us
+              </a>
             </li>
           </ul>
         </nav>
