@@ -48,6 +48,7 @@ const HeroSection = () => {
             alt={`Slide ${index}`}
             width={100}
             height={100}
+            loading="eager"
             className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${
               currentImageIndex === index ? "opacity-100" : "opacity-0"
             }`}
