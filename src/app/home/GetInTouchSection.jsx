@@ -134,7 +134,7 @@ const GetInTouchSection = () => {
             <div className="flex items-center gap-4">
               <MdEmail className="text-[#221C42] text-2xl" />
               <span className="font-workSansMedium text-lg text-[#182A64]">
-                lizzume.custodio@realestate.camayacoast.com
+                Email - lizzume.custodio@realestate.camayacoast.com
               </span>
             </div>
 
@@ -142,7 +142,7 @@ const GetInTouchSection = () => {
             <div className="flex items-center gap-4">
               <MdLocationOn className="text-[#221C42] text-2xl" />
               <span className="font-workSansMedium text-lg text-[#182A64]">
-                PET Plans Tower Guadalupe Viejo EDSA Makati City
+                Address - PET Plans Tower Guadalupe Viejo EDSA Makati City
               </span>
             </div>
           </div>
