@@ -6,31 +6,31 @@ import { Card, Typography } from "@material-tailwind/react";
 const SkyTownForestPromo = () => {
   return (
     <>
-      <div className="flex justify-between items-center bg-[#FFDCA5]  px-4 py-4">
+      <div className="flex justify-between items-center bg-[#FFDCA5] px-4 py-4">
         <Typography
           variant="h6"
-          className="text-base md:text-xs font-bold text-[#7C7C7C]"
+          className="text-xs md:text-xs font-bold text-[#7C7C7C]"
         >
           PROJECT
         </Typography>
         <div className="border-t border-[#FFFFFF] w-1/4 mx-auto"></div>
         <Typography
           variant="h6"
-          className="text-base md:text-lg font-bold text-[#CF8834]"
+          className="text-xs md:text-lg font-bold text-[#CF8834]"
         >
           SKY TOWN FOREST PROJECT
         </Typography>
         <div className="border-t border-[#FFFFFF] w-1/4 mx-auto"></div>
         <Typography
           variant="h6"
-          className="text-base md:text-xs font-bold text-[#7C7C7C]"
+          className="text-xs md:text-xs font-bold text-[#7C7C7C]"
         >
           3 DAYS PROMO
         </Typography>
       </div>
-      <div className="bg-[#FFF4E8] w-full mx-auto  p-6">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-[1rem] md:gap-[14rem] text-center">
-          <div>
+      <div className="bg-[#FFF4E8] w-full mx-auto p-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-12 text-center">
+          <div className="w-full">
             <Typography
               variant="small"
               className="text-xs md:text-sm font-medium text-[#515151]"
@@ -44,7 +44,7 @@ const SkyTownForestPromo = () => {
               200
             </Typography>
           </div>
-          <div>
+          <div className="w-full">
             <Typography
               variant="small"
               className="text-xs md:text-sm font-medium text-[#515151]"
@@ -58,7 +58,7 @@ const SkyTownForestPromo = () => {
               ₱13,000.00
             </Typography>
           </div>
-          <div>
+          <div className="w-full">
             <Typography
               variant="small"
               className="text-xs md:text-sm font-medium text-[#515151]"

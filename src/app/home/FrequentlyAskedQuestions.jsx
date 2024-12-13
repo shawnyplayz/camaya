@@ -1,6 +1,8 @@
 import Accordion from "@/components/Accordian";
 import Accordian2 from "@/components/Accordian2";
 import Accordian3 from "@/components/Accordian3";
+import StationTable from "@/components/StationTable";
+
 import React from "react";
 
 const FrequentlyAskedQuestions = () => {
@@ -30,8 +32,9 @@ const FrequentlyAskedQuestions = () => {
           title="2. Can I set a sample computation on a best discount in the smallest lot cut?"
           content="You can reach Camaya Coast via ferry from Manila or by land travel through Bataan."
         />
+        <StationTable title="3. Can I get the price list?" />
         <Accordian3
-          title="4. Is this Selling Platform headed by a Licensed Real Estate Broker or Salesperon?"
+          title="4. Is this Selling Platform headed by a licensed real estate broker or salesperson?"
           content="Yes it is. We are headed by our Sales Director,  Ms. Maripaul Corpuz -Milanes.  She is a Licensed Real Estate Broker and Appraiser. She has been with Earth and Shore Leisure Communities Corp since 2016."
         />
       </div>
