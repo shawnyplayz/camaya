@@ -46,6 +46,7 @@ const FeaturedProperties = () => {
     slidesToShow: 1,
     slidesToScroll: 1,
     arrows: numImages > 1,
+    initialSlide: 0,
     autoplay: true,
     customPaging: (i) => (
       <div
@@ -119,7 +120,7 @@ const FeaturedProperties = () => {
                       fontSize: "139px",
                     }}
                   >
-                    {index + 1}{" "}
+                    {property.station_number}
                   </span>
 
                   <div className="ml-[-13px] mt-[60px]">
