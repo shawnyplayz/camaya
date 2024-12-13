@@ -63,7 +63,7 @@ const StationTable = ({ title }) => {
         {
           name: "Golf Town Camaya",
           regularPrice: "₱50,000",
-          premiumPrice: "₱50,000",
+          premiumPrice: "₱55,000",
           fairwayPrice: "-",
           notes: "-",
         },
@@ -72,7 +72,7 @@ const StationTable = ({ title }) => {
           regularPrice: "₱5,750,000",
           premiumPrice: "₱9,750,000",
           fairwayPrice: "-",
-          notes: "-",
+          notes: "Premium & Premium Corner",
         },
         {
           name: "Golf Villas B1",
@@ -152,7 +152,7 @@ const StationTable = ({ title }) => {
           regularPrice: "₱20,500",
           premiumPrice: "₱22,000",
           fairwayPrice: "₱23,500",
-          notes: "Regular, Premium/Corner, & Sky Golf",
+          notes: "-",
         },
         // Other properties...
       ],
@@ -191,7 +191,7 @@ const StationTable = ({ title }) => {
           <div className="text-center border-[1.83px] border-[#FFBA68] p-4 bg-[#FFE6BE]">
             <Typography
               variant="small"
-              className="text-xs md:text-lg font-bold text-[#574D4D] tracking-wider uppercase"
+              className="text-xs md:text-lg font-bold text-[#EB9126] tracking-wider uppercase"
             >
               Price List
             </Typography>
@@ -239,7 +239,7 @@ const StationTable = ({ title }) => {
                                 margin: "auto",
                               }}
                               src={station}
-                              alt=""
+                              alt="stations"
                             />
                           </td>
                         )}
