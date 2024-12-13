@@ -99,7 +99,7 @@ const FeaturedProperties = () => {
       id="featuredPropertiesSection"
     >
       <div className="container mx-auto flex flex-col gap-3 lg:gap-12">
-        <div className="mx-32 hidden md:block">
+        <div className="md:block">
           <Divider style={{ borderColor: "#CCCCCC" }}>
             <h1 className="text-[#221C42] font-workSansMedium font-medium lg:text-[64px] text-center text-3xl">
               Featured Properties

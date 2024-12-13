@@ -191,7 +191,7 @@ const StationTable = ({ title }) => {
           <div className="text-center border-[1.83px] border-[#FFBA68] p-4 bg-[#FFE6BE]">
             <Typography
               variant="small"
-              className="text-xs md:text-lg font-bold text-[#574D4D] tracking-wider uppercase"
+              className="text-xs md:text-lg font-bold text-[#EB9126] tracking-wider uppercase"
             >
               Price List
             </Typography>
