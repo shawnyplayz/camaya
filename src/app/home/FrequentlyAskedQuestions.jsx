@@ -1,6 +1,6 @@
 import Accordion from "@/components/Accordian";
 import Accordian2 from "@/components/Accordian2";
-import StationTable from "@/components/AccordianTable";
+import StationTable from "@/components/StationTable";
 
 import React from "react";
 
