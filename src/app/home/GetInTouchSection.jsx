@@ -21,7 +21,7 @@ const GetInTouchSection = () => {
   }, []);
   return (
     <div className="bg-[#FDFAF3]" id="contactUsSection">
-      <div className="h-auto relative mx-auto container flex flex-col lg:flex-row items-center gap-8 lg:gap-20 px-4 sm:px-6 lg:px-16 py-8 sm:py-12 lg:py-16 lg:flex lg:justify-center lg:items-baseline">
+      <div className="h-auto relative mx-auto container flex flex-col lg:flex-row items-center gap-8 lg:gap-x-96 px-4 sm:px-6 lg:px-16 py-8 sm:py-12 lg:py-16 lg:flex lg:justify-center lg:items-baseline">
         {/* Left Section */}
         <div className="text-center lg:text-start max-w-96 md:max-w-full">
           <div className="pt-8 sm:pt-12  pb-8 max-w-[20rem] lg:max-w-full sm:pb-12 ">
