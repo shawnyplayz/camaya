@@ -21,80 +21,92 @@ const GetInTouchSection = () => {
   }, []);
   return (
     <div className="bg-[#FDFAF3]" id="contactUsSection">
-      <div className="h-auto relative mx-auto container flex flex-col lg:flex-row items-center gap-8 lg:gap-x-96 px-4 sm:px-6 lg:px-16 py-8 sm:py-12 lg:py-16 lg:flex lg:justify-center lg:items-baseline">
-        {/* Left Section */}
-        <div className="text-center lg:text-start max-w-96 md:max-w-full">
-          <div className="pt-8 sm:pt-12  pb-8 max-w-[20rem] lg:max-w-full sm:pb-12 ">
-            <h1 className="font-workSansMedium font-medium text-2xl sm:text-3xl lg:text-5xl text-[#221C42]">
-              Get in Touch
-            </h1>
-            <p className="max-w-full sm:max-w-xl mt-4 sm:mt-6 text-[#9C9C9C] text-center lg:text-start font-workSansMedium font-medium text-sm sm:text-base lg:text-lg mx-auto lg:mx-0">
-              {GetInTouchData.description}
-            </p>
-
-            <div className="contact-info mt-8 sm:mt-12 lg:mt-16 font-workSansMedium font-medium text-base text-center sm:text-lg text-[#182A64]">
-              <div className="flex flex-col gap-4 items-center md:items-start">
-                <div className="flex items-center gap-2">
-                  <IoMdCall className="text-lg" />
-                  <span>Call -</span>
-                  <span className="text-xs sm:text-base">
-                    {GetInTouchData.phoneNumber}
-                  </span>
-                  <PH title="Philippines" className="w-5" />
+      <div className="container mx-auto py-20 lg:px-12 px-8">
+        <div className="flex justify-between flex-col lg:flex-row gap-8">
+          <div
+            className="leftside flex flex-col lg:text-start text-center"
+            data-aos="fade-up-right"
+          >
+            <div className="flex flex-col gap-8">
+              <div className="flex grouped_first_half flex-col">
+                <div className="heading">
+                  <h1 className="font-workSansMedium font-medium text-2xl sm:text-3xl lg:text-5xl text-[#221C42]">
+                    Get in Touch
+                  </h1>
                 </div>
-
-                <div className="flex items-center gap-2">
-                  <FaViber className="text-lg" />
-                  <span>Viber -</span>
-                  <span className="text-xs sm:text-base">
-                    {GetInTouchData.viber}
-                  </span>
-                  <PH title="Philippines" className="w-5" />
+                <div className="GIT_Description">
+                  <p className="max-w-full sm:max-w-xl mt-4 sm:mt-6 text-[#9C9C9C] text-center lg:text-start font-workSansMedium font-medium text-sm sm:text-base lg:text-lg mx-auto lg:mx-0">
+                    {GetInTouchData.description}
+                  </p>
                 </div>
+              </div>
+              <div className="lg:flex lg:mr-16">
+                <div className="grid  grid-rows-[30px_auto_40px] lg:grid-cols-[30px_auto_40px] gap-x-5 gap-y-3 items-center max-w-lg mx-auto font-workSansMedium font-medium text-base text-center lg:text-start sm:text-lg text-[#182A64]">
+                  <div className="text-lg text-center flex justify-center lg:block ">
+                    {" "}
+                    <IoMdCall className="text-lg" />
+                  </div>
+                  <div className="text-gray-800 text-start flex justify-center lg:block">
+                    Call - 0926 053 2470
+                  </div>
+                  <div className="hidden lg:block">
+                    <PH title="Philippines" className="w-5" />
+                  </div>
 
-                <div className="flex items-center gap-2">
-                  <IoMdCall className="text-lg" />
-                  <span>Call -</span>
-                  <span className="text-xs sm:text-base">
-                    {GetInTouchData.canada}
-                  </span>
-                  <CA title="Canada" className="w-5" />
-                </div>
+                  <div className="text-lg text-center flex justify-center lg:block">
+                    {" "}
+                    <FaViber className="text-lg" />
+                  </div>
+                  <div className="text-gray-800 text-start flex justify-center lg:block">
+                    Viber - 0945 566 6565
+                  </div>
+                  <div className="hidden lg:block">
+                    <PH title="Philippines" className="w-5" />
+                  </div>
 
-                <div className="flex flex-col sm:flex-row items-center sm:items-start gap-2 sm:gap-4">
-                  <MdEmail className="text-lg" />
-                  <span className="hidden sm:inline">Email -</span>
-                  <span className="text-xs sm:text-base">
-                    {GetInTouchData.email}
-                  </span>
-                </div>
+                  <div className="text-lg text-center flex justify-center lg:block">
+                    {" "}
+                    <IoMdCall className="text-lg" />
+                  </div>
+                  <div className="text-gray-800 text-start flex justify-center lg:block">
+                    Call - 0778 241 4895
+                  </div>
+                  <div className="hidden lg:block">
+                    <CA title="Canada" className="w-5" />
+                  </div>
 
-                <div className="flex flex-col sm:flex-row items-center sm:items-start gap-2 sm:gap-4">
-                  <MdEmail className="text-lg" />
-                  <span className="hidden sm:inline">Email -</span>
-                  <span className="text-xs sm:text-base">
-                    {GetInTouchData.email2}
-                  </span>
-                </div>
-
-                <div className="flex flex-col sm:flex-row items-center sm:items-start gap-2 sm:gap-4">
-                  <FaLocationDot className="text-lg" />
-                  <span className="hidden sm:inline">Address -</span>
-                  <span className="text-xs sm:text-base max-w-80 lg:text-start">
-                    {GetInTouchData.location}
-                  </span>
+                  <div className="text-lg text-center flex justify-center lg:block">
+                    <MdEmail className="text-lg" />
+                  </div>
+                  <div className="text-gray-800 text-start flex justify-center lg:block">
+                    <a href="mailto:lizzume.custodio@realestate.camayacoast.com">
+                      lizzume.custodio@realestate.camayacoast.com
+                    </a>
+                  </div>
+                  <div className="hidden lg:block"></div>
+                  <div className="text-lg text-center flex justify-center lg:block">
+                    <MdEmail className="text-lg" />
+                  </div>
+                  <div className="text-gray-800 text-start flex justify-center lg:block">
+                    <a href="mailto:lizzume.custodio@realestate.camayacoast.com">
+                      maripaul.milanes@realestate.camayacoast.com
+                    </a>
+                  </div>
+                  <div className="hidden lg:block"></div>
+                  <div className="text-lg text-center flex justify-center lg:block">
+                    <FaLocationDot className="text-lg" />
+                  </div>
+                  <div className="text-gray-800">
+                    PET Plans Tower Guadalupe Viejo EDSA Makati City
+                  </div>
+                  <div></div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-
-        {/* Right Section - Contact Form */}
-        <div
-          className="mt-8 lg:mt-0 px-4 lg:px-0 w-full lg:w-auto flex justify-center items-center"
-          data-aos="flip-right"
-        >
-          <ContactForm />
+          <div className="rightside flex" data-aos="fade-up-left">
+            <ContactForm />
+          </div>
         </div>
       </div>
     </div>
