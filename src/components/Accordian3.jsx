@@ -5,7 +5,6 @@ import { useState } from "react";
 import { MdKeyboardArrowUp } from "react-icons/md";
 import { MdKeyboardArrowDown } from "react-icons/md";
 
-
 const Accordion3 = ({ title, content }) => {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -38,7 +37,9 @@ const Accordion3 = ({ title, content }) => {
             : "max-h-0 opacity-0"
         }`}
       >
-        <div className="px-4 pb-4 text-sm text-gray-600">{content}</div>
+        <div className=" text-sm font-medium font-workSansRegular lg:max-w-2xl text-[#7C7C7C]">
+          {content}
+        </div>
       </div>
     </div>
   );
