@@ -80,7 +80,7 @@ const GetInTouchSection = () => {
                 <div className="flex flex-col sm:flex-row items-center sm:items-start gap-2 sm:gap-4">
                   <FaLocationDot className="text-lg" />
                   <span className="hidden sm:inline">Address -</span>
-                  <span className="text-xs sm:text-base max-w-96 lg:text-start">
+                  <span className="text-xs sm:text-base max-w-80 lg:text-start">
                     {GetInTouchData.location}
                   </span>
                 </div>
