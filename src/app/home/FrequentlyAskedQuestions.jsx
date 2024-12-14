@@ -28,10 +28,6 @@ const FrequentlyAskedQuestions = () => {
           title="2. Can I set a sample computation on a best discount in the smallest lot cut?"
           content="You can reach Camaya Coast via ferry from Manila or by land travel through Bataan."
         />
-        <Accordian2
-          title="2. Can I set a sample computation on a best discount in the smallest lot cut?"
-          content="You can reach Camaya Coast via ferry from Manila or by land travel through Bataan."
-        />
         <StationTable title="3. Can I get the price list?" />
         <Accordian3
           title="4. Is this Selling Platform headed by a licensed real estate broker or salesperson?"
