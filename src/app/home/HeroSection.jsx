@@ -4,7 +4,7 @@ import endpoints from "@/config/endpoints";
 import { fetchDataGet } from "@/utils.js/fetchData";
 import Image from "next/image";
 import React, { useState, useEffect } from "react";
-
+import DefaultSection from "../../../public/assets/home/heroSection/Hero_default.webp";
 const HeroSection = () => {
   const [images, setImages] = useState([]);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -41,20 +41,35 @@ const HeroSection = () => {
   return (
     <div className="relative w-full h-screen overflow-hidden" id="home">
       <div className="absolute inset-0 w-full h-full">
-        {images.map((image, index) => (
-          <Image
-            key={index}
-            src={image}
-            alt={`Slide ${index}`}
-            width={100}
-            height={100}
-            loading="eager"
-            className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${
-              currentImageIndex === index ? "opacity-100" : "opacity-0"
-            }`}
-            sizes="(max-width: 768px) 100vw, 100vw"
-          />
-        ))}
+        {images?.length !== 0 ? (
+          images?.map((image, index) => (
+            <Image
+              key={index}
+              src={image}
+              alt={`Slide ${index}`}
+              width={100}
+              height={100}
+              loading="eager"
+              className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${
+                currentImageIndex === index ? "opacity-100" : "opacity-0"
+              }`}
+              sizes="(max-width: 768px) 100vw, 100vw"
+            />
+          ))
+        ) : (
+          <>
+            <Image
+              src={DefaultSection}
+              alt={"Camaya Coast"}
+              width={100}
+              height={100}
+              loading="eager"
+              className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 
+              }`}
+              sizes="(max-width: 768px) 100vw, 100vw"
+            />
+          </>
+        )}
       </div>
 
       <div

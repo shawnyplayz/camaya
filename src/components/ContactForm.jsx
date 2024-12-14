@@ -63,7 +63,6 @@ const ContactForm = () => {
         // Clear feedback message after 8 seconds
         setTimeout(() => setFeedbackMessage(null), 8000);
       } else {
-        debugger;
         // Handle failed response
         const errorMsg = response?.message || "Failed to send the message.";
         setFeedbackMessage({ type: "error", text: errorMsg });
