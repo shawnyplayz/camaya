@@ -8,6 +8,7 @@ import endpoints from "@/config/endpoints";
 import { showToastError, showToastSuccess } from "@/config/toast";
 
 const ContactForm = () => {
+  // State for form data
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -15,57 +16,67 @@ const ContactForm = () => {
     message: "",
   });
 
+  // State for form status
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [feedbackMessage, setFeedbackMessage] = useState({
-    type: "",
-    text: "",
-  });
 
+  // State for feedback messages
+  const [feedbackMessage, setFeedbackMessage] = useState(null);
+
+  // Handle input changes dynamically
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData((prevData) => ({ ...prevData, [name]: value }));
   };
 
+  // Handle form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (isSubmitting) return; // Prevent duplicate submissions
+    // Prevent duplicate submissions
+    if (isSubmitting) return;
+
     setIsSubmitting(true);
-    setFeedbackMessage({ type: "", text: "" });
+    setFeedbackMessage(null); // Clear previous messages
 
     try {
-      console.log("Sending data:", formData);
-
+      // Send form data to the API endpoint
       const response = await fetchDataPost(endpoints.sendInquiry, formData);
 
-      if (response.success) {
+      // Check if the response is successful
+      if (response?.message) {
+        // Show success message
         setFeedbackMessage({
           type: "success",
           text: "Your message has been sent successfully!",
         });
-        setFormData({ name: "", email: "", mobile_number: "", message: "" });
+
+        // Reset form fields
+        setFormData({
+          name: "",
+          email: "",
+          mobile_number: "",
+          message: "",
+        });
+
         showToastSuccess(response.message);
-        // Clear the message after 8 seconds
-        setTimeout(
-          () =>
-            setFeedbackMessage({
-              name: "",
-              email: "",
-              mobile_number: "",
-              message: "",
-            }),
-          8000
-        );
+
+        // Clear feedback message after 8 seconds
+        setTimeout(() => setFeedbackMessage(null), 8000);
       } else {
-        const errorMsg = response.message || "Failed to send message.";
+        debugger;
+        // Handle failed response
+        const errorMsg = response?.message || "Failed to send the message.";
         setFeedbackMessage({ type: "error", text: errorMsg });
         showToastError(errorMsg);
       }
     } catch (error) {
-      const errorMsg = error.message || "An unexpected error occurred.";
+      // Handle unexpected errors
+      const errorMsg =
+        error?.message || "An unexpected error occurred. Please try again.";
       setFeedbackMessage({ type: "error", text: errorMsg });
       showToastError(errorMsg);
     } finally {
+      // Stop submitting state
       setIsSubmitting(false);
     }
   };
@@ -73,9 +84,12 @@ const ContactForm = () => {
   return (
     <div className="bg-white px-10 py-8 rounded-lg shadow-md max-w-md mx-auto lg:max-w-xl">
       <form onSubmit={handleSubmit}>
+        {/* Title */}
         <h1 className="text-[#221C42] font-workSansMedium font-medium text-3xl sm:text-4xl md:text-5xl mb-6 mt-5">
           Contact Us
         </h1>
+
+        {/* Form Fields */}
         <div className="w-full">
           <Input
             type="text"
@@ -83,6 +97,7 @@ const ContactForm = () => {
             value={formData.name}
             onChange={handleInputChange}
             placeholder="Name"
+            required
           />
           <Input
             type="email"
@@ -90,6 +105,7 @@ const ContactForm = () => {
             value={formData.email}
             onChange={handleInputChange}
             placeholder="Email"
+            required
           />
           <Input
             type="text"
@@ -97,9 +113,9 @@ const ContactForm = () => {
             value={formData.mobile_number}
             onChange={handleInputChange}
             placeholder="Phone"
+            required
           />
           <textarea
-            id="message"
             name="message"
             value={formData.message}
             onChange={handleInputChange}
@@ -109,17 +125,21 @@ const ContactForm = () => {
             required
           />
         </div>
-        {feedbackMessage.text && (
+
+        {/* Feedback Message */}
+        {feedbackMessage && (
           <p
             className={`${
               feedbackMessage.type === "success"
                 ? "text-green-600"
                 : "text-red-600"
-            } transition-opacity duration-500`}
+            } transition-opacity duration-500 mb-4`}
           >
             {feedbackMessage.text}
           </p>
         )}
+
+        {/* Submit Button */}
         <div className="flex items-center justify-center pb-8">
           <Button className="w-full" disabled={isSubmitting}>
             {isSubmitting ? "Sending..." : "Send Message"}
