@@ -6,7 +6,7 @@ const AboutCamayaMobile = () => {
   return (
     <section
       className="py-12 px-4"
-      id="aboutusmobile"
+      id="aboutus"
       style={{
         background:
           "linear-gradient(180deg, rgba(255, 196, 71, 0.18) 22.97%, rgba(255, 244, 221, 0) 76.05%)",
