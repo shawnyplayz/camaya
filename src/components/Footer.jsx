@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import Image from "next/image";
 import Link from "next/link";
@@ -64,35 +64,43 @@ const Footer = () => {
         <nav className="mt-12">
           <ul className="flex flex-wrap lg:gap-[7rem] gap-5 justify-center lg:justify-center font-workSansMedium font-medium text-sm md:text-base lg:text-lg text-black">
             <li>
-              <a href="/home#home" onClick={(e) => handleNavigation(e, "/home#home")}>
+              <a
+                href="/home#home"
+                onClick={(e) => handleNavigation(e, "#home")}
+              >
                 Home
               </a>
             </li>
             <li>
-              <a href="/home#aboutus" onClick={(e) => handleNavigation(e, "/home#aboutus")}>
+              <a
+                href="#aboutus"
+                onClick={(e) => handleNavigation(e, "#aboutus")}
+              >
                 About Us
               </a>
             </li>
             <li>
               <a
-                href="/home#featuredPropertiesSection"
-                onClick={(e) => handleNavigation(e, "/home#featuredPropertiesSection")}
+                href="#featuredPropertiesSection"
+                onClick={(e) =>
+                  handleNavigation(e, "#featuredPropertiesSection")
+                }
               >
                 Properties
               </a>
             </li>
             <li>
               <a
-                href="/home#amenitiesSection"
-                onClick={(e) => handleNavigation(e, "/home#amenitiesSection")}
+                href="#amenitiesSection"
+                onClick={(e) => handleNavigation(e, "#amenitiesSection")}
               >
                 Amenities
               </a>
             </li>
             <li>
               <a
-                href="/home#contactUsSection"
-                onClick={(e) => handleNavigation(e, "/home#contactUsSection")}
+                href="#contactUsSection"
+                onClick={(e) => handleNavigation(e, "#contactUsSection")}
               >
                 Contact Us
               </a>

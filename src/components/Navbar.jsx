@@ -35,11 +35,11 @@ const Navbar = () => {
   };
 
   const navLinks = [
-    { href: "/home#home", label: "HOME" },
-    { href: "/home#aboutus", label: "ABOUT US" },
-    { href: "/home#featuredPropertiesSection", label: "PROPERTIES" },
-    { href: "/home#amenitiesSection", label: "AMENITIES" },
-    { href: "/home#contactUsSection", label: "CONTACT US" },
+    { href: "#home", label: "HOME" },
+    { href: "#aboutus", label: "ABOUT US" },
+    { href: "#featuredPropertiesSection", label: "PROPERTIES" },
+    { href: "#amenitiesSection", label: "AMENITIES" },
+    { href: "#contactUsSection", label: "CONTACT US" },
   ];
 
   return (
