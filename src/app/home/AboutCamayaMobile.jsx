@@ -32,71 +32,90 @@ const AboutCamayaMobile = () => {
         {/* Image Grid */}
         <div className="grid grid-cols-3 gap-4 sm:gap-6 md:gap-[3.5rem]">
           {/* Row 1 */}
-          <Image
-            src="/assets/home/aboutSection/image_row_1.webp"
-            alt="Image 1"
-            width={200}
-            height={200}
-            className="rounded-lg shadow-lg"
-          />
-          <Image
-            src="/assets/home/aboutSection/image_row_1_2.webp"
-            alt="Image 2"
-            width={200}
-            height={200}
-            className="rounded-lg shadow-lg"
-          />
-          <Image
-            src="/assets/home/aboutSection/image_row_1_3.webp"
-            alt="Image 3"
-            width={200}
-            height={200}
-            className="rounded-lg shadow-lg"
-          />
+          <div className="flex">
+            <Image
+              src="/assets/home/aboutSection/image_row_1.webp"
+              alt="Image 1"
+              width={200}
+              height={200}
+              className="rounded-lg shadow-lg"
+            />
+          </div>
+          <div className="flex">
+            <Image
+              src="/assets/home/aboutSection/image_row_1_2.webp"
+              alt="Image 2"
+              width={200}
+              height={200}
+              className="rounded-lg shadow-lg"
+            />
+          </div>
+          <div className="flex">
+            <Image
+              src="/assets/home/aboutSection/image_row_1_3.webp"
+              alt="Image 3"
+              width={200}
+              height={200}
+              className="rounded-lg shadow-lg object-contain"
+            />
+          </div>
+
           {/* Row 2 */}
-          <Image
-            src="/assets/home/aboutSection/image_row_2_1.webp"
-            alt="Image 4"
-            width={200}
-            height={200}
-            className="rounded-lg shadow-lg"
-          />
-          <Image
-            src="/assets/home/aboutSection/image_row_2_2.webp"
-            alt="Image 5"
-            width={200}
-            height={200}
-            className="rounded-lg shadow-lg"
-          />
-          <Image
-            src="/assets/home/aboutSection/image_row_2_3.webp"
-            alt="Image 6"
-            width={200}
-            height={200}
-            className="rounded-lg shadow-lg"
-          />
+          <div className="flex">
+            <Image
+              src="/assets/home/aboutSection/image_row_2_1.webp"
+              alt="Image 4"
+              width={200}
+              height={200}
+              className="rounded-lg shadow-lg"
+            />
+          </div>
+          <div className="flex">
+            <Image
+              src="/assets/home/aboutSection/image_row_2_2.webp"
+              alt="Image 5"
+              width={200}
+              height={200}
+              className="rounded-lg shadow-lg"
+            />
+          </div>
+          <div className="flex">
+            <Image
+              src="/assets/home/aboutSection/image_row_2_3.webp"
+              alt="Image 6"
+              width={200}
+              height={200}
+              className="rounded-lg shadow-lg"
+            />
+          </div>
           {/* Row 3 */}
-          <Image
-            src="/assets/home/aboutSection/image_row_3_1.webp"
-            alt="Image 7"
-            width={200}
-            height={200}
-            className="rounded-lg shadow-lg"
-          />
-          <Image
-            src="/assets/home/aboutSection/image_row_3_2.webp"
-            alt="Image 8"
-            width={200}
-            height={200}
-            className="rounded-lg shadow-lg"
-          />
-          <Image
-            src="/assets/home/aboutSection/image_row_3_3.webp"
-            alt="Image 9"
-            width={200}
-            height={200}
-            className="rounded-lg shadow-lg"
-          />
+          <div className="flex">
+            <Image
+              src="/assets/home/aboutSection/image_row_3_1.webp"
+              alt="Image 7"
+              width={200}
+              height={200}
+              className="rounded-lg shadow-lg"
+            />
+          </div>
+          <div className="flex">
+            <Image
+              src="/assets/home/aboutSection/image_row_3_2.webp"
+              alt="Image 8"
+              width={200}
+              height={200}
+              className="rounded-lg shadow-lg"
+            />
+          </div>
+          <div className="flex">
+            <Image
+              src="/assets/home/aboutSection/image_row_3_3.webp"
+              alt="Image 9"
+              width={200}
+              height={200}
+              className="rounded-lg shadow-lg"
+            />
+          </div>
         </div>
       </div>
     </section>
