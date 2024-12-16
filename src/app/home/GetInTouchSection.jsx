@@ -5,7 +5,7 @@ import ContactForm from "@/components/ContactForm";
 import { FaLocationDot } from "react-icons/fa6";
 import { CA, PH } from "country-flag-icons/react/3x2";
 import { IoMdCall } from "react-icons/io";
-import { FaViber } from "react-icons/fa";
+import { FaViber, FaWhatsapp } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import { AOS } from "aos";
 import "aos/dist/aos.css";
@@ -59,6 +59,17 @@ const GetInTouchSection = () => {
                   </div>
                   <div className="text-gray-800 text-start flex justify-center lg:block">
                     Viber - 0945 566 6565
+                  </div>
+
+                  <div className="hidden lg:block">
+                    <PH title="Philippines" className="w-5" />
+                  </div>
+                  <div className="text-lg text-center flex justify-center lg:block">
+                    {" "}
+                    <FaWhatsapp className="text-lg" />
+                  </div>
+                  <div className="text-gray-800 text-start flex justify-center lg:block">
+                    WhatsApp - 0917 635 2003
                   </div>
                   <div className="hidden lg:block">
                     <PH title="Philippines" className="w-5" />
