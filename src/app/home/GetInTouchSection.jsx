@@ -79,11 +79,7 @@ const GetInTouchSection = () => {
                     <MdEmail className="text-lg" />
                   </div>
                   <div className="text-gray-800 text-start flex justify-center lg:block">
-<<<<<<< HEAD
                     <a href="mailto:lizzome.custodio@realestate.camayacoast.com">
-=======
-                    <a href="mailto:lizzume.custodio@realestate.camayacoast.com">
->>>>>>> 551aedc8ac29c1cf2fd76bdc7bbe24802c12a820
                       lizzome.custodio@realestate.camayacoast.com
                     </a>
                   </div>
