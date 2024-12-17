@@ -125,9 +125,20 @@ const FeaturedProperties = () => {
 
                   <div className="ml-[-13px] mt-[60px]">
                     <div className="relative top-4 left-4 flex flex-col gap-[10px]">
-                      <h2 className="font-workSansMedium font-medium text-lg sm:text-xl lg:text-[26px] text-[#FFC447] uppercase">
-                        Station
-                      </h2>
+                      <div className="flex items-center gap-2">
+                        <h2 className="font-workSansMedium font-medium text-lg sm:text-xl lg:text-[26px] text-[#FFC447] uppercase">
+                          Station
+                        </h2>
+                        <a
+                          href={property.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-blue-600 no-underline hover:text-blue-800 hover:font-semibold hover:scale-105 transition-transform duration-300"
+                        >
+                          Google Drive Link
+                        </a>
+                      </div>
+
                       <h3 className="font-workSansMedium font-medium text-2xl sm:text-3xl lg:text-[48px] text-[#4CAF50] uppercase">
                         {property.location.toUpperCase()}
                       </h3>
