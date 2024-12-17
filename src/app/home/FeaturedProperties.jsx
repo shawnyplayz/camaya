@@ -112,40 +112,38 @@ const FeaturedProperties = () => {
           const numImages = property.pictures.length;
           return (
             <div key={property.prop_id} className="mt-[4rem]">
-              <div className="slider-container">
-                <div className="flex gap-3">
+              <div className="relative slider-container">
+                <div className="flex gap-3 items-start">
                   <span
                     className="text-[#FFC107] font-extrabold"
-                    style={{
-                      fontSize: "139px",
-                    }}
+                    style={{ fontSize: "139px" }}
                   >
                     {property.station_number}
                   </span>
 
                   <div className="ml-[-13px] mt-[60px]">
-                    <div className="relative top-4 left-4 flex flex-col gap-[10px]">
-                      <div className="flex items-center gap-2">
-                        <h2 className="font-workSansMedium font-medium text-lg sm:text-xl lg:text-[26px] text-[#FFC447] uppercase">
-                          Station
-                        </h2>
-                        <a
-                          href={property.link}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-blue-600 no-underline hover:text-blue-800 hover:font-semibold hover:scale-105 transition-transform duration-300"
-                        >
-                          Google Drive Link
-                        </a>
-                      </div>
-
+                    <div className="flex flex-col gap-[10px]">
+                      <h2 className="font-workSansMedium font-medium text-lg sm:text-xl lg:text-[26px] text-[#FFC447] uppercase">
+                        Station
+                      </h2>
                       <h3 className="font-workSansMedium font-medium text-2xl sm:text-3xl lg:text-[48px] text-[#4CAF50] uppercase">
                         {property.location.toUpperCase()}
                       </h3>
                     </div>
                   </div>
                 </div>
+
+                {/* Button Positioned at Top-Right */}
+                <a
+                  href={property.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="absolute top-[55px] right-0 m-4 bg-yellow-500 text-white px-2 py-1 sm:px-3 sm:py-1.5 text-xs sm:text-[12px] rounded font-medium transition-all duration-300 ease-in-out hover:bg-white hover:border-yellow-500 hover:border hover:text-black hover:scale-105 shadow uppercase tracking-wider"
+                >
+                  Check Availability Map
+                </a>
               </div>
+
               <div className="slider-container">
                 <Slider {...sliderSettings(numImages)}>
                   {property.pictures.map((pic, i) => (
