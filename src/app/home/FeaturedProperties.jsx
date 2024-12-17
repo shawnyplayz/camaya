@@ -123,7 +123,7 @@ const FeaturedProperties = () => {
 
                   <div className="ml-[-13px] mt-[60px]">
                     <div className="flex flex-col gap-[10px]">
-                      <h2 className="font-workSansMedium font-medium text-lg sm:text-xl lg:text-[26px] text-[#FFC447] uppercase">
+                      <h2 className="font-workSansMedium font-medium text-[15px] sm:text-xl lg:text-[26px] text-[#FFC447] uppercase">
                         Station
                       </h2>
                       <h3 className="font-workSansMedium font-medium text-2xl sm:text-3xl lg:text-[48px] text-[#4CAF50] uppercase">
@@ -138,7 +138,7 @@ const FeaturedProperties = () => {
                   href={property.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="absolute top-[55px] right-0 m-4 bg-yellow-500 text-white px-2 py-1 sm:px-3 sm:py-1.5 text-xs sm:text-[12px] rounded font-medium transition-all duration-300 ease-in-out hover:bg-white hover:border-yellow-500 hover:border hover:text-black hover:scale-105 shadow uppercase tracking-wider"
+                  className="absolute top-[50px] lg:top-[55px]  right-0 m-4 bg-yellow-500 text-white px-2 py-1 sm:px-3 sm:py-1.5 text-xs sm:text-[12px] rounded font-medium transition-all duration-300 ease-in-out hover:bg-white hover:border-yellow-500 hover:border hover:text-black hover:scale-105 shadow uppercase tracking-wider"
                 >
                   Check Availability Map
                 </a>
