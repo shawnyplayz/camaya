@@ -7,8 +7,9 @@ import "react-toastify/dist/ReactToastify.css";
 import Head from "next/head";
 
 export const metadata = {
-  title: "Camaya",
-  description: "Camaya",
+  title: "Camaya Coast",
+  description:
+    "Nestled in the heart of Bataan, Camaya Coast offers a perfect blend of nature and modernity. Enjoy the beauty of pristine beach, world-class amenities, and a vibrant community.",
 };
 
 export default function RootLayout({ children }) {
