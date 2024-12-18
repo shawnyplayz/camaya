@@ -15,11 +15,14 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       {/* Open Graph Meta Tags */}
-      <meta property="og:title" content="Camaya" />
-      <meta property="og:description" content="Camaya" />
-      <meta property="og:image" content="/assets/thumbnail.png" />
+      <meta property="og:title" content="Camaya Coast" />
+      <meta
+        property="og:description"
+        content="Nestled in the heart of Bataan, Camaya Coast offers a perfect blend of nature and modernity. Enjoy the beauty of pristine beach, world-class amenities, and a vibrant community."
+      />
+      <meta property="og:image" content="/assets/thumbnail.webp" />
       <meta property="og:image:alt" content="About Camaya" />
-      <meta property="og:image:type" content="image/png" />
+      <meta property="og:image:type" content="image/webp" />
       <meta property="og:image:width" content="1200" />
       <meta property="og:image:height" content="630" />
       <meta property="og:type" content="website" />
