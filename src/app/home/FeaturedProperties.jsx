@@ -3,7 +3,9 @@ import Image from "next/image";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { FaCaretLeft, FaCaretRight } from "react-icons/fa";
+import { FaCaretLeft, FaCaretRight, FaMapMarkerAlt } from "react-icons/fa";
+import { GrMapLocation } from "react-icons/gr";
+
 import { Divider } from "antd";
 import { fetchDataGet } from "@/utils.js/fetchData";
 import endpoints from "@/config/endpoints";
@@ -134,13 +136,15 @@ const FeaturedProperties = () => {
                 </div>
 
                 {/* Button Positioned at Top-Right */}
+
                 <a
                   href={property.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="absolute top-[50px] lg:top-[55px]  right-0 m-4 bg-yellow-500 text-white px-2 py-1 sm:px-3 sm:py-1.5 text-xs sm:text-[12px] rounded font-medium transition-all duration-300 ease-in-out hover:bg-white hover:border-yellow-500 hover:border hover:text-black hover:scale-105 shadow uppercase tracking-wider"
+                  className="absolute top-[50px] lg:top-[30px] right-0 m-4 bg-[#FFF8EA] text-[#3A3A3A] border-2 border-[#F8A227] flex items-center justify-center gap-1 px-4 py-4 text-xs sm:text-sm rounded-full font-medium transition-all duration-300 ease-in-out hover:bg-white hover:border-yellow-500 hover:border hover:text-black hover:scale-105 shadow uppercase tracking-wider"
                 >
-                  Check Availability Map
+                  <GrMapLocation className="text-lg sm:text-xl text-[#FFBE35]" />
+                  Check Availability Maps
                 </a>
               </div>
 
