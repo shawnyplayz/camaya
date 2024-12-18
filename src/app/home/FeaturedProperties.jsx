@@ -141,9 +141,9 @@ const FeaturedProperties = () => {
                   href={property.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="absolute top-[20px] lg:top-[30px] right-0 m-4 bg-[#FFF8EA] text-[#3A3A3A] border-2 border-[#F8A227] flex items-center justify-center gap-1 px-4 py-4 text-xs sm:text-sm rounded-full font-medium transition-all duration-300 ease-in-out hover:bg-white hover:border-yellow-500 hover:border hover:text-black hover:scale-105 shadow uppercase tracking-wider"
+                  className="absolute top-[20px] lg:top-[30px] right-0 m-4 bg-[#FFF8EA] text-[#3A3A3A] border-2 border-[#F8A227] flex items-center justify-center gap-1 px-3 py-3 sm:px-4 sm:py-4 text-[10px] sm:text-sm rounded-full font-medium transition-all duration-300 ease-in-out hover:bg-white hover:border-yellow-500 hover:border hover:text-black hover:scale-105 shadow uppercase tracking-wider"
                 >
-                  <GrMapLocation className="text-lg sm:text-xl text-[#FFBE35] w-[50px] h-[50px]" />
+                  <GrMapLocation className="text-lg sm:text-xl text-[#FFBE35] " />
                   Check Availability Maps
                 </a>
               </div>
