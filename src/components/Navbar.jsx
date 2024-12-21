@@ -18,12 +18,22 @@ const Navbar = () => {
   const handleNavigation = (event, href) => {
     event.preventDefault();
 
-    const id = href.split("#")[1]; // Get the section ID
+    const id = href.split("#")[1]; // Extract the section ID
     if (!id) return; // Exit if ID is undefined or null
 
     const element = document.getElementById(id);
+
     if (element) {
+      // Attempt to scroll into view smoothly
       element.scrollIntoView({ behavior: "smooth" });
+
+      // Fallback: Force scrolling if the smooth behavior fails
+      const yOffset = -80; // Adjust for fixed navbar height
+      const yPosition =
+        element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+      window.scrollTo({ top: yPosition, behavior: "smooth" });
+    } else {
+      console.error(`Element with ID '${id}' not found!`);
     }
 
     closeMenu(); // Close the menu
