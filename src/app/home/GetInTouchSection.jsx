@@ -21,10 +21,10 @@ const GetInTouchSection = () => {
   }, []);
   return (
     <section className="bg-[#FDFAF3]" id="contactUsSection">
-      <div className="container mx-auto py-20 lg:px-12 px-8">
+      <div className="container mx-auto py-20 lg:py-0 lg:px-12 px-8">
         <div className="flex justify-between flex-col lg:flex-row gap-8">
           <div
-            className="leftside flex flex-col lg:text-start text-center"
+            className="lg:relative top-[202px] leftside flex flex-col lg:text-start text-center"
             data-aos="fade-up-right"
           >
             <div className="flex flex-col gap-8">
@@ -115,7 +115,10 @@ const GetInTouchSection = () => {
               </div>
             </div>
           </div>
-          <div className="rightside flex" data-aos="fade-up-left">
+          <div
+            className="rightside flex lg:relative top-[202px]"
+            data-aos="fade-up-left"
+          >
             <ContactForm />
           </div>
         </div>
