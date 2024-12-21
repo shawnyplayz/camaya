@@ -20,7 +20,7 @@ const GetInTouchSection = () => {
     });
   }, []);
   return (
-    <div className="bg-[#FDFAF3]" id="contactUsSection">
+    <section className="bg-[#FDFAF3]" id="contactUsSection">
       <div className="container mx-auto py-20 lg:px-12 px-8">
         <div className="flex justify-between flex-col lg:flex-row gap-8">
           <div
@@ -120,7 +120,7 @@ const GetInTouchSection = () => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

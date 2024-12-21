@@ -97,7 +97,7 @@ const Amenities = () => {
   }
 
   return (
-    <div className="container mx-auto py-20 lg:px-5" id="amenitiesSection">
+    <section className="container mx-auto py-20 lg:px-5" id="amenitiesSection">
       <div className="text-center md:text-left lg:ml-14">
         <h1 className="font-workSansMedium font-medium text-3xl sm:text-4xl md:text-5xl text-[#221C42] mb-6 pt-14 px-1">
           Living Your Best Life in Camaya Coast
@@ -169,7 +169,7 @@ const Amenities = () => {
       ) : (
         <div>Loading amenities...</div>
       )}
-    </div>
+    </section>
   );
 };
 
