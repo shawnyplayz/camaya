@@ -153,7 +153,7 @@ const Amenities = () => {
                         </h3>
                         <div className="flex flex-col items-center">
                           <p className="text-[#646464] text-[11px] md:text-[14px] mt-2 leading-relaxed max-w-[29rem] text-center font-bold">
-                            {card.description.length > 100
+                            {card.description.length > 50
                               ? `${card.description.substring(0, 50)}...`
                               : card.description}
                           </p>
