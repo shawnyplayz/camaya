@@ -116,8 +116,10 @@ const Amenities = () => {
           <NextArrow className="custom-next-arrow" />
 
           <TabsContainer
-            tabs={amenities.map((tab) => (
-              <div className="text-heroMainSecondaryTextColor">{tab.title}</div>
+            tabs={amenities.map((tab, index) => (
+              <div key={index} className="text-heroMainSecondaryTextColor">
+                {tab.title}
+              </div>
             ))}
           >
             {amenities.map((tab, tabIndex) => (
