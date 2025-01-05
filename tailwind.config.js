@@ -1,5 +1,5 @@
 /** @type {import('tailwindcss').Config} */
-module.exports = {
+export default {
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -25,17 +25,26 @@ module.exports = {
       lineHeight: {
         68: "68px",
       },
+
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        navTextColor: "var(--navTextColor)",
+        navIconsColor: "var(--navIconsColor)",
+        heroMainTextColor: "var(--heroMainTextColor)",
+        heroMainSecondaryTextColor: "var(--heroMainSecondaryTextColor)",
+        heroSubTextColor: "var(--heroSubTextColor)",
+        universalButtonColor: "var(--universalButtonColor)",
+        universalHeadingTextColor: "var(--universalHeadingTextColor)",
+        universalContentTextColor: "var(--universalContentTextColor)",
       },
     },
     fontFamily: {
       workSansRegular: ["WorkSansRegular", "sans-serif"],
-      workSansMedium: ["WorkSansMedium", "sans-serif"],
+      workSansMedium: ["var(--dynamic-font-family)", "sans-serif"],
       workSansItalic: ["WorkSansItalic", "sans-serif"],
       workSansSemiBold: ["WorkSansSemiBold", "sans-serif"],
-      ralewaySemiBold: ["RalewaySemiBold", "sans-serif"],
+      heroSectionDynamic: ["var(--hero-font-family)", "sans-serif"],
     },
   },
   plugins: [],

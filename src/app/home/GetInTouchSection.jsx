@@ -30,12 +30,12 @@ const GetInTouchSection = () => {
             <div className="flex flex-col gap-8">
               <div className="flex grouped_first_half flex-col">
                 <div className="heading">
-                  <h1 className="font-workSansMedium font-medium text-2xl sm:text-3xl lg:text-5xl text-[#221C42]">
+                  <h1 className="font-workSansMedium font-medium text-2xl sm:text-3xl lg:text-5xl text-universalHeadingTextColor">
                     Get in Touch
                   </h1>
                 </div>
                 <div className="GIT_Description">
-                  <p className="max-w-full sm:max-w-xl mt-4 sm:mt-6 text-[#9C9C9C] text-center lg:text-start font-workSansMedium font-medium text-sm sm:text-base lg:text-lg mx-auto lg:mx-0">
+                  <p className="max-w-full sm:max-w-xl mt-4 sm:mt-6 text-universalContentTextColor text-center lg:text-start font-workSansMedium font-medium text-sm sm:text-base lg:text-lg mx-auto lg:mx-0">
                     {GetInTouchData.description}
                   </p>
                 </div>
@@ -46,7 +46,7 @@ const GetInTouchSection = () => {
                     {" "}
                     <IoMdCall className="text-lg" />
                   </div>
-                  <div className="text-gray-800 text-start flex justify-center lg:block">
+                  <div className="text-universalContentTextColor text-start flex justify-center lg:block">
                     Call - 0926 053 2470
                   </div>
                   <div className="hidden lg:block">
@@ -57,7 +57,7 @@ const GetInTouchSection = () => {
                     {" "}
                     <FaViber className="text-lg" />
                   </div>
-                  <div className="text-gray-800 text-start flex justify-center lg:block">
+                  <div className="text-universalContentTextColor text-start flex justify-center lg:block">
                     Viber - 0945 566 6565
                   </div>
 
@@ -68,7 +68,7 @@ const GetInTouchSection = () => {
                     {" "}
                     <FaWhatsapp className="text-lg" />
                   </div>
-                  <div className="text-gray-800 text-start flex justify-center lg:block">
+                  <div className="text-universalContentTextColor text-start flex justify-center lg:block">
                     WhatsApp - 0917 635 2003
                   </div>
                   <div className="hidden lg:block">
@@ -79,7 +79,7 @@ const GetInTouchSection = () => {
                     {" "}
                     <IoMdCall className="text-lg" />
                   </div>
-                  <div className="text-gray-800 text-start flex justify-center lg:block">
+                  <div className="text-universalContentTextColor text-start flex justify-center lg:block">
                     Call - 0778 241 4895
                   </div>
                   <div className="hidden lg:block">
@@ -89,7 +89,7 @@ const GetInTouchSection = () => {
                   <div className="text-lg text-center flex justify-center lg:block">
                     <MdEmail className="text-lg" />
                   </div>
-                  <div className="text-gray-800 text-start flex justify-center lg:block">
+                  <div className="text-universalContentTextColor text-start flex justify-center lg:block">
                     <a href="mailto:lizzome.custodio@realestate.camayacoast.com">
                       lizzome.custodio@realestate.camayacoast.com
                     </a>
@@ -98,7 +98,7 @@ const GetInTouchSection = () => {
                   <div className="text-lg text-center flex justify-center lg:block">
                     <MdEmail className="text-lg" />
                   </div>
-                  <div className="text-gray-800 text-start flex justify-center lg:block">
+                  <div className="text-universalContentTextColor text-start flex justify-center lg:block">
                     <a href="mailto:lizzume.custodio@realestate.camayacoast.com">
                       maripaul.milanes@realestate.camayacoast.com
                     </a>
@@ -107,7 +107,7 @@ const GetInTouchSection = () => {
                   <div className="text-lg text-center flex justify-center lg:block">
                     <FaLocationDot className="text-lg" />
                   </div>
-                  <div className="text-gray-800">
+                  <div className="text-universalContentTextColor">
                     PET Plans Tower Guadalupe Viejo EDSA Makati City
                   </div>
                   <div></div>

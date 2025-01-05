@@ -16,14 +16,14 @@ const AboutCamayaMobile = () => {
       <div className="max-w-4xl mx-auto">
         {/* Text Section */}
         <div className="text-center mb-8">
-          <h2 className="font-workSansMedium font-medium text-[28px] sm:text-[35px] tracking-wide leading-[1.2] text-[#221C42]">
+          <h2 className="font-workSansMedium font-medium text-[28px] sm:text-[35px] tracking-wide leading-[1.2] text-universalHeadingTextColor">
             {AboutUsData.title}
           </h2>
-          <p className="text-[14px] sm:text-[16px] font-workSansMedium font-medium leading-[24px] sm:leading-[28px] text-[#9C9C9C] mt-4">
+          <p className="text-[14px] sm:text-[16px] font-workSansMedium font-medium leading-[24px] sm:leading-[28px] text-universalContentTextColor mt-4">
             {AboutUsData.description}
           </p>
           <div className="mt-6">
-            <button className="bg-[#FFC447] px-8 py-3 rounded-full font-workSansRegular text-[#221C42] text-sm sm:text-base">
+            <button className="bg-universalButtonColor px-8 py-3 rounded-full font-workSansMedium  text-sm sm:text-base">
               <Link href={"#featuredPropertiesSection"}>View Properties</Link>
             </button>
           </div>

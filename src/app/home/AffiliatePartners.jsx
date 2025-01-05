@@ -67,13 +67,13 @@ const AffiliatePartners = () => {
         }}
       >
         <div className="hidden md:block">
-          <div className="text-[32px] md:pt-0 pt-10 sm:text-2xl font-medium font-workSansMedium text-center text-[#221C42]">
+          <div className="text-[32px] md:pt-0 pt-10 sm:text-2xl font-medium font-workSansMedium text-center text-universalHeadingTextColor">
             OUR SUBSIDIARIES & AFFILIATED PARTNERS
           </div>
         </div>
       </Divider>
 
-      <div className="md:hidden text-sm md:pt-0 pt-10 sm:text-2xl font-medium font-workSansMedium text-center text-[#221C42]">
+      <div className="md:hidden text-sm md:pt-0 pt-10 sm:text-2xl font-medium font-workSansMedium text-center text-universalHeadingTextColor">
         OUR SUBSIDIARIES & AFFILIATED PARTNERS
       </div>
 

@@ -10,16 +10,16 @@ const FrequentlyAskedQuestions = () => {
     <div className="flex flex-col items-center justify-center gap-12 lg:gap-16 px-4 sm:px-5 py-10 lg:py-16">
       {/* Header Section */}
       <div className="left text-center">
-        <h1 className="max-w-2xl font-workSansMedium font-normal text-2xl sm:text-3xl lg:text-5xl text-[#221C42]">
+        <h1 className="max-w-2xl font-workSansMedium font-normal text-2xl sm:text-3xl lg:text-5xl text-universalHeadingTextColor">
           Have Questions About Camaya Coast?
         </h1>
-        <p className="mt-4 text-[#9C9C9C] font-workSansMedium font-medium text-base sm:text-lg lg:text-xl">
+        <p className="mt-4 text-universalContentTextColor font-workSansMedium font-medium text-base sm:text-lg lg:text-xl">
           We&rsquo;ve Got the Answers You Need!
         </p>
       </div>
 
       {/* Accordion Section */}
-      <div className="right w-full max-w-[70rem]">
+      <div className="right w-full max-w-[70rem] text-universalHeadingTextColor ">
         <Accordion
           title="1. How to get there?"
           content="Camaya Coast is a luxury beach resort and residential community in the Philippines."

@@ -71,15 +71,15 @@ export default function AboutSection() {
 
         {/* Right Content */}
         <div className="text-center lg:text-left">
-          <h2 className="text-4xl font-extrabold text-gray-800 mb-4">
+          <h2 className="text-4xl font-extrabold text-universalHeadingTextColor mb-4">
             About Camaya Coast
           </h2>
-          <p className="text-lg text-gray-600 leading-relaxed mb-6">
+          <p className="text-lg text-universalContentTextColor leading-relaxed mb-6">
             Nestled in the heart of Bataan, Camaya Coast offers a perfect blend
             of nature and modernity. Enjoy the beauty of pristine beaches,
             world-class amenities, and a vibrant community.
           </p>
-          <button className="bg-yellow-500 text-white text-lg px-6 py-3 rounded-full shadow-lg hover:bg-yellow-600 transition">
+          <button className="bg-universalButtonColor! font-workSansMedium text-white text-lg px-6 py-3 rounded-full shadow-lg hover:bg-yellow-600 transition">
             View Properties
           </button>
         </div>

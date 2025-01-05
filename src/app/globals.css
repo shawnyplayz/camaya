@@ -7,8 +7,9 @@
   src: url("../../public/fonts/WorkSans-Regular.ttf");
 }
 @font-face {
-  font-family: "WorkSansMedium";
-  src: url("../../public/fonts/WorkSans-Medium.ttf");
+  font-family: "Work Sans";
+  src: url("https://fonts.gstatic.com/s/worksans/v19/QGY_z_wNahGAdqQ43RhVcIgYT2Xz5u32K3vXNigDp6_cOyA.ttf");
+  /* font-weight: 500; */
 }
 @font-face {
   font-family: "WorkSansItalic";
@@ -19,8 +20,9 @@
   src: url("../../public/fonts/WorkSans-SemiBold.ttf");
 }
 @font-face {
-  font-family: "RalewaySemiBold";
+  font-family: "Raleway";
   src: url("../../public/fonts/Raleway-SemiBold.ttf");
+  font-weight: 600;
 }
 
 * {
@@ -35,6 +37,24 @@ html {
   overflow-x: hidden;
   margin: 0;
   padding: 0;
+}
+:root {
+  --dynamic-font-family: "Work Sans"; /* Default fallback font */
+  --hero-font-family: "Raleway";
+  --navTextColor: #000000;
+  --navIconsColor: #000000;
+  --heroMainTextColor: #ffff;
+  --heroMainSecondaryTextColor: #ffc447;
+  --heroSubTextColor: #ffff;
+  --universalButtonColor: #ffc447;
+  --universalHeadingTextColor: #221c42;
+  --universalContentTextColor: #838383;
+  --dynamic-font-weight: "500";
+}
+body {
+  font-family: var(--dynamic-font-family);
+
+  font-weight: var(--dynamic-font-weight);
 }
 
 /* Custom styles for Swiper navigation arrows */

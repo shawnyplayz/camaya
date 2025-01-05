@@ -99,10 +99,10 @@ const Amenities = () => {
   return (
     <section className="container mx-auto py-20 lg:px-5" id="amenitiesSection">
       <div className="text-center md:text-left lg:ml-14">
-        <h1 className="font-workSansMedium font-medium text-3xl sm:text-4xl md:text-5xl text-[#221C42] mb-6 pt-14 px-1">
+        <h1 className="font-workSansMedium font-medium text-3xl sm:text-4xl md:text-5xl text-universalHeadingTextColor mb-6 pt-14 px-1">
           Living Your Best Life in Camaya Coast
         </h1>
-        <p className="text-[#9C9C9C] max-w-5xl mx-auto md:mx-0 font-workSansMedium font-medium text-lg md:text-xl mb-12 px-3 lg:px-2">
+        <p className="text-universalContentTextColor max-w-5xl mx-auto md:mx-0 font-workSansMedium font-medium text-lg md:text-xl mb-12 px-3 lg:px-2">
           Imagine waking up to the sound of the surf. A gentle breeze enters the
           bedrooms as you open the windows to a breathtaking view of the sea in
           your own tropical vacation home. Now imagine making this come true.
@@ -115,7 +115,11 @@ const Amenities = () => {
           <PrevArrow className="custom-prev-arrow" />
           <NextArrow className="custom-next-arrow" />
 
-          <TabsContainer tabs={amenities.map((tab) => tab.title)}>
+          <TabsContainer
+            tabs={amenities.map((tab) => (
+              <div className="text-heroMainSecondaryTextColor">{tab.title}</div>
+            ))}
+          >
             {amenities.map((tab, tabIndex) => (
               <Tabs key={tabIndex}>
                 <Swiper

@@ -84,7 +84,7 @@ const ContactForm = () => {
     <div className="bg-white px-10 py-8 rounded-lg shadow-md max-w-md mx-auto lg:max-w-xl">
       <form onSubmit={handleSubmit}>
         {/* Title */}
-        <h1 className="text-[#221C42] font-workSansMedium font-medium text-3xl sm:text-4xl md:text-5xl mb-6 mt-5">
+        <h1 className="text-universalHeadingTextColor font-workSansMedium font-medium text-3xl sm:text-4xl md:text-5xl mb-6 mt-5">
           Contact Us
         </h1>
 
@@ -140,7 +140,10 @@ const ContactForm = () => {
 
         {/* Submit Button */}
         <div className="flex items-center justify-center pb-8">
-          <Button className="w-full" disabled={isSubmitting}>
+          <Button
+            className="w-full bg-universalButtonColor"
+            disabled={isSubmitting}
+          >
             {isSubmitting ? "Sending..." : "Send Message"}
           </Button>
         </div>

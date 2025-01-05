@@ -151,21 +151,21 @@ const CamayaCoastSection = () => {
           {/* Title Section */}
           <div>
             <div className="flex items-center mb-4">
-              <h2 className="font-workSansMedium font-medium text-[28px] sm:text-[35px] tracking-[3px] leading-[1.2] text-[#221C42] ml-0">
+              <h2 className="font-workSansMedium font-medium text-[28px] sm:text-[35px] tracking-[3px] leading-[1.2] text-universalHeadingTextColor ml-0">
                 {AboutUsData.title}
               </h2>
             </div>
           </div>
 
           {/* Description */}
-          <p className="text-[14px] sm:text-[16px] font-workSansMedium font-medium leading-[24px] sm:leading-[28px] text-[#9C9C9C] mb-6">
+          <p className="text-[14px] sm:text-[16px] font-workSansMedium font-medium leading-[24px] sm:leading-[28px] text-universalContentTextColor mb-6">
             {AboutUsData.description}
           </p>
 
           {/* Button */}
           <div className="mt-8 flex justify-center md:justify-start">
             <Link href={"#featuredPropertiesSection"}>
-              <button className="bg-[#FFC447] px-6 sm:px-14 md:px-20 py-3 sm:py-5 rounded-full font-workSansRegular text-[#221C42] text-sm sm:text-base md:text-lg">
+              <button className="bg-universalButtonColor font-workSansMedium px-6 sm:px-14 md:px-20 py-3 sm:py-5 rounded-full text-[#221C42] text-sm sm:text-base md:text-lg">
                 View Properties
               </button>
             </Link>

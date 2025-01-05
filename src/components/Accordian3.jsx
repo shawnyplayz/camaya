@@ -37,7 +37,7 @@ const Accordion3 = ({ title, content }) => {
             : "max-h-0 opacity-0"
         }`}
       >
-        <div className=" text-sm font-medium font-workSansRegular lg:max-w-2xl text-[#7C7C7C]">
+        <div className=" text-sm font-medium font-workSansMedium lg:max-w-2xl text-[#7C7C7C]">
           {content}
         </div>
       </div>

@@ -40,7 +40,7 @@ const Footer = () => {
             alt="Camaya Coast Properties Logo"
             className="mb-6 lg:mb-0"
           />
-          <p className="text-center lg:text-left max-w-2xl mt-3 font-workSansRegular text-base md:text-lg lg:text-lg font-normal text-[#1E1E1E]">
+          <p className="text-center lg:text-left max-w-2xl mt-3 font-workSansMedium text-base md:text-lg lg:text-lg font-normal text-[#1E1E1E]">
             At Camaya Coast Properties, we are dedicated to helping you find
             your dream home by the beach. Experience luxurious living, stunning
             amenities, and a vibrant community in the heart of paradise.
@@ -48,15 +48,24 @@ const Footer = () => {
         </div>
 
         {/* Social Media Section */}
-        <div className="flex justify-center lg:justify-end items-center gap-6 mt-8 lg:mt-4 text-white lg:mr-[15rem]">
+        <div className="flex justify-center lg:justify-end items-center gap-6 mt-8 lg:mt-4 text-navIconsColor lg:mr-[15rem]">
           <Link href={"https://www.facebook.com/camayaresort"}>
-            <SlSocialFacebook size={35} color="#1E1E1E" />
+            <SlSocialFacebook
+              size={35}
+              // color="#1E1E1E"
+            />
           </Link>
           <Link href={"https://instagram.com/camaya_prestige"}>
-            <SlSocialInstagram size={35} color="#1E1E1E" />
+            <SlSocialInstagram
+              size={35}
+              // color="#1E1E1E"
+            />
           </Link>
           <Link href="viber://chat?number=639260532470">
-            <SiViber size={35} color="#1E1E1E" />
+            <SiViber
+              size={35}
+              // color="#1E1E1E"
+            />
           </Link>
         </div>
 
