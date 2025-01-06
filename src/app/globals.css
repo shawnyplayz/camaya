@@ -9,7 +9,7 @@
 @font-face {
   font-family: "Work Sans";
   src: url("https://fonts.gstatic.com/s/worksans/v19/QGY_z_wNahGAdqQ43RhVcIgYT2Xz5u32K3vXNigDp6_cOyA.ttf");
-  /* font-weight: 500; */
+  font-weight: 500;
 }
 @font-face {
   font-family: "WorkSansItalic";

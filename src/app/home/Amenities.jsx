@@ -115,13 +115,7 @@ const Amenities = () => {
           <PrevArrow className="custom-prev-arrow" />
           <NextArrow className="custom-next-arrow" />
 
-          <TabsContainer
-            tabs={amenities.map((tab, index) => (
-              <div key={index} className="text-heroMainSecondaryTextColor">
-                {tab.title}
-              </div>
-            ))}
-          >
+          <TabsContainer tabs={amenities.map((tab, index) => tab.title)}>
             {amenities.map((tab, tabIndex) => (
               <Tabs key={tabIndex}>
                 <Swiper
