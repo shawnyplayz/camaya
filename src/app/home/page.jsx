@@ -35,7 +35,94 @@ const Home = () => {
   const universalContentTextColor = searchParams.get(
     "universalContentTextColor"
   );
-
+  useEffect(() => {
+    // Handle dynamic styles
+    if (fontName) {
+      const existingLink = document.querySelector(`link[href*="${fontName}"]`);
+      if (!existingLink) {
+        const link = document.createElement("link");
+        link.href = `https://fonts.googleapis.com/css2?family=${fontName.replace(
+          / /g,
+          "+"
+        )}&display=swap`;
+        link.rel = "stylesheet";
+        document.head.appendChild(link);
+      }
+      document.documentElement.style.setProperty(
+        "--dynamic-font-family",
+        `'${fontName}', sans-serif`
+      );
+    }
+    if (font_name_Hero) {
+      const existingLink = document.querySelector(
+        `link[href*="${font_name_Hero}"]`
+      );
+      if (!existingLink) {
+        const link = document.createElement("link");
+        link.href = `https://fonts.googleapis.com/css2?family=${font_name_Hero.replace(
+          / /g,
+          "+"
+        )}&display=swap`;
+        link.rel = "stylesheet";
+        document.head.appendChild(link);
+      }
+      document.documentElement.style.setProperty(
+        "--hero-font-family",
+        `'${font_name_Hero}', sans-serif`
+      );
+    }
+    // Handle other color parameters
+    if (navTextColor)
+      document.documentElement.style.setProperty(
+        "--navTextColor",
+        navTextColor
+      );
+    if (navIconsColor)
+      document.documentElement.style.setProperty(
+        "--navIconsColor",
+        navIconsColor
+      );
+    if (heroMainTextColor)
+      document.documentElement.style.setProperty(
+        "--heroMainTextColor",
+        heroMainTextColor
+      );
+    if (heroMainSecondaryTextColor)
+      document.documentElement.style.setProperty(
+        "--heroMainSecondaryTextColor",
+        heroMainSecondaryTextColor
+      );
+    if (heroSubTextColor)
+      document.documentElement.style.setProperty(
+        "--heroSubTextColor",
+        heroSubTextColor
+      );
+    if (universalButtonColor)
+      document.documentElement.style.setProperty(
+        "--universalButtonColor",
+        universalButtonColor
+      );
+    if (universalHeadingTextColor)
+      document.documentElement.style.setProperty(
+        "--universalHeadingTextColor",
+        universalHeadingTextColor
+      );
+    if (universalContentTextColor)
+      document.documentElement.style.setProperty(
+        "--universalContentTextColor",
+        universalContentTextColor
+      );
+  }, [
+    fontName,
+    navTextColor,
+    navIconsColor,
+    heroMainTextColor,
+    heroMainSecondaryTextColor,
+    heroSubTextColor,
+    universalButtonColor,
+    universalHeadingTextColor,
+    universalContentTextColor,
+  ]);
   useEffect(() => {
     const fetchServices = async () => {
       try {

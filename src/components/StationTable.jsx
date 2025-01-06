@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import { Card, Typography } from "@material-tailwind/react";
 import { MdKeyboardArrowUp, MdKeyboardArrowDown } from "react-icons/md";
+import Image from "next/image";
 
 const StationTable = ({ title }) => {
   const TABLE_HEAD = [
@@ -231,13 +232,15 @@ const StationTable = ({ title }) => {
                               backgroundRepeat: "no-repeat",
                             }}
                           >
-                            <img
+                            <Image
                               style={{
                                 maxWidth: "100%",
                                 height: "auto",
                                 display: "block",
                                 margin: "auto",
                               }}
+                              width={100}
+                              height={100}
                               src={station}
                               alt="stations"
                             />
