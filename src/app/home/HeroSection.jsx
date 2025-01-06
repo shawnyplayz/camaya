@@ -82,7 +82,7 @@ const HeroSection = () => {
       ></div>
 
       <div className="relative z-10 text-heroMainTextColor px-4 sm:px-8 md:px-16 lg:px-16 h-full flex flex-col justify-center pt-28 mx-auto container">
-        <div className="text-xl font-heroMainTextColor font-medium  sm:text-4xl md:text-5xl lg:text-[58px] max-w-full md:max-w-[971px] text-center md:text-left lg:leading-68">
+        <div className="text-xl font-heroSectionDynamic font-medium  sm:text-4xl md:text-5xl lg:text-[58px] max-w-full md:max-w-[971px] text-center md:text-left lg:leading-68">
           <h1>
             We&apos;ve created an affordable beach, golf & mountain view
             <span className="text-heroMainSecondaryTextColor">
