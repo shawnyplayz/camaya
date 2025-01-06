@@ -43,7 +43,10 @@ export default function RootLayout({ children }) {
           content="/assets/home/heroSection/hero6.png"
         />
       </head>
-      <body className={`antialiased`}>
+      <body
+        className={`antialiased`}
+        style={{ fontFamily: "var(--dynamic-font-family)" }}
+      >
         <Suspense fallback={<div>Loading....</div>}>
           <ToastContainer
             position="top-center"

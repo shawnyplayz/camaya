@@ -16,6 +16,7 @@ const endpoints = {
   sendInquiry: `${baseUrl}/sendInquiry`,
   fetchAmenities: `${baseUrl}/fetchAmenities`,
   fetchHero: `${baseUrl}/fetchHero`,
+  getFontColor: `${baseUrl}/getFontColor`,
 };
 
 export default endpoints;
