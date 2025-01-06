@@ -91,9 +91,13 @@ const Home = () => {
       if (Array.isArray(response) && response.length > 0) {
         const data = response[0];
         const fontNameFromApi = data.font_name || fontName;
+        const fontHeroNameFromApi = data.font_name_Hero || font_name_Hero;
 
         if (fontNameFromApi) {
           loadFont(fontNameFromApi, "--dynamic-font-family");
+        }
+        if (fontHeroNameFromApi) {
+          loadFont(fontHeroNameFromApi, "--hero-font-family");
         }
 
         document.documentElement.style.setProperty(
