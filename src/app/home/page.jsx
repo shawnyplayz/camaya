@@ -138,23 +138,49 @@ const Home = () => {
     }
   };
 
-  const loadFont = (fontName, cssVariable) => {
-    const fontUrl = `https://fonts.googleapis.com/css2?family=${fontName.replace(
-      / /g,
-      "+"
-    )}&display=swap`;
+  // const loadFont = (fontName, cssVariable) => {
+  //   const fontUrl = `https://fonts.googleapis.com/css2?family=${fontName.replace(
+  //     / /g,
+  //     "+"
+  //   )}&display=swap`;
+  //   if (!document.querySelector(`link[href="${fontUrl}"]`)) {
+  //     const link = document.createElement("link");
+  //     link.href = fontUrl;
+  //     link.rel = "stylesheet";
+  //     document.head.appendChild(link);
+  //   }
+  //   document.documentElement.style.setProperty(
+  //     cssVariable,
+  //     `'${fontName}', sans-serif`
+  //   );
+  // };
+  const loadFont = (fontName, cssVariable, fontWeight = 600) => {
+    let fontUrl;
+    if (fontName == "Raleway") {
+      fontUrl = `https://fonts.googleapis.com/css2?family=${fontName.replace(
+        / /g,
+        "+"
+      )}:wght@${fontWeight}&display=swap`;
+    } else {
+      fontUrl = `https://fonts.googleapis.com/css2?family=${fontName.replace(
+        / /g,
+        "+"
+      )}&display=swap`;
+    }
+    debugger;
+    console.log("fontUrl", fontUrl);
     if (!document.querySelector(`link[href="${fontUrl}"]`)) {
       const link = document.createElement("link");
       link.href = fontUrl;
       link.rel = "stylesheet";
       document.head.appendChild(link);
     }
+
     document.documentElement.style.setProperty(
       cssVariable,
       `'${fontName}', sans-serif`
     );
   };
-
   useEffect(() => {
     if (
       fontName ||

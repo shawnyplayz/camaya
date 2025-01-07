@@ -21,7 +21,7 @@
 }
 @font-face {
   font-family: "Raleway";
-  src: url("../../public/fonts/Raleway-SemiBold.ttf");
+  src: url("https://fonts.gstatic.com/s/raleway/v34/1Ptxg8zYS_SKggPN4iEgvnHyvveLxVsEpYCPNLA3JC9c.ttf");
   font-weight: 600;
 }
 
@@ -53,7 +53,6 @@ html {
 }
 body {
   font-family: var(--dynamic-font-family);
-
   font-weight: var(--dynamic-font-weight);
 }
 
