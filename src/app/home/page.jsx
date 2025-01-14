@@ -167,7 +167,7 @@ const Home = () => {
         "+"
       )}&display=swap`;
     }
-    debugger;
+
     console.log("fontUrl", fontUrl);
     if (!document.querySelector(`link[href="${fontUrl}"]`)) {
       const link = document.createElement("link");
