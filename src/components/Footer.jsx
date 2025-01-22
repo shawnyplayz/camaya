@@ -7,6 +7,7 @@ import { useRouter } from "next/navigation";
 import { SlSocialFacebook, SlSocialInstagram } from "react-icons/sl";
 import { SiViber } from "react-icons/si";
 import { GoDotFill } from "react-icons/go";
+import innocursor from "../../public/assets/footerAssets/innocursor.svg";
 
 const Footer = () => {
   const router = useRouter();
@@ -126,16 +127,21 @@ const Footer = () => {
             © 2024 Camaya Coast Properties. All rights reserved.
           </p>
           <div className="flex gap-6 items-center">
-            {/* Privacy Policy Link */}
-            <div className="flex items-center gap-1">
-              <GoDotFill color="#FFC447" />
-              <p>Privacy Policy</p>
-            </div>
-            {/* Terms of Service Link */}
-            <div className="flex items-center gap-1">
-              <GoDotFill color="#FFC447" />
-              <p>Terms of Service</p>
-            </div>
+            <p className="flex gap-2 text-center md:text-right">
+              Designed and Developed by{" "}
+              <Image
+                src={innocursor}
+                width={25}
+                className="bg-white rounded-xl border-1"
+                height={25}
+                alt="Innovative Cursor Logo"
+              />
+              <Link href="https://www.innovativecursor.com/">
+                <span className="text-blue-800 font-semibold">
+                  Innovative Cursor
+                </span>
+              </Link>
+            </p>
           </div>
         </div>
       </div>
