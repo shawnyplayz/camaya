@@ -6,7 +6,6 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Head from "next/head";
 import { Suspense } from "react";
-
 export const metadata = {
   title: "Camaya Coast",
   description:
@@ -47,7 +46,15 @@ export default function RootLayout({ children }) {
         className={`antialiased`}
         style={{ fontFamily: "var(--dynamic-font-family)" }}
       >
-        <Suspense fallback={<div>Loading....</div>}>
+        <Suspense
+          fallback={
+            <>
+              <div className="fixed inset-0 flex items-center justify-center bg-white z-50">
+                <div className="animate-spin rounded-full h-16 w-16 border-b-4 border-blue-500"></div>
+              </div>
+            </>
+          }
+        >
           <ToastContainer
             position="top-center"
             theme="light"

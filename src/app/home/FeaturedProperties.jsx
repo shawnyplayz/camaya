@@ -5,10 +5,10 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { FaCaretLeft, FaCaretRight, FaMapMarkerAlt } from "react-icons/fa";
 import { GrMapLocation } from "react-icons/gr";
-
 import { Divider } from "antd";
 import { fetchDataGet } from "@/utils.js/fetchData";
 import endpoints from "@/config/endpoints";
+import { motion } from "framer-motion";
 
 const NextArrow = ({ onClick }) => (
   <div
@@ -97,23 +97,43 @@ const FeaturedProperties = () => {
   }
 
   return (
-    <div
-      className="bg-gradient-to-b from-[#ffffff] via-[#F9E3C8] to-[#ffffff] mt-6"
+    <motion.div
+      className="bg-gradient-to-b from-white via-[#F9E3C8] to-white mt-6"
       id="featuredPropertiesSection"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 1 }}
     >
       <div className="container mx-auto flex flex-col gap-3 lg:gap-12">
-        <div className="md:block">
+        <motion.div
+          className="md:block"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, ease: "easeOut" }}
+          viewport={{ once: true }}
+        >
           <Divider style={{ borderColor: "#CCCCCC" }}>
             <h1 className="text-universalHeadingTextColor font-workSansMedium font-medium lg:text-[64px] text-center text-3xl">
               Featured Properties
             </h1>
           </Divider>
-        </div>
+        </motion.div>
 
         {properties.map((property, index) => {
           const numImages = property.pictures.length;
           return (
-            <div key={property.prop_id} className="mt-[4rem]">
+            <motion.div
+              key={property.prop_id}
+              className="mt-[4rem]"
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{
+                duration: 0.8,
+                ease: "easeOut",
+                delay: index * 0.2,
+              }}
+              viewport={{ once: true }}
+            >
               <div className="relative slider-container">
                 <div className="flex gap-3 items-start">
                   <span
@@ -135,8 +155,6 @@ const FeaturedProperties = () => {
                   </div>
                 </div>
 
-                {/* Button Positioned at Top-Right */}
-
                 <a
                   href={property.link}
                   target="_blank"
@@ -151,7 +169,13 @@ const FeaturedProperties = () => {
               <div className="slider-container">
                 <Slider {...sliderSettings(numImages)}>
                   {property.pictures.map((pic, i) => (
-                    <div key={i}>
+                    <motion.div
+                      key={i}
+                      initial={{ scale: 0.9, opacity: 0 }}
+                      whileInView={{ scale: 1, opacity: 1 }}
+                      transition={{ duration: 0.6, ease: "easeOut" }}
+                      viewport={{ once: true }}
+                    >
                       <Image
                         src={pic.secure_url}
                         alt={`Property Image ${i + 1}`}
@@ -159,15 +183,15 @@ const FeaturedProperties = () => {
                         height={200}
                         className="pb-7 object-fill"
                       />
-                    </div>
+                    </motion.div>
                   ))}
                 </Slider>
               </div>
-            </div>
+            </motion.div>
           );
         })}
       </div>
-    </div>
+    </motion.div>
   );
 };
 

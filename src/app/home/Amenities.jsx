@@ -10,7 +10,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import { Navigation } from "swiper/modules";
-
+import { motion } from "framer-motion";
 import { FaCaretLeft, FaCaretRight } from "react-icons/fa";
 import endpoints from "@/config/endpoints";
 import { fetchDataGet } from "@/utils.js/fetchData";
@@ -98,7 +98,12 @@ const Amenities = () => {
 
   return (
     <section className="container mx-auto py-20 lg:px-5" id="amenitiesSection">
-      <div className="text-center md:text-left lg:ml-14">
+      <motion.div
+        initial={{ opacity: 0, x: -50 }} // Start with opacity 0 and move up
+        whileInView={{ opacity: 1, x: 0 }} // End with full opacity and normal position
+        transition={{ duration: 1, ease: "easeOut" }} // Smooth animation
+        className="text-center md:text-left lg:ml-14"
+      >
         <h1 className="font-workSansMedium font-medium text-3xl sm:text-4xl md:text-5xl text-universalHeadingTextColor mb-6 pt-14 px-1">
           Living Your Best Life in Camaya Coast
         </h1>
@@ -108,7 +113,7 @@ const Amenities = () => {
           your own tropical vacation home. Now imagine making this come true.
           You can - with Camaya Coast&apos;s residential developments.
         </p>
-      </div>
+      </motion.div>
 
       {amenities.length > 0 ? (
         <div className="relative overflow-x-auto whitespace-nowrap scrollbar-hide">
